@@ -1,0 +1,80 @@
+<form>
+	<alternance>true</alternance>
+	<valternance>true</valternance>
+	
+	<fields>
+
+		<_count header="No." width="20" align="right" suffix="."/>
+
+		<item_parent header="Product" type="relation" empty="true" restricted="eval:$_GET[item_parent];">
+			<relation table="plugin:shop_items" id="item_id" text="item_title" order="item_title ASC">
+			</relation>
+		</item_parent>
+
+		<item_name header="Author"/>
+
+		<item_email header="E-Mail"/>
+
+		<item_phone header="Phone"/>
+
+		<item_status type="relation" align="center" width="100" header="Status" restricted="eval:$_GET[item_status];">
+			<options>
+				<option name="1">unanswered</option>
+				<option name="2">answered</option>
+			</options>
+		</item_status>
+
+		<item_date header="Date" type="date" params="j M Y" width="100" align="center"/>
+
+		<button_delete type="button" width="20" align="center" onclick="" button="/small/delete" protected="promo_default">
+			<location>{SELF.URI.DELETE}</location>
+		</button_delete>
+
+		<button_details type="button" width="20" align="center" onclick="" button="/small/edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_details>
+
+	</fields>
+
+	<header>
+		<titles>true</titles>
+		<buttons>
+			<add button="addnew">
+				<location>{SELF.URI.ADD}</location>
+			</add>
+		</buttons>
+	</header>
+
+	<vars>
+		<module_id type="eval" import="(int)$_GET[module_id]" />
+		<item_cat type="eval" import="(int)$_GET[item_cat]" />
+		<item_parent type="eval" import="(int)$_GET[item_id]" />
+	</vars>
+
+
+	<sql>
+		<vars>
+
+			<table type="table"/>
+
+			<page type="page"/>
+			<items type="form" var="items"/>
+			<module_id type="eval" import="(int)$_GET[module_id]" />
+			<item_parent type="eval" import="(int)$_GET[item_id]" />
+
+			<condition type="var" import="" />
+			<req_condition type="var" import=" WHERE module_id={MODULE_ID} " />
+
+			<order type="var" import="item_date" />
+			<order_mode type="var" import="DESC" />
+
+		</vars>
+		<query>select * from {TABLE} {CONDITION} ORDER BY {ORDER} {ORDER_MODE} LIMIT {PAGE} , {ITEMS} </query>
+		<count table="{TABLE}" condition="{CONDITION}" />
+
+	</sql> 
+
+	<items>50</items>
+
+
+</form>

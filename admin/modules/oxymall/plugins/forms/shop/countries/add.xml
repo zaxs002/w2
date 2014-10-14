@@ -1,0 +1,54 @@
+<form>
+	<title>{SELF.TITLE} Country</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<item_id type="hidden"/>		
+
+		<item_title type="textbox" size="60" title="Name" required="true" validate="A:1:200" unique="true" />
+		<item_iso type="textbox" title="ISO2" required="true" validate="A:2:2" unique="true" size="2:2"/>
+
+		<item_states type="textarea" size="60:7" title="States" description="Put one state name on a line. They will be automaticaly sorted alphabeticaly."/>
+
+		<item_status type="droplist" title="Status">		
+			<options>
+				<option name="1">enabled</option>
+				<option name="0">disabled</option>
+			</options>
+		</item_status>
+
+		<subtitle_after title="&nbsp;" type="subtitle" />
+		<after_save type="after_save" />
+
+	</fields>
+</form>

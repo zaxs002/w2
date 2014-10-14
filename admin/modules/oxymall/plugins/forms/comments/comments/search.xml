@@ -1,0 +1,66 @@
+<form>
+	<title>User Comments</title>
+	<action>{SELF.FILE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<method>get</method>
+
+	<formtag>true</formtag>
+	<border>true</border>
+	<alternance>true</alternance>
+	
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+	</buttons>
+
+	<redirect>index.php?sub=units</redirect>
+
+
+	<tabs>
+		<t width="100" title="Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default&action=details&module_id=11" />
+		<t9 active="true" width="100" title="Comments" link="index.php?mod=oxymall&sub=oxymall.plugin.comments.landing" />
+<!--		<t10 width="100" title="Pages Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.comments.pages" />-->
+
+	</tabs>
+
+
+	<fields>
+
+		<mod type="hidden" default="$_GET['mod']" action="eval"/>
+		<sub type="hidden" default="$_GET['sub']" action="eval"/>
+		<module_id type="hidden" default="$_GET['module_id']" action="eval"/>
+		<advanced type="hidden" default="0" />
+	</fields>
+
+	<search>
+			<fields>
+				<item_url	type="textbox" size="60" title="Page" />
+				<item_author type="textbox" title="Author" />
+				<item_email type="textbox" size="30" title="E-Mail" />
+				<item_website type="textbox" size="40" title="Website" />
+
+				<item_status type="radiolist" title="Show" newline="false">
+					<options>
+						<option name="">all</option>
+						<option name="1">pending</option>
+						<option name="2">approved</option>
+					</options>
+				</item_status>
+
+				<button type="button" button="search" location="javascript:document.forms[0].submit();" />
+			</fields>
+
+			<sql_fields>
+				<field name="item_author">%</field>			
+				<field name="item_website">%</field>			
+				<field name="item_email">%</field>			
+				<field name="item_url">%</field>			
+				<field name="item_status">=</field>			
+			</sql_fields>
+
+	</search>
+</form>

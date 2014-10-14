@@ -1,0 +1,76 @@
+<form>
+	<title>Backgrounds</title>
+	<border>true</border>
+
+	<alternance>true</alternance>
+	<valternance>true</valternance>
+
+	<vars>
+		<module_id type="eval" import="$_GET[module_id]" />
+		<item_module type="eval" import="$_GET[item_module]" />
+	</vars>
+
+	<order>
+		<restricted></restricted>
+		<drag>true</drag>
+		<field>item_order</field>
+		<mode>ASC</mode>
+		<button></button>
+	</order>
+
+	<fields>
+
+		<_count header="No." width="20" align="right" suffix="."/>
+
+		<item_title header="Title" />	
+
+		<item_module header="Module" type="relation" restricted="eval:$_GET[item_module];">
+			<tree parent="mod_parent" separator="&nbsp;&nbsp;&nbsp;" s1eparator="   " full="true"/>
+			<relation table="core:user_modules" id="mod_id" text="mod_name" />
+		</item_module>
+	
+
+		<button_delete type="button" width="20" align="center" onclick="" button="/small/delete" protected="promo_default">
+			<location>{SELF.URI.DELETE}</location>
+		</button_delete>
+
+		<button_details type="button" width="20" align="center" onclick="" button="/small/edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_details>
+
+	</fields>
+
+	<header>
+		<titles>true</titles>
+		<nolinks>true</nolinks>
+		<buttons>
+			<add button="addnew">
+				<location>{SELF.URI.ADD}</location>
+			</add>
+		</buttons>
+	</header>
+
+	<items>50</items>
+
+	<sql>
+		<vars>
+
+			<table type="table"/>
+
+			<page type="page"/>
+			<items type="form" var="items"/>
+
+			<condition type="var" import="" />
+			<req_condition type="var" import="WHERE item_module!=0 " />
+
+			<order type="var" import="item_order" />
+			<order_mode type="var" import="ASC" />
+
+		</vars>
+		<query>select * from {TABLE} {CONDITION} ORDER BY {ORDER} {ORDER_MODE} LIMIT {PAGE} , {ITEMS} </query>
+		<count table="{TABLE}" condition="{CONDITION}" />
+
+	</sql> 
+
+
+</form>

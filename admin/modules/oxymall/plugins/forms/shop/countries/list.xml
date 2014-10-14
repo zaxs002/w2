@@ -1,0 +1,61 @@
+<form>
+	<alternance>true</alternance>
+	<valternance>true</valternance>
+	
+	<fields>
+
+		<_count header="No." width="20" align="right" suffix="."/>
+
+		<item_title header="Name" link="{SELF.URI.EDIT}"/>
+
+		<item_iso header="ISO" align="center" width="80"/>
+
+		<item_status type="relation" header="Status" align="center" width="70">
+			<options>
+				<option name="1">enabled</option>
+				<option name="0">disabled</option>
+			</options>
+		</item_status>
+
+		<button_delete type="button" width="20" align="center" onclick="" button="/small/delete" protected="promo_default">
+			<location>{SELF.URI.DELETE}</location>
+		</button_delete>
+
+		<button_details type="button" width="20" align="center" onclick="" button="/small/edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_details>
+
+	</fields>
+
+	<header>
+		<titles>true</titles>
+		<buttons>
+			<add button="addnew" >
+				<location>{SELF.URI.ADD}</location>
+			</add>
+		</buttons>
+	</header>
+
+	<sql>
+		<vars>
+
+			<table type="table"/>
+
+			<page type="page"/>
+			<items type="form" var="items"/>
+
+			<condition type="var" import="" />
+
+			<order type="var" import="item_title" />
+			<order_mode type="var" import="ASC" />
+
+		</vars>
+		<query>select * from {TABLE} {CONDITION} ORDER BY {ORDER} {ORDER_MODE} LIMIT {PAGE} , {ITEMS} </query>
+		<count table="{TABLE}" condition="{CONDITION}" />
+
+	</sql> 
+
+	<items>50</items>
+
+
+</form>

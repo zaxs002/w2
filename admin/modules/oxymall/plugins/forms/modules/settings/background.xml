@@ -1,0 +1,11 @@
+<form>
+	<tabs>
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user&action=details&mod_id={MODULE_ID}" />
+
+		<t0 width="130" title="Global Backgrounds" link="index.php?mod=oxymall&sub=oxymall.plugin.background.landing&returnurl=" />
+		<t1 width="130" title="Modules Backgrounds" link="index.php?mod=oxymall&sub=oxymall.plugin.background.modules&returnurl=" />
+	</tabs> 
+
+	<fields>
+	</fields>
+</form>

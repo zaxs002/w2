@@ -1,0 +1,27 @@
+<!--S:Main-->
+		<div class="module" id="password-recover-module">
+			<header>
+				<h1>{SET_RECOVER_TOPTITLE}</h1>
+			</header>
+			
+			<form class="see-through-bg" id="recover-form"  action="ajax.users-recover.php" method="post">
+				<p>{SET_RECOVER_DESCRIPTON}</p>
+				
+				<ul class="layout">
+					<li class="inline pb12 pr12">
+						<label class="block big">{SET_RECOVER_EMAILCAPTION}</label>
+						<input class="w194" name="email" type="text"/>
+					</li>
+
+					<li class="inline clear pr6"><input id="recover-form-submit-btn" type="submit" value="{SET_RECOVER_BUTTON}"/></li>
+					<li id="recover-form-msg" class="inline lh25">
+						<div class="wait">{SET_RECOVER_SENDINGALERT}</div>
+					</li>
+
+
+					<li class="inline-right"><a href="{LINK:REGISTER}" class="text-button"><span>{SET_LOGIN_REGISTERBUTTONCAPTION}</span></a></li>
+					<li class="inline-right pr6"><a href="{LINK:LOGIN}" class="text-button"><span>{SET_LOGIN_LOGINBUTTONCAPTION}</span></a></li>
+				</ul>	
+			</form>
+		</div>
+<!--E:Main-->

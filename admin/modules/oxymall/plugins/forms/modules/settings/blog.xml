@@ -1,0 +1,64 @@
+<form>
+	<tabs>
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user&action=details&mod_id={MODULE_ID}" />
+		<t3 width="80" title="Authors" link="index.php?mod=oxymall&sub=oxymall.plugin.blog.authors&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t0 width="80" title="Topics" link="index.php?mod=oxymall&sub=oxymall.plugin.blog.landing&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t2 width="80" title="Categories" link="index.php?mod=oxymall&sub=oxymall.plugin.blog.cats&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t_video width="80" title="Video Tutorial" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.help&module_id={MODULE_ID}" restricted="eval:$GLOBALS['no_tutorials'];"/>
+	</tabs>
+
+
+	<fields>
+		<subtitle_mod_9 type="subtitle" title="Settings" />
+
+		<set_categories_type type="radiolist" title="Categories Display" newline="false">
+			<options>
+				<option name="1">menu</option>
+				<option name="2">droplist</option>
+				<option name="3">droplist if more then 3</option>
+			</options>
+		</set_categories_type>
+
+		<set_items type="textbox" size="4" title="Show" suffix="items per page"/>
+		<set_date_format type="textbox" size="20" title="Listing Date Format" />
+		<set_date_format_details type="textbox" size="20" title="Details Date Format" />
+		<set_label_url type="textbox" size="40" title="All Topics Url" />
+		<set_label_title type="textbox" size="40" title="All Topics Title" />
+
+
+		<subtitle_mod_3 type="subtitle" title="Comments" />
+		<set_fbcomments type="droplist" title="User Comments">
+			<options>
+				<option name="0">disabled</option>
+				<option name="1">local comments</option>
+				<option name="3">facebook comments</option>
+			</options>
+		</set_fbcomments>
+
+		<subtitle_mod_2 type="subtitle" title="Texts" />
+		<set_text_list_date type="textbox" title="Listing Date" />
+		<set_text_list_back type="textbox" title="Back to listing" />
+		<set_text_details_back type="textbox" title="Back Button" />
+		<set_text_details_next type="textbox" title="Next Button" />
+		<set_text_posted_by type="textbox" title="Posted By" />
+		<set_text_posted_on type="textbox" title="Posted On" />
+
+		<subtitle_mod_1 type="subtitle" title="Module Settings" />
+
+		<subtitle_mod_publisher type="subtitle" title="Author Profile" />
+		<set_publisher_back type="textbox" title="back Button" size="15" />
+
+
+
+		<subtitle_mod_filter type="subtitle" title="Filter Form" />
+		<set_filter_sort type="textbox" size="20" title="Sort Caption" />
+		<set_filter_order type="textbox" size="20" title="Order Caption" />
+		<set_filter_name type="textbox" size="20" title="Name" />
+		<set_filter_date type="textbox" size="20" title="Date" />
+		<set_filter_author type="textbox" size="20" title="Author" />
+		<set_filter_asc type="textbox" size="20" title="Ascending" />
+		<set_filter_desc type="textbox" size="20" title="Descending" />
+		<set_filter_search type="textbox" size="20" title="Search" />
+
+	</fields>
+</form>

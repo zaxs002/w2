@@ -1,0 +1,132 @@
+<!--S:Main-->
+		<div class="module" id="shop-step4-module">
+			{STEPS}
+			
+			<div class="see-through-bg extra-content">
+				<header>
+					<h3>{SET_STEP4_TITLE}</h3>
+					
+					<a href="{LINK:STEP3}" class="text-button">
+						<span class="arrow-left-icon">{SET_STEP4_BUTTON}</span>
+					</a>
+				</header>
+				
+				<article>
+					<p>{SET_STEP4_HEADER}</p>
+				</article>				
+			</div>
+			
+			<div id="payment-options">
+
+				{ACCOUNTS}
+				{ACCOUNTS_DATA}				
+
+			</div>
+		</div>
+<!--E:Main-->
+
+
+
+<!--S:AccountsGroup-->
+				<ul id="payment-options-tabs">
+					{DATA}
+				</ul>
+<!--E:AccountsGroup-->
+
+<!--S:AccountsElement-->
+					<li data-content="{ITEM_CODE}" class="{CLASS}"><a href="#">{ITEM_TITLE}</a></li>
+<!--E:AccountsElement-->
+
+<!--S:AccountsEmpty-->
+
+<!--E:AccountsEmpty-->
+
+
+<!--S:AccountsDataGroup-->
+
+					{DATA}
+
+<!--E:AccountsDataGroup-->
+
+<!--S:AccountsDataElement-->
+				{CONTENT}
+<!--E:AccountsDataElement-->
+
+<!--S:AccountsDataEmpty-->
+
+<!--E:AccountsDataEmpty-->
+
+<!--S:AccountCreditCard-->
+				<div id="{ITEM_CODE}" class="see-through-bg">
+					<form action="{ITEM_SCRIPT}" method="post">		
+						<p>{ITEM_DESCRIPTION}</p>
+						<ul class="layout">
+							<li class="clear inline"><label class="block big w136 lh25">{SET_NAMEONCARDCAPTION}</label></li>
+							<li class="inline pb12"><input class="w194" name="name" type="text"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_CARDTYPECAPTION}</label></li>
+							<li class="inline pb12">
+								<select class="w194" name="type">
+									<option value="mc">Mastercard</option>
+									<option value="amex">AMEX</option>
+									<option value="discovery">Discovery</option>
+									<option value="visa">VISA</option>
+									<option value="visaelectron">VISA Electron</option>
+								</select> 
+							</li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_CARDNUMBERCAPTION}</label></li>
+							<li class="inline pb12"><input class="w194" name="nr" maxlength="16" type="text"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_EXPIRYDATECAPTION}</label></li>
+							<li class="inline pb12 pr6">
+								<select name="month">
+									<option value=""></option>
+									<option value="01">{SET_MONTH_1} (01)</option>
+									<option value="02">{SET_MONTH_2} (02)</option>
+									<option value="03">{SET_MONTH_3} (03)</option>
+									<option value="04">{SET_MONTH_4} (04)</option>
+									<option value="05">{SET_MONTH_5} (05)</option>
+									<option value="06">{SET_MONTH_6} (06)</option>
+									<option value="07">{SET_MONTH_7} (07)</option>
+									<option value="08">{SET_MONTH_8} (08)</option>
+									<option value="09">{SET_MONTH_9} (09)</option>
+									<option value="10">{SET_MONTH_10} (10)</option>
+									<option value="11">{SET_MONTH_11} (11)</option>
+									<option value="12">{SET_MONTH_12} (12)</option>
+								</select> 
+							</li>
+							<li class="inline pb12">
+								<select name="year">
+									{YEARS}
+								</select> 
+							</li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_CVV2CAPTION}</label></li>
+							<li class="inline pb12"><input name="cvv2" type="text" maxlength="4" /></li>
+							
+							<li class="inline clear pl136 pr12"><input id="cc-form-submit-btn" type="submit" value="{ITEM_BUTTONCAPTION}"/></li>
+							<li id="cc-form-msg" class="inline lh25">
+								<div class="wait">{SET_STEP4_SENDING}</div>
+							</li>
+						</ul>			
+						
+					</form>
+				</div>
+<!--E:AccountCreditCard-->
+
+<!--S:AccountLink-->
+				<div id="{ITEM_CODE}" class="see-through-bg">
+					<form action="{ITEM_SCRIPT}" method="post">
+						<p>{ITEM_DESCRIPTION}</p>
+						
+						<ul class="layout">
+							<li class="inline pr6"><input type="submit" value="{ITEM_BUTTONCAPTION}"/></li>
+							<li class="inline lh27">
+								<div class="wait">{SET_STEP4_SENDING}</div>
+							</li>
+						</ul>
+					</form>
+				</div>
+
+<!--E:AccountLink-->

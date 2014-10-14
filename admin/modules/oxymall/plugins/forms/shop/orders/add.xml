@@ -1,0 +1,101 @@
+<form>
+	<title>Edit Order</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<vars>
+		<curr import="order_price_currency" type="value" />
+	</vars>
+
+	<fields>
+		<order_id type="hidden"/>		
+
+		<order_status type="radiolist" title="Status" newline="false">
+			<options>
+				<option name="">temporary</option>
+				<option name="1">peding</option>
+				<option name="2">completed</option>
+				<option name="3">refunded</option>
+				<option name="4">canceled</option>
+				<option name="5">shipped</option>
+			</options>
+		</order_status>
+		<order_note type="textarea" title="Notes" size="60:3"/>
+
+		<send_mail title="Send Mail" type="checkbox" checked="1" label="mail client the order changes" description="Check this field to mail the user the changes to order. When you switch an order from pending to completed the mail will contain the download links if there were any files attached to products. The mail wont be sent for temporary orders."/>
+
+
+		<subtitle type="subtitle" title="Order" />
+		<order_code type="text" title="Order ID#" />
+		<order_trans_id type="textbox" title="Transaction ID#" size="30"/>
+
+		<order_date type="text" title="Order Date" action="date" params="d M Y g:i:a"/>
+		<order_payment_date type="text" title="Payment Date" action="date" params="d M Y g:i:a"/>
+		<order_payment_method_name type="text" title="Merchant" />
+
+		<subtitle4 type="subtitle" title="Pricing" />	
+		<order_price_currency type="text" title="Currency"/>
+		<order_price_subtotal type="text" title="Subtotal"/>
+		<order_price_discount type="text" title="Discount"/>
+		<order_price_tax type="text" title="Tax" />
+		<order_price_shipping type="text" title="Shipping" />
+		<order_price_total type="text" title="Total" />
+		<order_price_shipping_name type="text" title="Carrier" />
+
+
+		<subtitle2 type="subtitle" title="Billing Address" />	
+
+		<order_billing_first_name type="text" title="First Name"/>
+		<order_billing_last_name type="text" title="Last Name"/>
+		<order_billing_address_1 type="text" title="Address" />
+		<order_billing_address_2 type="text" title="Address 2" />
+		<order_billing_city type="text" title="City" />
+		<order_billing_state type="text" title="State" />
+		<order_billing_zip type="text" title="Zip" />
+		<order_billing_country type="text" title="Country" />
+		<order_billing_email type="text" title="E-Mail" />
+
+		<subtitle3 type="subtitle" title="Shipping Address" />	
+
+		<order_shipping_first_name type="text" title="First Name"/>
+		<order_shipping_last_name type="text" title="Last Name"/>
+		<order_shipping_address_1 type="text" title="Address" />
+		<order_shipping_address_2 type="text" title="Address 2" />
+		<order_shipping_city type="text" title="City" />
+		<order_shipping_state type="text" title="State" />
+		<order_shipping_zip type="text" title="Zip" />
+		<order_shipping_country type="text" title="Country" />
+
+	</fields>
+
+</form>

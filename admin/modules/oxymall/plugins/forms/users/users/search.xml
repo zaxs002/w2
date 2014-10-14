@@ -1,0 +1,71 @@
+<form>
+	<title>Users Accounts</title>
+	<action>{SELF.FILE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<method>get</method>
+
+	<formtag>true</formtag>
+	<border>true</border>
+	<alternance>true</alternance>
+	
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+	</buttons>
+
+	<redirect>index.php?sub=units</redirect>
+
+
+	<tabs>
+		<t width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.users.settings" />
+		<t1 active="true" width="80" title="Users" link="index.php?mod=oxymall&sub=oxymall.plugin.users.landing" />
+		<t4 width="80" title="Groups" link="index.php?mod=oxymall&sub=oxymall.plugin.users.groups" />
+	</tabs>
+
+	<fields>
+
+		<mod type="hidden" default="$_GET['mod']" action="eval"/>
+		<sub type="hidden" default="$_GET['sub']" action="eval"/>
+		<module_id type="hidden" default="$_GET['module_id']" action="eval"/>
+		<advanced type="hidden" default="0" />
+	</fields>
+
+	<search>
+			<fields>
+				<module_id type="hidden" default="eval:$_GET[module_id]" />
+
+				<user_email type="textbox" size="30" title="Email"/>
+				<user_first_name type="textbox" size="30" title="First/Last Name" referers="user_last_name"/>
+				<user_last_name type="textbox" size="30" referer="user_first_name"/>
+
+				<user_groups title="Groups" type="radiolist" empty="true" empty_text="all" newline="false">
+					<relation table="plugin:users_groups" id="group_id" text="group_name" order="group_name ASC">
+					</relation>
+				</user_groups>
+
+				<user_status type="radiolist" title="Status" align="center" width="100" empty="true" newline="false" empty_text="all">
+					<options>
+						<option name="1">inactive</option>
+						<option name="2">active</option>
+						<option name="3">pending admin confirmation</option>
+						<option name="4">suspended</option>
+					</options>
+				</user_status>
+
+				<button type="button" location="javascript:document.forms[0].submit();" button="search" />
+			</fields>
+
+			<sql_fields>
+				<field name="user_status">=</field>			
+				<field name="user_groups">in_set</field>			
+				<field name="user_email">%</field>			
+				<field name="user_first_name">%</field>			
+				<field name="user_lasst_name">%</field>			
+			</sql_fields>
+
+	</search>
+</form>

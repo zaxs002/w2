@@ -1,0 +1,35 @@
+<form>
+	<tabs>
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user&action=details&mod_id={MODULE_ID}" />
+		<t0 width="80" title="Texts" link="index.php?mod=oxymall&sub=oxymall.plugin.contact.texts&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t1 width="80" title="Links" link="index.php?mod=oxymall&sub=oxymall.plugin.contact.links&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t5 width="100" title="Form Fields" link="index.php?mod=oxymall&sub=oxymall.plugin.contact.fields&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t2 width="120" title="Received Messages" link="index.php?mod=oxymall&sub=oxymall.plugin.contact.landing&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t_video width="80" title="Video Tutorial" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.help&module_id={MODULE_ID}" restricted="eval:$GLOBALS['no_tutorials'];"/>
+	</tabs>
+
+	<fields>
+
+		<subtitle_mod_7 type="subtitle" title="Mails Settings" /> 
+		<set_mail_admin type="droplist" title="Admin Notification" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_admin>
+
+		<set_mail_client type="droplist" title="Autoresponder" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_client>
+
+		<set_email_message type="textarea" size="90:4" title="Admin Message Template" description="Configure here the message to be stored in received message section. You need to put variables in body with the extra variables. By default only name / email / subject / message are beeing saved."/> 
+
+
+		<set_verificationcodecaption type="textbox" size="40" title="verificationCodeCaption"/>
+		<set_verificationcoderefresh type="textbox" size="15" title="verificationCodeRefresh"/>
+		<set_verificationcodeerror type="textbox" size="40" title="verificationCodeAlert"/>
+		<set_contactsendbuttoncaption type="textbox" size="40" title="contactSendButtonCaption"/>
+		<set_resetbuttoncaption type="textbox" size="40" title="resetButtonCaption"/>
+		
+		<set_sendingmessagetext type="textbox" size="40" title="sendingMessageText"/>
+		<set_succestext type="textbox" size="40" title="succesText"/>
+		
+	</fields>
+</form>

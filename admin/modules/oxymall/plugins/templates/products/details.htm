@@ -1,0 +1,112 @@
+<!--S:Main-->
+
+		<div class="module" id="shop-details-module">
+			<header>
+				<h1>{ITEM_TITLE}</h1>
+				
+				<ul class="inline-list module-header-nav-btns">
+					{BACK}
+					{NEXT}
+				</ul>
+				
+				<ul class="inline-list module-header-buttons">
+					<li><a href="{LINK:CHECKOUT}" class="checkout-btn"><span>{SET_DETAILS_CHECKOUT}</span></a></li>
+					<li><a href="{LINK:BACK}" class="go-back-btn"><span>{SET_DETAILS_BACK}</span></a></li>
+				</ul>
+			</header>
+			
+			<form class="product-form" action="ajax.products-addcart.php?pid={ITEM_ID}" method="post">
+
+				<ul class="inline-list to-left">
+					<li data-price="400" class="product-price">{SET_DETAILS_PRICE} <b>{PRICE}</b></li>
+					{VARIATIONS}
+					</li>
+				</ul>
+				{ADD}				
+			</form>
+			
+			<div class="product-content">			
+				<div class="product-pics">				
+					{IMAGE}
+										
+					{GALLERY}
+				</div>
+				
+				<div class="product-details">				
+					<ul class="tabs-list">
+						<li data-content="product-description" class="selected"><a href="#">{SET_DETAILS_DESCRIPTION}</a></li>
+						{SPECIFICATIONS_BUTTON}
+						{REVIEWS_BUTTON}
+						{ASK_BUTTON}
+					</ul>
+					
+					<article id="product-description">					
+						{ITEM_DETAILS}
+					</article>				
+
+					{SPECIFICATIONS}
+					{ASK_WIDGET}
+					{REVIEWS}
+				</div>			
+			</div>
+
+			{COMMENTS}
+		</div>
+<!--E:Main-->
+
+<!--S:Image--><img class="product-main-pic" alt="{ITEM_TITLE}" src="upload/shop/large_{ITEM_ID}.jpg"/><!--E:Image-->
+<!--S:NoImage--><img class="product-main-pic" alt="{ITEM_TITLE}" src="upload/shop/default_details.jpg"/><!--E:NoImage-->
+
+<!--S:AddToCart-->
+				<ul class="inline-list to-right">
+					<li><input class="product-add-to-cart-btn" type="submit" value="{SET_DETAILS_ADD}"/></li>
+				</ul>
+<!--E:AddToCart-->
+
+<!--S:ImagesGroupEmpty-->
+
+<!--E:ImagesGroupEmpty-->
+
+<!--S:ImagesGroup-->
+					<h3>{SET_PRJ_MIDDLE_TEXT}</h3>
+					
+					<div class="thumbs-listing product-gallery">
+						<ul class="three-cols">
+							{DATA}
+						</ul>
+					</div>
+<!--E:ImagesGroup-->
+
+<!--S:ImagesElement-->
+							<li><a title="{ITEM_TITLE}" rel="prettyPhoto[gallery]"  href="{SOURCE}"><img class="product-main-pic" alt="" src="upload/shop/gallery/tn_{ITEM_ID}.jpg"/></a></li>
+<!--E:ImagesElement-->
+
+<!--S:ImagesEmpty-->
+
+<!--E:ImagesEmpty-->
+
+
+<!--S:VariationsGroup-->
+					{DATA}	
+<!--E:VariationsGroup-->
+
+<!--S:VariationsElement-->
+					<li>
+						<select name="o[{ITEM_NAME}]">
+							<option value="">{ITEM_NAME}</option>
+							{OPTIONS}
+						</select>
+					</li>					
+<!--E:VariationsElement-->
+
+<!--S:VariationsEmpty-->
+
+<!--E:VariationsEmpty-->
+
+<!--S:OptionsGroup-->
+							{DATA}
+<!--E:OptionsGroup-->
+
+<!--S:OptionsElement-->
+						<option value="{VALUE}" data-extra="{PRICE}">{NAME}</option>
+<!--E:OptionsElement-->

@@ -1,0 +1,76 @@
+<form>
+	<title>Social Bookmarking</title>
+	<border>true</border>
+
+	<alternance>true</alternance>
+	<valternance>true</valternance>
+
+	<tabs>
+		<t width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default&action=details&module_id=17" />
+		<t0 active="true" width="80" title="Links" link="index.php?mod=oxymall&sub=oxymall.plugin.sharing.landing" />
+	</tabs>  
+	<vars>
+		<module_id type="eval" import="$_GET[module_id]" />
+	</vars>
+
+	<order>
+		<restricted></restricted>
+		<drag>true</drag>
+		<field>item_order</field>
+		<mode>ASC</mode>
+		<button></button>
+	</order>
+
+	<fields>
+
+		<_count header="No." width="20" align="right" suffix="."/>
+
+		<item_icon type="image" path="./sharing/" header="" width="27" nolink="true">
+			<file default="" field="item_id" ext=".png" />			
+		</item_icon>
+
+		<item_description header="Tooltip" />	
+
+		<button_delete type="button" width="20" align="center" onclick="" button="/small/delete" protected="promo_default">
+			<location>{SELF.URI.DELETE}</location>
+		</button_delete>
+
+		<button_details type="button" width="20" align="center" onclick="" button="/small/edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_details>
+
+	</fields>
+
+	<header>
+		<titles>true</titles>
+		<nolinks>true</nolinks>
+		<buttons>
+			<add button="addnew">
+				<location>{SELF.URI.ADD}</location>
+			</add>
+		</buttons>
+	</header>
+
+	<items>50</items>
+
+	<sql>
+		<vars>
+
+			<table type="table"/>
+
+			<page type="page"/>
+			<items type="form" var="items"/>
+
+			<condition type="var" import="WHERE item_type=1" />
+
+			<order type="var" import="item_order" />
+			<order_mode type="var" import="ASC" />
+
+		</vars>
+		<query>select * from {TABLE} {CONDITION} ORDER BY {ORDER} {ORDER_MODE} LIMIT {PAGE} , {ITEMS} </query>
+		<count table="{TABLE}" condition="{CONDITION}" />
+
+	</sql> 
+
+
+</form>

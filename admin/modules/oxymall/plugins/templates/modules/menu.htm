@@ -1,0 +1,37 @@
+<!--S:MenuGroup-->
+			<ul id="main-menu">			
+				{DATA}
+			</ul>
+<!--E:MenuGroup-->
+
+<!--S:MenuElement-->
+			<li {SELECTED}>{TITLE}</li>		
+<!--E:MenuElement-->
+
+<!--S:MenuEmpty-->
+
+<!--E:MenuEmpty-->
+
+
+<!--S:SubMenuGroupEmpty-->
+
+<!--E:SubMenuGroupEmpty-->
+<!--S:SubMenuGroup-->
+				{DATA}
+<!--E:SubMenuGroup-->
+
+<!--S:SubMenuElement-->
+					<li {SELECTED}><a href="{LINK}" {TARGET} title="{MOD_URLTITLE}">{MOD_NAME}</a></li>
+<!--E:SubMenuElement-->
+
+<!--S:SubMenuEmpty-->
+
+<!--E:SubMenuEmpty-->
+
+<!--S:Link--><a href="{LINK}" {TARGET} title="{MOD_URLTITLE}">{MOD_NAME}</a><!--E:Link-->
+
+<!--S:NoLink--><a href="#" >{MOD_NAME}</a>
+				<ul>{SUBITEMS}
+				</ul><!--E:NoLink-->
+
+<!--S:Selected-->class="selected"<!--E:Selected-->

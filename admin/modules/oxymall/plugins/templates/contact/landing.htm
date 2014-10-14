@@ -1,0 +1,114 @@
+<!--S:Main-->		
+		<div class="module" id="contact-module">
+			<header>
+				<h1>{TITLE}</h1>
+			</header>
+			
+			<div class="contact-left">
+				
+				<div id="contact-form" class="extra-content see-through-bg">
+					<header>
+						<h3>{FORMTITLE}</h3>
+					</header>					
+					
+					<p>{SUBTITLE}</p>
+					
+					<form action="ajax.contact-send.php?module_id={MOD_ID}" method="post">
+						
+						<ul class="layout">							
+							{FIELDS}							
+							<li class="inline clear pb12 pr6">
+								<input id="contact-form-submit-btn" type="submit" value="{SET_CONTACTSENDBUTTONCAPTION}"/>
+							</li>
+							<li id="contact-form-msg" class="inline lh27">
+								<div class="wait">{SET_SENDINGMESSAGETEXT}</div>
+							</li>
+							<li class="inline-right">
+								<input type="reset" value="{SET_RESETBUTTONCAPTION}"/>
+							</li>
+						</ul>											
+					</form>
+				</div>
+				
+			</div>
+			
+			<div class="contact-right">				
+				{SET_RIGHTPANELPICTURE}				
+				<div class="contact-box contact-info">
+					{HEADER}
+					<p>
+						{LINKS}
+					</p>
+				</div>				
+			</div>
+			
+		</div>
+<!--E:Main-->
+
+
+<!--S:Group-->
+			{DATA}
+							<li class="inline clear w194 pb12">
+								<label class="block big">{SET_VERIFICATIONCODECAPTION}</label>
+								<div class="verification-code">
+									<input class="w106 pr82" type="text" name="image_code" value=""/>
+									<img class="verification-image" alt="" src="ajax.capcha.php"/>
+									<a class="refresh-button" href="ajax.capcha.php">{SET_VERIFICATIONCODEREFRESH}</a>
+								</div>
+							</li>
+<!--E:Group-->
+
+<!--S:Element-->
+			{CONTENT}
+<!--E:Element-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->
+
+<!--S:Small-->
+							<li class="inline pb12 {CLASS} w194">
+								<label class="block big">{ITEM_TITLE}</label>
+								{FIELD}
+							</li>							
+<!--E:Small-->
+
+<!--S:Big-->
+							<li class="inline pb12 clear ">
+								<label class="block big">{ITEM_TITLE}</label>
+								{FIELD}
+							</li>							
+<!--E:Big-->
+
+<!--S:smallsize-->w184<!--E:smallsize-->
+<!--S:bigsize-->w390<!--E:bizsize-->
+
+<!--S:usertext--><input name="{ITEM_FIELD}" class="{SIZE}" type="text" value=""/><!--E:usertext-->
+<!--S:useremail--><input name="{ITEM_FIELD}" class="{SIZE}" type="text" value=""/><!--E:useremail-->
+<!--S:usermessage--><textarea name="{ITEM_FIELD}" class="{SIZE}" rows="8"></textarea><!--E:usermessage-->
+
+<!--S:userdroplist-->
+								<select class="{SIZE}" name="{ITEM_FIELD}">
+									<option></option>
+									{OPTIONS}
+								</select>
+<!--E:userdroplist-->
+
+<!--S:image-->
+				<div class="contact-box">
+					<a href="{IMAGE_LINK}" target="{IMAGE_LINK_TARGET}"><img class="contact-map" alt="" src="upload/contact/{MOD_ID}.png"/></a>
+				</div>
+<!--E:image-->
+
+
+<!--S:LinksGroup-->
+	{DATA}
+<!--E:LinksGroup-->
+
+<!--S:LinksElement-->
+						<b>{ITEM_TITLE}</b> <a href="{ITEM_LINK}" target="_blank">{ITEM_VALUE}</a><br/>
+<!--E:LinksElement-->
+
+<!--S:LinksEmpty-->
+
+<!--E:LinksEmpty-->

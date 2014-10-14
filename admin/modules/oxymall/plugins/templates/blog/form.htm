@@ -1,0 +1,27 @@
+<!--S:Main-->
+			<div class="filter-box">				
+				<form action="{LINK}" method="get">					
+					<input type="text" name="q" value="{SEARCH}" data-default-value="{SET_FILTER_SEARCH}" />					
+				</form>
+				
+				<div>
+					<dl>
+						<dt>{SET_FILTER_SORT}</dt>
+						{SORT}
+					</dl>
+					
+					<dl>
+						<dt>{SET_FILTER_ORDER}</dt>
+						{ORDER}
+					</dl>
+				</div>				
+			</div>
+<!--E:Main-->
+
+<!--S:FieldsGroup-->
+	{DATA}
+<!--E:FieldsGroup-->
+
+<!--S:FieldsElement-->
+						<dd><a rel="nofollow noindex" href="{LINK}" class="text-button {CLASS}"><span>{TITLE}</span></a></dd>
+<!--E:FieldsElement-->

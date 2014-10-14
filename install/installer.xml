@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<data>
+	<productLogo>
+		<source>logo.gif</source>
+		<logoX>-5</logoX>
+	</productLogo>
+	
+	<styleSheet><![CDATA[
+		
+		a:link { color: #055067; }
+		a:hover { text-decoration: underline; }
+		.red { color: #FF0000; }
+		.green { color: #016015; }
+		
+	]]></styleSheet>
+	
+	<misc>
+		
+		<messageBox>
+			<width>400</width>
+			<maxHeight>250</maxHeight>
+		</messageBox>
+		
+	</misc>
+	
+	<steps>
+		
+		<step>			
+			<name><![CDATA[Welcome]]></name>
+			<content width="480" height="220">
+				<nextButtonLabel><![CDATA[<b>START INSTALLING</b>]]></nextButtonLabel>
+				<title><![CDATA[<b>Welcome</b>]]></title>
+				<brief maxHeight=""><![CDATA[
+					<p>Welcome to our installation tool. In order to successfully complete the installation and before moving to the next step, you need to give writing permissions to the upload folder, located in your site root (chmod 777). For further details, please check the installation guide from the package you purchased.</p>
+					<p></p>
+					<p>The second important piece of information you need to detain is the login info to an existing mysql database. If you don't know where to get that from, please check our tutorial for creating a database.</p>
+				]]></brief>
+				
+				
+			</content>			
+		</step>
+		
+		<step>			
+			<name><![CDATA[Checking Permissions]]></name>			
+			<content width="480" height="420">
+				<nextButtonLabel><![CDATA[<b>NEXT STEP</b>]]></nextButtonLabel>
+				<refreshButtonLabel><![CDATA[Refresh List]]></refreshButtonLabel>
+				<title><![CDATA[<b>Checking Permissions...</b>]]></title>
+				<brief maxHeight="120"><![CDATA[
+					<p>Bellow you have a list of all the folders for which we need write access. {The admin panel needs that access to save the resources you will upload (images, files, etc.). If any of them is marked in red, please go to ftp and fix the permissions, then hit the refresh list-button.</p>
+					<p></p>
+					<p>You won't be able to advance to the next step until everything is O.K. on this screen.</p>
+					<p>Note: In most cases windows hostings there is nothing you need to do, the site has writing permissions by default.</p>
+				]]></brief>
+				<checkScript>check-permissions.php</checkScript>
+			</content>
+		</step>
+		
+		<step>			
+			<name><![CDATA[Mysql Database]]></name>			
+			<content width="480" height="420">
+				<nextButtonLabel><![CDATA[<b>NEXT STEP</b>]]></nextButtonLabel>
+				<testConnectionButtonLabel><![CDATA[Test Connection]]></testConnectionButtonLabel>
+				<title><![CDATA[<b>Configure the mysql database here</b>]]></title>
+				<brief maxHeight="140"><![CDATA[
+					<p>Please enter the mysql database connection info and test the connection (it must be validated before going to the next step).</p>
+					<p></p>
+					<p>If you are sharing a database with other sites or if you want to reinstall the template, you will be prompted to allow overwritting the conflicted tables. If you don't want to do so, please create an empty database and use that one.</p>
+					<p></p>
+					<p>Note: In case you aren't sure what to put in these fields, please check our tutorials to learn how to create new databases for cpanel and hsphere managed hostings.</p>
+					
+					]]></brief>
+				<formX>80</formX>
+				<defaultValues>
+					<server>localhost</server>
+					<port>3306</port>
+				</defaultValues>
+				<validationMsg>
+					<server><![CDATA[Please enter the server ip or hostname.]]></server>
+					<username><![CDATA[Please enter the username.]]></username>
+					<password><![CDATA[Please enter the password.]]></password>
+					<confirm><![CDATA[Password and confirmation don't match.]]></confirm>
+					<database><![CDATA[Please enter the database.]]></database>
+				</validationMsg>
+				<testScript>check-database.php</testScript>
+			</content>			
+		</step>
+		
+		<step>			
+			<name><![CDATA[Administrator Info]]></name>			
+			<content width="480" height="420">
+				<nextButtonLabel><![CDATA[<b>NEXT STEP</b>]]></nextButtonLabel>
+				<title><![CDATA[<b>Administrator Login Info</b>]]></title>
+				<brief maxHeight="120"><![CDATA[
+					<p>Enter the administrator login info. You will use this information to access the admin panel. In case you later forget them, you can recover your password any time: it will be sent to the email address you specified here, so please make sure you double check all the data you enter.</p>
+
+					<p></p>
+					<p>To change the password or any of the information later, please login into admin panel, go to the administrators' section and edit there.</p>
+				]]></brief>
+				<formX>70</formX>
+				<validationMsg>
+					<username><![CDATA[Please enter username.]]></username>
+					<password><![CDATA[Please enter password.]]></password>
+					<confirm><![CDATA[Passwords do not match.]]></confirm>
+					<emailEmpty><![CDATA[Please enter an email address.]]></emailEmpty>
+					<emailInvalid><![CDATA[Please enter a valid email address.]]></emailInvalid>
+				</validationMsg>
+			</content>				
+		</step>
+		<step>			
+			<name><![CDATA[Install sample content]]></name>			
+			<content width="480" height="320">
+				<nextButtonLabel><![CDATA[<b>INSTALL</b>]]></nextButtonLabel>
+				<title><![CDATA[<b>Install sample content</b>]]></title>
+				<brief maxHeight="120"><![CDATA[Choose if you want to have installed the sameple content for this site. It consists from a set of default records ( texts and images ) for all modules so you can get a better ideea about the cms functionality. You can delete the content easely directly from admin panel later.]]></brief>				
+				<formX>0</formX>
+				<options>
+					<option selected="true" value="1"><![CDATA[Yes, install it]]></option>
+					<option value="0"><![CDATA[No, do not install it]]></option>
+				</options>
+			</content>			
+		</step>		
+		<step>			
+			<name><![CDATA[Installing]]></name>			
+			<content width="480" height="280">
+				<nextButtonLabel><![CDATA[<b>FINISH</b>]]></nextButtonLabel>
+				<title><![CDATA[<b>Installing...</b>]]></title>
+				<brief maxHeight="120"><![CDATA[Please wait until the install process is completed.... ]]></brief>				
+				<listX>0</listX>
+				<operations>					
+					<operation>						
+						<title><![CDATA[Importing database...]]></title>
+						<script>install-database.php</script>						
+					</operation>					
+					<operation>						
+						<title><![CDATA[Created administrator user...]]></title>
+						<script>install-administrator.php</script>						
+					</operation>					
+					<operation>						
+						<title><![CDATA[Installing default skins ...]]></title>
+						<script>install-skins.php</script>						
+					</operation>					
+					<operation>						
+						<title><![CDATA[Importing sample database ...]]></title>
+						<script>install-sample-database.php</script>						
+					</operation>					
+					<operation>						
+						<title><![CDATA[Copying sample resources ...]]></title>
+						<script>install-sample-content.php</script>						
+					</operation>					
+					<operation>						
+						<title><![CDATA[Saving configuration file ...]]></title>
+						<script>install-config.php</script>						
+					</operation>					
+				</operations>				
+			</content>			
+		</step>
+		<step>			
+			<name><![CDATA[Success]]></name>			
+			<content width="480" height="420">
+				<nextButtonLabel><![CDATA[<b>NEXT STEP</b>]]></nextButtonLabel>
+				<title><![CDATA[<b>Install Completed</b>]]></title>
+				<brief maxHeight="120"><![CDATA[
+					<p>Your install process was completed. Please writedown the following information, so that you can access your site, admin panel and your login info.</p>
+					<p></p>
+					<p>Enjoy this new release from <a href="http://www.oxylustemplates.com" target="_blank">OXYLUS Templates</a></p>
+				]]></brief>
+				<infoX>110</infoX>
+				<infoScript>finish.xml</infoScript>
+				<copyToClipBoardBtnLabel><![CDATA[Copy to Clipboard]]></copyToClipBoardBtnLabel>
+				<copiedToClipboardMsg><![CDATA[Information copied to clipboard]]></copiedToClipboardMsg>
+			</content>			
+		</step>
+		
+	</steps>
+	
+</data>

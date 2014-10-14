@@ -1,0 +1,67 @@
+<form>
+
+	<tabs>
+		<t active="true" width="100" title="Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default&action=details&module_id=11" />
+		<t9 width="100" title="Comments" link="index.php?mod=oxymall&sub=oxymall.plugin.comments.landing" />
+<!--		<t10 width="100" title="Pages Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.comments.pages" />-->
+	</tabs>
+
+
+	<fields>
+
+		<subtitle_mod_3 type="subtitle" title="List Comments" />
+
+		<set_title type="textbox"  size="50" title="Comments Title" description="You can use {COMMENTS} variable to be replaced with the number of comments." />
+		<set_titleno type="textbox"  size="50" title="No Comments Title" />
+
+		<set_items type="textbox" size="4" title="Local Show" suffix="items per page"/> 
+		<set_items_fb type="textbox" size="4" title="Facebook Show" suffix="items per page"/> 
+		<set_display type="droplist" title="Display">
+			<options>
+				<option name="0">all</option>
+				<option name="1">approved</option>
+			</options>
+		</set_display>
+
+		<set_comments_date_format type="textbox" size="40" title="Date Format" />
+		<set_comments_said type="textbox" size="30" title="text Said" />
+
+		<subtitle_mod_2 type="subtitle" title="Post Comment" />
+
+		<set_post_title type="textbox" size="20" title="Form Title" />
+
+		<set_post_name type="textbox" size="20" title="Name" />
+		<set_post_email type="textbox" size="20" title="E-Mail" />
+		<set_post_website type="textbox" size="20" title="Website" />
+		<set_post_message type="textbox" size="20" title="Message" />
+		<set_post_button_post type="textbox" size="20" title="Post Button" />
+
+		<set_post_alert_sending type="textbox" size="50" title="sending Data" />
+		<set_post_alert_email type="textbox" size="50" title="email Alert" />
+		<set_post_alert_name type="textbox" size="50" title="name Alert" />
+		<set_post_alert_message type="textbox" size="50" title="message Alert" />
+		<set_post_alert_success type="textbox" size="50" title="success Alert" />
+
+		<set_post_comment type="textarea" size="90:4" title="note" />
+
+
+		<subtitle_mod_4 type="subtitle" title="Capcha" />
+
+		<set_post_capcha type="droplist" title="Display Capcha">
+			<options>
+				<option name="0">never</option>
+				<option name="1">if not logged in </option>
+				<option name="2">all the time</option>
+			</options>
+		</set_post_capcha>
+		<set_post_capcha_title type="textbox" size="20" title="Capcha" />
+		<set_post_capcha_refresh type="textbox" size="20" title="Capcha Refresh" />
+		<set_post_alert_capcha type="textbox" size="50" title="capcha Alert" />
+
+
+		<subtitle_mod_6 type="subtitle" title="Notification Settings" />
+		<set_mail_admin type="droplist" title="Admin Notification" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_admin>
+	</fields>
+</form>			 

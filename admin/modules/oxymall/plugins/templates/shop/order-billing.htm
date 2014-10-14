@@ -1,0 +1,129 @@
+<!--S:Main-->
+
+		<div class="module" id="shop-step1-module">
+			{STEPS}
+			
+			<form id="step1-form" class="see-through-bg extra-content" action="ajax.shop-billing.php" method="post">
+				<header>
+					<h3 class="w340 pr24">{SET_ACCOUNT_SHOP_BILLING}</h3>
+					{SHIPPING_TITLE}
+				</header>
+				
+				<ul class="layout pt12">
+					<li class="inline pb12 w340 pr24">
+					</li>
+					{SHIPPING_CONTROL}
+					
+
+					<li class="clear inline w340 pr24" id="billing-form">
+						<ul class="layout">
+							<li class="inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_FIRST_NAME}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_billing_first_name" type="text" value="{ORDER_BILLING_FIRST_NAME}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_LAST_NAME}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_billing_last_name" type="text" value="{ORDER_BILLING_LAST_NAME}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ADDRESS}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_billing_address_1" type="text" value="{ORDER_BILLING_ADDRESS_1}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ADDRESS2}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_billing_address_2" type="text" value="{ORDER_BILLING_ADDRESS_2}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_COUNTRY}</label></li>
+							<li class="inline pb12">
+								<select data-selected="{ORDER_BILLING_COUNTRY}" class="w194" name="order_billing_country" >
+									<option value=""></option>
+									{COUNTRIES}
+								</select> 
+							</li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_STATE}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_billing_state" type="text" value="{ORDER_BILLING_STATE}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_CITY}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_billing_city" type="text" value="{ORDER_BILLING_CITY}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ZIP}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_billing_zip" type="text" value="{ORDER_BILLING_ZIP}"/></li>							
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_PHONE}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_billing_phone" type="text" value="{ORDER_BILLING_PHONE}"/></li>
+						</ul>
+					</li>
+					
+					{SHIPPING_FORM}
+					{EMAIL_FIELD}
+					
+				</ul>
+				
+				<footer class="extra-content-footer">
+					<ul class="layout">
+						<li class="inline">
+							<a href="{LINK:CART}" class="text-button">
+								<span class="arrow-left-icon">{SET_STEP1_BUTTON_1}</span>
+							</a>
+						</li>
+						
+						<li class="inline-right"><input id="step1-form-submit-btn" type="submit" value="{SET_STEP1_BUTTON_2}"/></li>
+						<li id="step1-form-msg" class="inline-right pr6 lh25">
+							<div class="wait">{SET_ACCOUNT_SHOP_SAVING}</div>
+						</li>
+					</ul>
+				</footer>
+			</form>
+		</div>
+<!--E:Main-->
+
+<!--S:ShippingTitle--><h2>{SET_ACCOUNT_SHOP_SHIPPING}</h2><!--E:ShippingTitle-->
+
+<!--S:ShippingControl-->					
+					<li class="inline pb12 w340">						
+						<input id="same-as-billing" name="option" type="checkbox"/>
+						<label for="same-as-billing" class="pr12">{SET_ACCOUNT_SHOP_SAME}</label>
+					</li>
+<!--E:ShippingControl-->					
+
+
+<!--S:ShippingForm-->
+					<li class="inline w340" id="shipping-form">
+						<ul class="layout">
+							<li class="inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_FIRST_NAME}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_shipping_first_name" type="text" value="{ORDER_SHIPPING_FIRST_NAME}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_LAST_NAME}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_shipping_last_name" type="text" value="{ORDER_SHIPPING_LAST_NAME}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ADDRESS}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_shipping_address_1" type="text" value="{ORDER_SHIPPING_ADDRESS_1}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ADDRESS2}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_shipping_address_2" type="text" value="{ORDER_SHIPPING_ADDRESS_2}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_COUNTRY}</label></li>
+							<li class="inline pb12">
+								<select data-selected="{ORDER_SHIPPING_COUNTRY}" class="w194" name="order_shipping_country">
+									<option value=""></option>
+									{COUNTRIES}
+								</select> 								
+							</li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_STATE}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_shipping_state" type="text" value="{ORDER_SHIPPING_STATE}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_CITY}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_shipping_city" type="text" value="{ORDER_SHIPPING_CITY}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ZIP}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_shipping_zip" type="text" value="{ORDER_SHIPPING_ZIP}"/></li>							
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_PHONE}</label></li>
+							<li class="inline pb12"><input class="w194" name="order_shipping_phone" type="text" value="{ORDER_SHIPPING_PHONE}"/></li>
+						</ul>
+					</li>
+<!--E:ShippingForm-->
+
+
+<!--S:Email-->
+					<li class="clear inline"><label class="block big w136 lh25">{SET_STEP1_EMAIL}</label></li>
+					<li class="inline pb12"><input class="w194" name="order_shipping_email" type="text"/></li>
+<!--E:Email-->

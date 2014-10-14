@@ -1,0 +1,82 @@
+/* 
+	Resets defualt browser settings
+	reset.css
+*/
+
+#container { width:580px; padding:10px; margin:0 auto; position:relative; z-index:0; }
+#example { width:600px; height:350px; position:relative; }
+#ribbon { position:absolute; top:-3px; left:-15px; z-index:500; }
+#frame { position:absolute; z-index:0; width:739px; height:341px; top:-3px; left:-80px; }
+/*
+	Slideshow
+*/
+
+#slides { position:absolute; top:15px; left:4px; z-index:100; }
+/*
+	Slides container
+	Important:
+	Set the width of your slides container
+	Set to display none, prevents content flash
+*/
+div#showreel-module { width:750px!important; height:468px; position:relative;}
+.outer-cont { width:740px;padding:5px 5px 33px; background: rgba(0, 0, 0, .75); overflow:hidden; margin-bottom:15px; }
+.slides_container { width:740px; overflow:hidden; position:relative; display:none; }
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+.slides_container a, 
+.slides_container .slide { width:740px; height:370px; display:block; }
+.slides_container a img { display:block; position:relative }
+.slides_container a .bordered{ position:absolute;width:740px; height:370px; z-index:103; border:0px solid #fff; top:0; left:0; background:url(img/opacity/black/0.png) repeat}
+/*
+	Next/prev buttons
+*/
+
+.outer-cont .next,
+.outer-cont .prev,
+.outer-cont .playstop{position:absolute;display:block; z-index:101; text-indent:-9999em;outline:none;cursor:default!important}
+
+.outer-cont .next,
+.outer-cont .prev {  bottom:5px; right:30px; width:25px; height:25px;  background:url(img/btn-prev-next.png) no-repeat ; }
+.outer-cont .next { right:3px;background-position:100% 0 }
+.outer-cont .prev:hover{background-position:0 -25px;}
+.outer-cont .next:hover{background-position:100% -25px;}
+
+.outer-cont  .playstop{bottom:3px; right:60px; width:28px; height:28px; background:url(img/bgr-play-stop.png) no-repeat 3px 0; }
+.outer-cont  .play{background:url(img/bgr-play.png) no-repeat 3px 0;}
+.outer-cont  .stop{background:url(img/bgr-stop.png) no-repeat 3px 0;}
+.outer-cont  .stop:hover,
+.outer-cont  .play:hover{background-position:-32px 0}
+
+
+/*
+	Pagination
+*/
+
+.pagination {position:absolute; bottom:2px; left:1px; margin:0; padding:0 ; list-style: none;}
+.pagination li { float:left;padding:0; margin:1px;}
+.pagination li a { display:block; width:29px; height:28px; line-height:27px; text-align:center;color:#fff; float:left; overflow:hidden; background:url(img/bgr-paging.png) no-repeat 4px 0;cursor:default!important }
+.pagination li.current a ,
+.pagination li:hover a { background-position: -31px 0; text-decoration:none}
+
+/*
+	Footer
+*/
+
+#footer { text-align:center; width:580px; margin-top:9px; padding:4.5px 0 18px; border-top:1px solid #dfdfdf; }
+#footer p { margin:4.5px 0; font-size:1.0em; }
+/*
+	Anchors
+*/
+
+.slides_container .caption{position:absolute; left:0; bottom:0; width:710px; height:20px; padding:10px 15px; background: rgba(0, 0, 0, .55); font-size:14px;}
+.slides_container .optional{ position:absolute; z-index:99;background: rgba(0, 0, 0, .75); font-size:14px; padding:5px 10px; border:1px solid #000}
+.slides_container .ptop{ top:0px;}
+.slides_container .pleft{ left:0px;}
+.slides_container .pbottom{ bottom:40px;}
+.slides_container .pright{ right:0px;}

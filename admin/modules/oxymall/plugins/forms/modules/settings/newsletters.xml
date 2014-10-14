@@ -1,0 +1,38 @@
+	<form>
+		<tabs>
+			<t active="true" width="100" title="Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default&action=details&module_id=109" />
+			<t1 width="100" title="Subscribers" link="index.php?mod=oxymall&sub=oxymall.plugin.newsletters.landing" />
+			<t2 width="100" title="Newsletters" link="index.php?mod=oxymall&sub=oxymall.plugin.newsletters.items" />
+		</tabs>
+	
+
+	<fields>
+
+
+		<set_title title="title" type="textbox" size="40" /> 				
+		<set_subtitle title="subTitle" type="textarea" size="60:3" /> 				
+								
+
+		<subtitle_ type="subtitle" title="Advanced Settings" />
+		<set_closetooltipalert title="closeTooltipAlert" type="textbox" size="40" /> 				
+
+
+		<set_contactnamecaption title="contactNameCaption" type="textbox" size="40" /> 				
+		<set_contactemailcaption title="contactEmailCaption" type="textbox" size="40" /> 				
+		<set_subscribecaption title="subscribeCaption" type="textbox" size="40" /> 				
+		<set_unsubscribecaption title="unsubscribeCaption" type="textbox" size="40" /> 				
+		<set_sendbuttoncaption title="sendButtonCaption" type="textbox" size="40" /> 				
+
+		<set_wrongnametext title="wrongNameText" type="textbox" size="40" /> 				
+		<set_wrongemailtext title="wrongEmailText" type="textbox" size="40" /> 				
+
+		<set_sendingmessagetext title="sendingMessageText" type="textbox" size="40" /> 				
+		<set_successubscribe title="succesSubscribe" type="textbox" size="40" /> 				
+		<set_succesunsubscribe title="succesUnsubscribe" type="textbox" size="40" /> 				
+
+		<set_failtext title="failText" type="textbox" size="60" /> 				
+		<set_alreadysubscribedalert title="alreadySubscribedAlert" type="textbox" size="60" /> 				
+		<set_alreadyunsubscribedalert title="alreadyUnSubscribedAlert" type="textbox" size="60" /> 				
+	</fields>
+
+</form>

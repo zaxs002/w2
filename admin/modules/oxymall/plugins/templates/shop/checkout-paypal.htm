@@ -1,0 +1,18 @@
+<!--S:Main-->
+
+						<header>
+						</header>
+
+						<article>
+							{ITEM_REDIRECT}
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" name="paypal-redirect">
+								{FORM}
+
+								<center><input type="image" src="images/checkout-paypal/pay_with_paypal.gif"/></center>
+							</form>
+
+							<script>setTimeout("document.forms['paypal-redirect'].submit();",1000);</script>
+						</article>
+<!--E:Main-->
+
+

@@ -1,0 +1,95 @@
+#RewriteRule ^$                                                         oxybase.php?_PAGE=index&mod=oxymall&sub=oxymall.plugin.homepage.landing&module_id=1
+
+#shopping-cart sttatic links
+RewriteRule ^cart/$                                                     oxybase.php?_PAGE=cart&mod=oxymall&sub=oxymall.plugin.shop.cart
+RewriteRule ^cart/empty/$                                               oxybase.php?_PAGE=cart&mod=oxymall&sub=oxymall.plugin.shop.empty
+RewriteRule ^cart/delete/$                                              oxybase.php?_PAGE=cart&mod=oxymall&sub=oxymall.plugin.shop.delete
+RewriteRule ^cart/update/$                                              oxybase.php?_PAGE=cart&mod=oxymall&sub=oxymall.plugin.shop.update
+RewriteRule ^cart/checkout/$                                            oxybase.php?_PAGE=cart&mod=oxymall&sub=oxymall.plugin.shop.checkout
+RewriteRule ^cart/checkout/shipping/$                                   oxybase.php?_PAGE=cart&mod=oxymall&sub=oxymall.plugin.shop.shipping
+RewriteRule ^cart/checkout/review/$                                     oxybase.php?_PAGE=cart&mod=oxymall&sub=oxymall.plugin.shop.review
+RewriteRule ^cart/checkout/payment/$                                    oxybase.php?_PAGE=cart&mod=oxymall&sub=oxymall.plugin.shop.payment
+
+#account static links
+RewriteRule ^account/signin/$						oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.users.signin
+RewriteRule ^account/signup/$						oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.users.register
+RewriteRule ^account/logout/$						oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.users.logout
+RewriteRule ^account/recover/$						oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.users.recover
+RewriteRule ^account/dashboard/$					oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.users.dashboard
+RewriteRule ^account/profile/$						oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.users.profile
+RewriteRule ^account/profile-shop/$					oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.shop.profile-shop
+RewriteRule ^account/history/$						oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.shop.orders-history
+RewriteRule ^account/history/([0-9]+)$					oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.shop.orders-history&page=$1
+RewriteRule ^account/history/([^/]+)/$					oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.shop.order-history&code=$1
+RewriteRule ^account/download/$						oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.shop.orders-download
+RewriteRule ^account/download/([0-9]+)$					oxybase.php?_PAGE=account&mod=oxymall&sub=oxymall.plugin.shop.orders-download&page=$1
+
+
+RewriteRule ^__about_module__/$                                         oxybase.php?_PAGE=about&mod=oxymall&sub=oxymall.plugin.about.landing
+
+RewriteRule ^__banner_module__/$					oxybase.php?_PAGE=banner&mod=oxymall&sub=oxymall.plugin.banner.landing
+
+
+#RewriteRule ^__blog_module__/feed/topics/$                              oxybase.php?_PAGE=xml&mod=oxymall&sub=oxymall.plugin.blog.rss
+RewriteRule ^__blog_module__/search/tag/([^/]+)/$			oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.tag&tag=$1&back=all&search=tag
+RewriteRule ^__blog_module__/search/tag/([^/]+)/([0-9]+)/$		oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.tag&tag=$1&page=$2&back=all&search=tag
+RewriteRule ^__blog_module__/search/$					oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.search&back=all&search=search
+RewriteRule ^__blog_module__/publishers/([^/]+)/$			oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.publisher&user=$1&back=author&search=author
+RewriteRule ^__blog_module__/publishers/([^/]+)/([0-9]+)/$		oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.publisher&user=$1&page=$2&back=author&search=author
+RewriteRule ^__blog_module__/publishers/([^/]+)/([^/]+)-([0-9]+)/$	oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.item&item=$3&user=$1&back=author
+RewriteRule ^__blog_module__/$						oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.landing&back=all&search=all
+RewriteRule ^__blog_module__/([0-9]+)/$					oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.landing&page=$1&back=all&search=all
+RewriteRule ^__blog_module__/([^/]+)-([0-9]+)/$				oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.item&item=$2&back=all
+RewriteRule ^__blog_module__/([^/]+)/([^/]+)-([0-9]+)/$			oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.item&item=$3&cat=$1&back=cat
+RewriteRule ^__blog_module__/([^/]+)/$					oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.landing&cat=$1&back=cat&search=category
+RewriteRule ^__blog_module__/([^/]+)/([0-9]+)/$				oxybase.php?_PAGE=blog&mod=oxymall&sub=oxymall.plugin.blog.landing&cat=$1&page=$2&back=cat&search=category
+
+RewriteRule ^__jobs_module__/$						oxybase.php?_PAGE=jobs&mod=oxymall&sub=oxymall.plugin.jobs.landing
+RewriteRule ^__jobs_module__/([^/]+)/$					oxybase.php?_PAGE=jobs&mod=oxymall&sub=oxymall.plugin.jobs.landing&cat=$1
+RewriteRule ^__jobs_module__/([^/]+)/([0-9]+)/$				oxybase.php?_PAGE=jobs&mod=oxymall&sub=oxymall.plugin.jobs.landing&cat=$1&page=$2
+RewriteRule ^__jobs_module__/([^/]+)/([^/]+)/([0-9]+)/$			oxybase.php?_PAGE=jobs&mod=oxymall&sub=oxymall.plugin.jobs.item&item=$3
+
+RewriteRule ^__clients_module__/$                                       oxybase.php?_PAGE=clients&mod=oxymall&sub=oxymall.plugin.clients.landing
+RewriteRule ^__clients_module__/([^/]+)/$                               oxybase.php?_PAGE=clients&mod=oxymall&sub=oxymall.plugin.clients.landing&cat=$1
+RewriteRule ^__clients_module__/([^/]+)/([0-9]+)/$                      oxybase.php?_PAGE=clients&mod=oxymall&sub=oxymall.plugin.clients.landing&cat=$1&page=$2
+
+RewriteRule ^__contact_module__/$                                       oxybase.php?_PAGE=contact&mod=oxymall&sub=oxymall.plugin.contact.landing
+
+RewriteRule ^__countdown_module__/$					oxybase.php?_PAGE=countdown&mod=oxymall&sub=oxymall.plugin.countdown.landing
+
+RewriteRule ^__homepage_module__/$                                      oxybase.php?_PAGE=index&mod=oxymall&sub=oxymall.plugin.homepage.landing
+
+RewriteRule ^__gallery_module__/$                                       oxybase.php?_PAGE=gallery&mod=oxymall&sub=oxymall.plugin.gallery.landing
+RewriteRule ^__gallery_module__/([^/]+)/$                               oxybase.php?_PAGE=gallery&mod=oxymall&sub=oxymall.plugin.gallery.landing&page=1&&cat=$1
+RewriteRule ^__gallery_module__/([^/]+)/([0-9]+)/$                      oxybase.php?_PAGE=gallery&mod=oxymall&sub=oxymall.plugin.gallery.landing&page=$2&cat=$1
+
+RewriteRule ^__news_module__/$                                          oxybase.php?_PAGE=news&mod=oxymall&sub=oxymall.plugin.news.landing&page=1
+RewriteRule ^__news_module__/([0-9]+)/$                                 oxybase.php?_PAGE=news&mod=oxymall&sub=oxymall.plugin.news.landing&page=$1
+RewriteRule ^__news_module__/([^/]+)-([0-9]+)/$                         oxybase.php?_PAGE=news&mod=oxymall&sub=oxymall.plugin.news.item&topic=$2
+
+RewriteRule ^__products_module__/$                                      oxybase.php?_PAGE=products&mod=oxymall&sub=oxymall.plugin.products.landing
+RewriteRule ^__products_module__/([0-9]+)/$                             oxybase.php?_PAGE=products&mod=oxymall&sub=oxymall.plugin.products.landing&page=$1
+RewriteRule ^__products_module__/search/$                               oxybase.php?_PAGE=products&mod=oxymall&sub=oxymall.plugin.products.search
+RewriteRule ^__products_module__/([^/]+)/$                              oxybase.php?_PAGE=products&mod=oxymall&sub=oxymall.plugin.products.category&category=$1
+RewriteRule ^__products_module__/([^/]+)/([0-9]+)/$                     oxybase.php?_PAGE=products&mod=oxymall&sub=oxymall.plugin.products.category&category=$1&page=$2
+RewriteRule ^__products_module__/([^/]+)/([^/]+)-([0-9]+)/$             oxybase.php?_PAGE=products&mod=oxymall&sub=oxymall.plugin.products.product&category=$1&product_id=$3&product_code=$2
+
+RewriteRule ^__portfolio_module__/$                                     oxybase.php?_PAGE=portfolio&mod=oxymall&sub=oxymall.plugin.portfolio.landing
+RewriteRule ^__portfolio_module__/([^/]+)/$				oxybase.php?_PAGE=portfolio&mod=oxymall&sub=oxymall.plugin.portfolio.landing&cat=$1
+RewriteRule ^__portfolio_module__/([^/]+)/([0-9]+)/$                    oxybase.php?_PAGE=portfolio&mod=oxymall&sub=oxymall.plugin.portfolio.landing&cat=$1&page=$2
+RewriteRule ^__portfolio_module__/([^/]+)/([^/]+)-([0-9]+)/$            oxybase.php?_PAGE=portfolio&mod=oxymall&sub=oxymall.plugin.portfolio.details&cat=$1&item=$3
+
+RewriteRule ^__services_module__/$                                      oxybase.php?_PAGE=services&mod=oxymall&sub=oxymall.plugin.services.landing
+RewriteRule ^__services_module__/([^/]+)/$                              oxybase.php?_PAGE=services&mod=oxymall&sub=oxymall.plugin.services.landing&cat=$1
+RewriteRule ^__services_module__/([^/]+)/([0-9]+)/$                     oxybase.php?_PAGE=services&mod=oxymall&sub=oxymall.plugin.services.landing&cat=$1&page=$2
+
+RewriteRule ^__team_module__/$						oxybase.php?_PAGE=team&mod=oxymall&sub=oxymall.plugin.team.landing
+RewriteRule ^__team_module__/([^/]+)/$					oxybase.php?_PAGE=team&mod=oxymall&sub=oxymall.plugin.team.landing&cat=$1
+RewriteRule ^__team_module__/([^/]+)/([0-9]+)/$				oxybase.php?_PAGE=team&mod=oxymall&sub=oxymall.plugin.team.landing&cat=$1&page=$2
+RewriteRule ^__team_module__/([^/]+)/([^/]+)/([0-9]+)/$			oxybase.php?_PAGE=team&mod=oxymall&sub=oxymall.plugin.team.item&cat=$1&item=$3
+
+
+
+
+RewriteRule ^googlemap.xml$                                             oxybase.php?_PAGE=xml&mod=oxymall&sub=oxymall.plugin.sitemaps.google
+RewriteRule ^urllist.txt$                                               oxybase.php?_PAGE=xml&mod=oxymall&sub=oxymall.plugin.sitemaps.urllist

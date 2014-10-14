@@ -1,0 +1,39 @@
+<!--S:Details-->
+		<div class="module" id="member-details-module">
+			<header>
+				<h1>{ITEM_TITLE}</h1>
+								
+				<ul class="inline-list module-header-buttons">
+					<li><a href="{BACK}" class="go-back-btn"><span>{SET_TEXT_BACK}</span></a></li>
+				</ul>
+			</header>
+			
+			<div class="extra-info">
+				{ITEM_SUBTITLE}
+				
+				<ul class="right">
+					{EMAIL}
+					{PHONE}
+				</ul>
+			</div>
+			
+			<div class="pic-content">			
+				<div class="pic-content-pics">				
+					{IMAGE}
+				</div>
+				
+				<div class="pic-content-details">				
+					<article id="pic-content-description">					
+						{ITEM_DESCRIPTION}
+					</article>					
+				</div>			
+			</div>
+
+			{COMMENTS}
+		</div>
+<!--E:Details-->
+
+<!--S:Image--><img class="pic-content-main-pic" alt="" src="upload/team/large_{ITEM_ID}.jpg"/><!--E:Image-->
+
+<!--S:Email--><li>{SET_TEXT_EMAIL} <a href="mailto:{ITEM_EMAIL}">{ITEM_EMAIL}</a></li><!--E:Email-->
+<!--S:Phone--><li>{SET_TEXT_PHONE} {ITEM_PHONE}</li><!--E:Phone-->

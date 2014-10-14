@@ -1,0 +1,50 @@
+<!--S:Main-->
+		<div class="module" id="clients-module">
+			<header>
+				<h1>{PROJECT_TITLE}</h1>
+				
+				<ul class="inline-list module-header-buttons">
+					<li><a href="{BACK_LINK}" class="go-back-btn"><span>{SET_TEXT_LIST_BACK}</span></a></li>
+				</ul>
+			</header>
+
+			<article>
+				{PROJECT_DESCRIPTION}
+			</article>
+
+			{LINK}			
+			{IMAGES}			
+
+			{COMMENTS}
+		</div>
+<!--E:Main-->
+
+<!--S:Header-->
+<!--E:Header-->
+
+
+<!--S:ItemsGroup-->
+			<div class="thumbs-listing">
+				<ul class="three-cols">					
+					{DATA}
+				</ul>					
+			</div>
+<!--E:ItemsGroup-->
+
+<!--S:ItemsGroupEmpty-->
+
+<!--E:ItemsGroupEmpty-->
+
+<!--S:ItemsElement-->
+					<li><a rel="prettyPhoto[gallery]" title="{ITEM_TITLE}" class="thumb" href="{LINK}" ><img alt="" src="upload/portfolio/tn_{ITEM_ID}.jpg"/></a></li>
+<!--E:ItemsElement-->
+
+<!--S:ItemsEmpty-->
+
+<!--E:ItemsEmpty-->
+
+<!--S:Link-->
+			<div class="extra-info">
+				<span>{SET_TEXT_LINK} <b><a href="{PROJECT_LINK}" target="{PROJECT_TARGET}">{PROJECT_LINK}</a></b></span>							
+			</div>
+<!--E:Link-->

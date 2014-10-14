@@ -1,0 +1,60 @@
+<!--S:Main-->
+		<div class="module" id="history-module">
+			<header>
+				<h1>{SET_ACCOUNT_YOURACCOUNTTITLE}</h1>
+			</header>
+			
+			<ul class="bigger-tabs-list">
+				{USER_MENU}
+				{SHOP_MENU}				
+			</ul>
+
+			<div class="extra-content see-through-bg">
+
+				<header>
+					<h3>{SET_DOWNLOAD_TITLE}</h3>
+				</header>
+
+				<table class="list bottom-margin">				
+					<thead>
+						<tr>
+							<td width="10%" class="">{SET_DOWNLOAD_PRODUCT}</td>
+							<td width="60%" class="spaced ">{SET_DOWNLOAD_FILE}</td>
+							<td width="30%" class="spaced center-align">{SET_DOWNLOAD_DATE}</td>
+							<td class="spaced center-align"></td>
+						</tr>
+					</thead>
+					
+					<tbody>
+						{FILES}
+					</tbody>				
+				</table>
+			</div>
+
+			{PAGING}			
+		</div>
+<!--E:Main-->
+
+<!--S:Group-->
+						{DATA}
+<!--E:Group-->
+
+<!--S:Element-->
+						{EXTRA}
+						<tr class="download-file">
+							<td class=""></td>
+							<td class="spaced silent">{FILE_TITLE}</td>
+							<td class="spaced silent center-align">{FILE_DATE}</td>
+							<td class="spaced center-align"><a href="order-download.php?o={ORDER_CODE}&f={FILE_ID}" class="text-button"><span>{SET_DOWNLOAD_BUTTON}</span></a></td>
+						</tr>
+<!--E:Element-->
+
+<!--S:Product-->
+						<tr>
+							<td colspan="4" class="full">{ITEM_PRODUCT} - <a href="{LINK:HISTORY-ORDER}{ORDER_CODE}/">#{ORDER_CODE}</a> <span class="info">{ORDER_DATE}</span></td>
+						</tr>
+<!--E:Product-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->

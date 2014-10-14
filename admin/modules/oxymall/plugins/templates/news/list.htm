@@ -1,0 +1,42 @@
+<!--S:Main-->
+
+		<div class="module" id="news-module">
+			<header>
+				<h1>{TITLE}</h1>
+			</header>
+			
+			{CONTENT}
+
+			{PAGING}
+		</div>
+<!--E:Main-->
+
+
+
+<!--S:Group-->
+			<div class="topics-listing">				
+				<ul>					
+					{DATA}
+				</ul>				
+			</div>
+<!--E:Group-->
+
+<!--S:Element-->
+					<li>
+						<header>
+							<h2><a href="{LINK}">{ITEM_TITLE}</a></h2>									
+							<span>{SET_TEXT_LIST_DATE} <b>{ITEM_DATE}</b></span>							
+						</header>
+						{BRIEF}
+					</li>
+<!--E:Element-->
+
+<!--S:Brief-->
+						<article>
+							<p>{ITEM_BRIEF}</p>
+						</article>
+<!--E:Brief-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->

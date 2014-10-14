@@ -1,0 +1,53 @@
+<form>
+	<title>Newsletters</title>
+	<action>{SELF.FILE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<method>get</method>
+
+	<formtag>true</formtag>
+	<border>true</border>
+	<alternance>true</alternance>
+	
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+	</buttons>
+
+	<redirect>index.php?sub=units</redirect>
+
+
+	<tabs>
+		<t width="100" title="Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default&action=details&module_id=109" />
+		<t9 active="true" width="100" title="Subscribers" link="index.php?mod=oxymall&sub=oxymall.plugin.newsletters.subscribers" />
+		<t2 width="100" title="Newsletters" link="index.php?mod=oxymall&sub=oxymall.plugin.newsletters.items" />
+
+	</tabs>
+
+
+	<fields>
+
+		<mod type="hidden" default="$_GET['mod']" action="eval"/>
+		<sub type="hidden" default="$_GET['sub']" action="eval"/>
+		<module_id type="hidden" default="$_GET['module_id']" action="eval"/>
+		<advanced type="hidden" default="0" />
+	</fields>
+
+	<search>
+			<fields>
+				<item_name type="textbox" title="Name" />
+				<item_email type="textbox" title="E-Mail" />
+
+				<button type="button" button="search" location="javascript:document.forms[0].submit();" />
+			</fields>
+
+			<sql_fields>
+				<field name="item_name">%</field>			
+				<field name="item_email">%</field>			
+			</sql_fields>
+
+	</search>
+</form>

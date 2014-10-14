@@ -1,0 +1,93 @@
+<form>
+	<title>{SELF.TITLE} {TITLE} Topic</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<item_id type="hidden"/>		
+		<item_order type="hidden"/>
+		<module_id type="hidden" default="eval:$_GET[module_id]"/>		
+
+		<item_cat title="Category" type="checklist" required="true" validate="A:1:200">
+			<relation table="plugin:blog_cats" id="cat_id" text="cat_title" order="cat_order ASC">
+				<condition eval="true" import=" ' module_id=' . $_GET[module_id] . '';"/>
+			</relation>
+		</item_cat>
+
+		<item_date type="calendar" title="Date"	default="eval:time();">
+					<calendar align="Bl" range="2007:2020"/>
+		</item_date>
+
+<!--
+		<item_comments type="checkbox" checked="1" label="enable comments" />
+-->
+		
+		<item_author type="droplist" title="Author" required="true" validate="A:1:200" empty="true">
+			<relation table="plugin:blog_authors" id="author_id" text="author_name" order="author_name " />
+		</item_author>
+		
+		<item_title type="textbox" size="60:200" title="Title" required="true" validate="A:2:200" onblur="AddPageCode(this.value);"/>
+		<item_url type="textbox" size="60:200" title="Url" required="true" validate="A:2:200" u_nique="true" preffix="/#/module-url/" suffix="-#id/"/>
+
+		<item_brief type="textarea" size="90:4" title="Brief" html="true" toolbar="Basic" width="600" height="200" />
+		<item_body type="textarea" html="true" toolbar="Basic" width="600" height="300" title="Body" />
+
+		<item_tags type="textarea" title="Tags" description="comma separed" size="60:3" />
+
+		<subtitle_seo title="SEO Fields" type="subtitle" />
+		<seo_title type="textbox" size="90:255" title="Browser Title"/>
+		<seo_desc type="textbox" size="90:255" title="Meta Description"/>
+		<seo_keys type="textbox" size="90:255" title="Meta Keywords"/>
+
+		<subtitle_after title="&nbsp;" type="subtitle" />
+		<after_save type="after_save" />
+
+	</fields>
+
+	<javascript>
+		<after>
+			function AddPageCode(txt) {
+				if (document.forms['edit'].item_url.value == '') {
+					var url = Name2Url(txt.trim());
+					document.forms['edit'].item_url.value = url.toLowerCase();
+				}
+
+				if (document.forms['edit'].seo_title.value == '') {
+					document.forms['edit'].seo_title.value = txt;
+				}
+
+			}
+		</after>
+	</javascript>
+
+</form>

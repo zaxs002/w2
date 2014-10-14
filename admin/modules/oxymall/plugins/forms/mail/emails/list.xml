@@ -1,0 +1,76 @@
+<form>
+	<title>Mailer</title>
+	<border>true</border>
+
+	<alternance>true</alternance>
+	<valternance>true</valternance>
+
+	<tabs>
+		<t7 width="100" title="Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.mail.swiftmail" />
+		<t6 active="true" width="100" title="E-Mails" link="index.php?mod=oxymall&sub=oxymall.plugin.mail.emails" />
+		<t8 width="100" title="Queue" link="index.php?mod=oxymall&sub=oxymall.plugin.mail.queue" />
+	</tabs>
+
+	<vars>
+		<module_id type="eval" import="$_GET[module_id]" />
+	</vars>
+
+	<fields>
+
+		<_count header="No." width="20" align="right" suffix="."/>
+
+		<email_subject header="Subject" />	
+
+		<email_code header="Code" />	
+
+		<email_status header="Status" align="center" width="100" type="relation">
+			<options>
+				<option name="1">enabled</option>
+				<option name="0">disabled</option>
+			</options>
+		</email_status>
+
+		<button_delete type="button" width="20" align="center" onclick="" button="/small/delete" protected="promo_default">
+			<location>{SELF.URI.DELETE}</location>
+		</button_delete>
+
+		<button_details type="button" width="20" align="center" onclick="" button="/small/edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_details>
+
+	</fields>
+
+	<header>
+		<titles>true</titles>
+		<buttons>
+			<add button="addnew">
+				<location>{SELF.URI.ADD}</location>
+			</add>
+
+		</buttons>
+	</header>
+
+	<items>50</items>
+
+	<sql>
+		<vars>
+
+			<table type="table"/>
+
+			<page type="page"/>
+			<items type="form" var="items"/>
+
+			<module_id type="eval" import="$_GET[module_id];" />
+			<condition type="var" import="" />
+
+			<order type="var" import="email_code" />
+			<order_mode type="var" import="ASC" />
+
+		</vars>
+		<query>select * from {TABLE} {CONDITION} ORDER BY {ORDER} {ORDER_MODE} LIMIT {PAGE} , {ITEMS} </query>
+		<count table="{TABLE}" condition="{CONDITION}" />
+
+	</sql> 
+
+
+</form>

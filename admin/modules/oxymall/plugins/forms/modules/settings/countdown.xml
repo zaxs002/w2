@@ -1,0 +1,41 @@
+<form>
+	<tabs>
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user&action=details&mod_id={MODULE_ID}" />
+
+		<t_video width="80" title="Video Tutorial" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.help&module_id={MODULE_ID}" restricted="eval:$GLOBALS['no_tutorials'];"/>
+	</tabs>
+	
+	<fields>
+
+		<subtitle_mod_2 type="subtitle" title="Settings" />
+
+		<set_fbcomments type="droplist" title="User Comments">
+			<options>
+				<option name="0">disabled</option>
+				<option name="1">local comments</option>
+				<option name="3">facebook comments</option>
+			</options>
+		</set_fbcomments>
+
+		<set_launchdate type="calendar" title="launchDate">
+				<calendar align="Bl" range="2011:2050" time="true"/>
+		</set_launchdate>
+
+		<set_counttitle type="textbox" size="40" title="countTitle" />
+		<set_topdescription type="textarea" html="true" toolbar="Basic" width="600" height="200" title="topDescription" />
+
+
+		<subtitle_mod_4 type="subtitle" title="Redirect when expires" />
+		<set_link_redirect type="textbox" size="60" title="Url" />
+
+
+		<subtitle_mod_3 type="subtitle" title="Texts" />
+
+		<set_daycaption type="textbox" size="20" title="dayCaption" />
+		<set_hourcaption type="textbox" size="20" title="hourCaption" />
+		<set_minutescaption type="textbox" size="20" title="minutesCaption" />
+		<set_secondscaption type="textbox" size="20" title="secondsCaption" />	
+
+	</fields>
+
+</form>

@@ -1,0 +1,165 @@
+<!--S:Main-->
+
+		<div class="module" id="shop-step3-module">
+			{STEPS}
+			
+			<div class="see-through-bg extra-content">
+				<header>
+					<h3>{SET_STEP3_TITLE}</h3>
+				</header>
+				
+				<div id="review-cart-list">
+					<ul id="review-cart-header">
+						<li class="product-name">{SET_PRODUCTNAMECAPTION}</li>
+						<li class="price">{SET_ONLYCARTPRICECAPTION}</li>
+						<li class="quantity">{SET_QUANTITYCAPTION}</li>
+						<li class="total">{SET_TOTALCAPTION}</li>
+					</ul>
+					
+					<ul id="review-cart-entries">	
+						{PRODUCTS}
+						{SHIPPING}
+						{TAX}
+						
+					</ul>
+				</div>
+					
+				<div id="review-cart-footer">
+					<div id="review-grand-total">{SET_GRANDTOTALCAPTION} <b>{TOTAL}</b></div>					
+				</div>				
+				
+				<hr/>
+				
+				<header>
+					<h3 class="w340 pr24">{SET_STEP1_BILLING}</h3>
+					{SHIPPING_TITLE}
+				</header>
+				
+				<ul class="layout pt12">
+					{BILLING_INFO}					
+					{SHIPPING_INFO}
+				</ul>
+				
+				<footer class="extra-content-footer">
+					<ul class="layout">
+						<li class="inline">
+							{BACK_BUTTON}
+						</li>
+						<li class="inline-right">
+							<a href="{LINK:STEP4}" class="text-button">
+								<span>{SET_STEP3_BUTTON_2}</span>
+							</a>
+						</li>
+					</ul>
+				</footer>
+			</div>
+		</div>
+<!--E:Main-->
+
+<!--S:BillingInfo-->
+					<li class="inline w340 pr24">
+						<ul class="layout">
+							<li class="inline lh16"><label class="block big w136">{SET_STEP1_FIRST_NAME}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_FIRST_NAME}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_LAST_NAME}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_LAST_NAME}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_ADDRESS}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_ADDRESS_1}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_ADDRESS2}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_ADDRESS_2}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_COUNTRY}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_COUNTRY}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_STATE}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_STATE}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_CITY}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_CITY}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_ZIP}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_ZIP}</li>					
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_PHONE}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_PHONE}</li>
+
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_EMAIL}</label></li>
+							<li class="inline pb12 lh16">{ORDER_BILLING_EMAIL}</li>
+						</ul>
+					</li>
+<!--E:BillingInfo-->
+
+<!--S:ShippingInfo-->
+					<li class="inline w340">
+						<ul class="layout">
+							<li class="inline lh16"><label class="block big w136">{SET_STEP1_FIRST_NAME}</label></li>
+							<li class="inline pb12 lh16">{ORDER_SHIPPING_FIRST_NAME}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_LAST_NAME}</label></li>
+							<li class="inline pb12 lh16">{ORDER_SHIPPING_LAST_NAME}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_ADDRESS}</label></li>
+							<li class="inline pb12 lh16">{ORDER_SHIPPING_ADDRESS_1}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_ADDRESS2}</label></li>
+							<li class="inline pb12 lh16">{ORDER_SHIPPING_ADDRESS_2}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_COUNTRY}</label></li>
+							<li class="inline pb12 lh16">{ORDER_SHIPPING_COUNTRY}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_STATE}</label></li>
+							<li class="inline pb12 lh16">{ORDER_SHIPPING_STATE}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_CITY}</label></li>
+							<li class="inline pb12 lh16">{ORDER_SHIPPING_CITY}</li>
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_ZIP}</label></li>
+							<li class="inline pb12 lh16">{ORDER_SHIPPING_ZIP}</li>					
+							
+							<li class="clear inline lh16"><label class="block big w136">{SET_STEP1_PHONE}</label></li>
+							<li class="inline pb12 lh16">{ORDER_SHIPPING_PHONE}</li>
+						</ul>
+					</li>
+<!--E:ShippingInfo-->
+
+<!--S:ShippingTitle--><h3>{SET_STEP1_SHIPPING}</h3><!--E:ShippingTitle-->
+
+
+<!--S:BackShipping-->
+							<a href="{LINK:STEP2}" class="text-button">
+								<span class="arrow-left-icon">{SET_STEP3_BUTTON_1}</span>
+							</a>
+<!--E:BackShipping-->
+
+<!--S:BackNoShipping-->
+							<a href="{LINK:STEP1}" class="text-button">
+								<span class="arrow-left-icon">{SET_STEP3_BUTTON_1_2}</span>
+							</a>
+<!--E:BackNoShipping-->
+
+
+
+<!--S:ProductsGroup-->
+							{DATA}
+<!--E:ProductsGroup-->
+
+<!--S:ProductsElement-->
+						<li>
+							<ul>
+								<li class="product-name">{TITLE}<span class="info">{OPTIONS}</span></li>
+								<li class="price">{PRICE}</li>
+								<li class="quantity">{QTY}</li>
+								<li class="total">{TOTAL_PRICE}</li>
+							</ul>
+						</li>
+<!--E:ProductsElement-->
+
+<!--S:ProductsEmpty-->
+
+<!--E:ProductsEmpty-->
+
+
+					

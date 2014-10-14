@@ -1,0 +1,90 @@
+<form>
+	<title>Global Settings</title>
+	<action>{SELF.LINK}action=store</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+	<formtag>true</formtag>
+	<border>true</border>
+
+
+	<tabs>
+		<t0 width="100" title="Video Tutorial" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.help" restricted="eval:$GLOBALS['no_tutorials'];"/>
+		<t1 active="true" width="100" title="Global Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.settings" />
+
+<!--		<t2 width="100" title="Installed Skins" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.skins" />-->
+		<t3 width="100" title="Installed Modules" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default" />
+		<t4 width="100" title="Enabled Modules" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user" />
+	</tabs>
+
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+		<back location="{SELF.PREVIOUS}" button="return" />
+		<save onclick="" location="javascript:document.forms[0].submit();" button="save" />
+		<edit location="{SELF.LINK}action=edit&module_id={MODULE_ID}&returnurl={SELF.LOCATION}" button="edit" />
+
+	</buttons>
+
+	<redirect>{SELF.LINK}</redirect>
+
+	<fields>
+		<subtitle_rewrite type="subtitle" title="Urls Rewriting" />
+		<set_links_type type="radiolist" title="Structure">
+			<options>
+				<option name="0">http://site.web/index.php/blog/category/post/</option>
+				<option name="1">http://site.web/blog/category/post/  (requires special server modifications, listed below)</option>
+			</options>
+
+			<description type="file" html="true" file="settings.htm"><![CDATA[
+			]]></description>
+		</set_links_type>
+
+		<set_404 type="droplist" title="Page Not Found" empty="true">
+			<relation table="core:user_modules" id="mod_id" text="mod_name" order="mod_name" condition="mod_module_code='about'"/>
+		</set_404>
+
+
+
+		<set_logo valign="top" adminwidth="100" type="image" path="./" absolute="false" editable="true">
+			<file default="logo" ext=".png" />			
+			<title>Logo</title>
+			<error>No photo available.</error>						
+		</set_logo>
+		<subtitle_seo2 type="subtitle" title="Site Ownership Verifications" />
+		<set_owner_google title="Google" type="textbox" size="90"/>
+		<set_owner_ms title="Microsoft" type="textbox" size="90"/>
+		<set_owner_yahoo title="Yahoo!" type="textbox" size="90"/>
+
+		<subtitle_seo type="subtitle" title="Default SEO Fields" />
+		<set_meta_title type="textbox" size="60" title="Browser Title" />
+		<set_meta_keys type="textbox" size="60" title="Keywords" />
+		<set_meta_desc type="textbox" size="60" title="Description" />
+
+		<subtitle_google type="subtitle" title="Google Analytics" />
+		<set_google_analytics_tracker type="textarea" size="90:4" title="Tracking Code" />
+
+
+		<subtitle_facebook type="subtitle" title="Facebook" />
+		<set_facebook_app type="textbox" size="60" title="Application ID" />
+		<set_facebook_secret type="textbox" size="60" title="Secret" />
+		<set_facebook_admins type="textbox" size="60" title="Admins IDs" />
+		<set_facebook_script type="textarea" size="90:4" title="Script Code" />
+
+			
+	</fields>
+
+	<javascript>
+		<after><![CDATA[
+
+		]]></after>
+	</javascript>
+
+
+
+</form>

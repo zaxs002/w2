@@ -1,0 +1,103 @@
+<!--S:Shop-->
+		<div class="module" id="shop-info-module">
+			<header>
+				<h1>{SET_ACCOUNT_YOURACCOUNTTITLE}</h1>
+			</header>
+			
+			<ul class="bigger-tabs-list">
+				{USER_MENU}
+				{SHOP_MENU}
+			</ul>
+			
+			<form id="shop-info-form" class="see-through-bg" action="ajax.shop-profile.php" method="post">
+				<ul class="layout">
+					<li class="inline pb12 w340 pr24">
+						<h2>{SET_ACCOUNT_SHOP_BILLING}</h2>					
+					</li>
+					<li class="inline pb12 w340">
+						<h2>{SET_ACCOUNT_SHOP_SHIPPING}</h2>
+						<input id="same-as-billing" name="option" type="checkbox"/>
+						<label for="same-as-billing" class="pr12">{SET_ACCOUNT_SHOP_SAME}</label>
+					</li>
+					
+					<li class="clear inline w340 pr24" id="billing-form">
+						<ul class="layout">
+							<li class="inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_FIRST_NAME}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_billing_first_name" type="text" value="{USER_BILLING_FIRST_NAME}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_LAST_NAME}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_billing_last_name" type="text" value="{USER_BILLING_LAST_NAME}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ADDRESS}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_billing_address_1" type="text" value="{USER_BILLING_ADDRESS_1}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ADDRESS2}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_billing_address_2" type="text" value="{USER_BILLING_ADDRESS_2}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_COUNTRY}</label></li>
+							<li class="inline pb12">
+								<select data-selected="{USER_BILLING_COUNTRY}" class="w194" name="user_billing_country" >
+									<option value=""></option>
+									{COUNTRIES}
+								</select> 
+							</li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_STATE}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_billing_state" type="text" value="{USER_BILLING_STATE}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_CITY}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_billing_city" type="text" value="{USER_BILLING_CITY}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ZIP}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_billing_zip" type="text" value="{USER_BILLING_ZIP}"/></li>							
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_PHONE}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_billing_phone" type="text" value="{USER_BILLING_PHONE}"/></li>
+						</ul>
+					</li>
+					
+					<li class="inline w340" id="shipping-form">
+						<ul class="layout">
+							<li class="inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_FIRST_NAME}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_shipping_first_name" type="text" value="{USER_SHIPPING_FIRST_NAME}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_LAST_NAME}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_shipping_last_name" type="text" value="{USER_SHIPPING_LAST_NAME}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ADDRESS}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_shipping_address_1" type="text" value="{USER_SHIPPING_ADDRESS_1}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ADDRESS2}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_shipping_address_2" type="text" value="{USER_SHIPPING_ADDRESS_2}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_COUNTRY}</label></li>
+							<li class="inline pb12">
+								<select data-selected="{USER_SHIPPING_COUNTRY}" class="w194" name="user_shipping_country">
+									<option value=""></option>
+									{COUNTRIES}
+								</select> 								
+							</li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_STATE}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_shipping_state" type="text" value="{USER_SHIPPING_STATE}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_CITY}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_shipping_city" type="text" value="{USER_SHIPPING_CITY}"/></li>
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_ZIP}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_shipping_zip" type="text" value="{USER_SHIPPING_ZIP}"/></li>							
+							
+							<li class="clear inline"><label class="block big w136 lh25">{SET_ACCOUNT_SHOP_PHONE}</label></li>
+							<li class="inline pb12"><input class="w194" name="user_shipping_phone" type="text" value="{USER_SHIPPING_PHONE}"/></li>
+						</ul>
+					</li>
+					
+					<li class="inline clear pr6"><input id="shop-info-form-submit-btn" type="submit" value="{SET_ACCOUNT_SHOP_BUTTON_1}"/></li>
+					<li id="shop-info-form-msg" class="inline lh25">
+						<div class="wait">{SET_ACCOUNT_SHOP_SAVING}</div>
+					</li>
+					<li class="inline-right"><a href="{LINK:PROFILE-SHOP}" class="text-button"><span>{SET_ACCOUNT_SHOP_BUTTON_2}</span></a></li>
+				</ul>	
+			</form>
+		</div>
+<!--E:Shop-->		

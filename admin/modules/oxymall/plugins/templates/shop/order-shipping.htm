@@ -1,0 +1,61 @@
+<!--S:Main-->
+
+		<div class="module" id="shop-step3-module">
+			{STEPS}			
+
+			<form id="step2-form" default="{DEFAULT}" class="see-through-bg extra-content" action="ajax.shop-shipping.php" method="post">
+				<header>
+					<h3>{SET_STEP2_TITLE}</h3>
+				</header>
+				
+				<div id="shipping-method" >
+					<ul id="shipping-method-header">
+						<li class="shipping-action"></li>
+						<li class="shipping-service">{SET_STEP2_SERVICE}</li>
+						<li class="shipping-duration">{SET_STEP2_DURATION}</li>
+						<li class="shipping-price">{SET_STEP2_PRICE}</li>
+					</ul>
+					
+					<ul id="shipping-method-entries">
+						{METHODS}
+					</ul>
+				</div>
+				
+				<footer class="extra-content-footer">
+					<ul class="layout">
+						<li class="inline">
+							<a href="{LINK:STEP1}" class="text-button">
+								<span class="arrow-left-icon">{SET_STEP2_BUTTON_1}</span>
+							</a>
+						</li>
+						
+						<li class="inline-right"><input id="step2-form-submit-btn" type="submit" value="{SET_STEP2_BUTTON_2}"/></li>
+						<li id="step2-form-msg" class="inline-right lh25 pr6">
+							<div class="wait">{SET_STEP2_SAVING}</div>
+						</li>
+					</ul>
+				</footer>
+			</form>
+		</div>
+<!--E:Main-->
+
+<!--S:Group-->
+	{DATA}
+<!--E:Group-->
+
+<!--S:Element-->
+						<li>
+							<ul>
+								<li class="shipping-action"><input id="opt{ITEM_ID}" value="{ITEM_ID}" name="method" type="radio" {CHECKED}/></li>
+								<li class="shipping-service"><label for="opt{ITEM_ID}">{ITEM_TITLE}</label></li>
+								<li class="shipping-duration">{ITEM_DURATION}</li>
+								<li class="shipping-price">{PRICE}</li>
+							</ul>
+						</li>
+<!--E:Element-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->
+
+<!--S:Checked-->checked<!--E:Checked-->

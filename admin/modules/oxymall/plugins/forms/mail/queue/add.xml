@@ -1,0 +1,79 @@
+<form>
+	<title>{SELF.TITLE} Mail</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<mail_id type="hidden"/>		
+
+		<mail_subject type="textbox" size="60" title="Title / Subject" required="true" validate="A:1:255"/>
+		<mail_status type="droplist" title="Status" description="When you change the status to sending, the newsletter will be sent to all subscribers automaticaly.">
+			<options>
+				<option name="0">unsent</option>
+				<option name="1">sent</option>
+			</options>
+		</mail_status>		
+
+		<mail_date type="calendar" title="Date" default="eval:time();">
+					<calendar align="Bl" range="2007:2020" time="true"/>
+		</mail_date>
+
+		<mail_priority type="droplist" title="Priority">
+			<options>
+				<option name="1">1</option>
+				<option name="2">2</option>
+				<option name="3">3</option>
+				<option name="4">4</option>
+				<option name="5">5</option>
+			</options>
+		</mail_priority>
+
+<!-->
+		<mail_date_sent type="calendar" title="Sent Date">
+					<calendar align="Bl" range="2007:2020" time="true"/>
+		</mail_date_sent>
+-->
+
+		<subtitle type="subtitle" title="From" />
+		<mail_from_name type="textbox" size="40" title="Name" required="true" validate="A:1:200"/>
+		<mail_from_email type="textbox" size="40" title="Email" required="true" validate="E:1:200"/>
+
+
+		<subtitle_to type="subtitle" title="To" />
+		<mail_to_name type="textbox" size="40" title="Name" required="true" validate="A:1:200"/>
+		<mail_to_email type="textbox" size="40" title="Email" required="true" validate="E:1:200"/>
+
+		<subtitle2 type="subtitle" title="&nbsp;" />
+
+		<mail_body type="textarea" extend="true" title="Body" html="true" width="800" height="400" toolbar="Basic" required="true" validate="A:1:2000000"/>
+	</fields>
+</form>

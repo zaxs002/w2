@@ -1,0 +1,65 @@
+<form>
+	<title>Mailer</title>
+	<action>{SELF.FILE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<method>get</method>
+
+	<formtag>true</formtag>
+	<border>true</border>
+	<alternance>true</alternance>
+	
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+	</buttons>
+
+	<redirect>index.php?sub=units</redirect>
+
+
+	<tabs>
+		<t7 width="100" title="Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.mail.swiftmail" />
+		<t6 width="100" title="E-Mails" link="index.php?mod=oxymall&sub=oxymall.plugin.mail.emails" />
+		<t8 active="true" width="100" title="Queue" link="index.php?mod=oxymall&sub=oxymall.plugin.mail.queue" />
+	</tabs>
+
+
+	<fields>
+
+		<mod type="hidden" default="$_GET['mod']" action="eval"/>
+		<sub type="hidden" default="$_GET['sub']" action="eval"/>
+		<module_id type="hidden" default="$_GET['module_id']" action="eval"/>
+		<advanced type="hidden" default="0" />
+	</fields>
+
+	<search>
+			<fields>
+				<mail_status type="radiolist" title="Show" newline="false">
+					<options>
+						<option name="">all</option>>
+						<option name="1">pending</option>
+						<option name="2">sent</option>
+					</options>
+				</mail_status>
+
+				<mail_to_name title="To Name/Email" type="textbox" size="20" referers="mail_to_email" />
+				<mail_to_email type="textbox" size="20" referer="true" />
+
+				<mail_from_name title="From Name/Email" type="textbox" size="20" referers="mail_from_email" />
+				<mail_from_email type="textbox" size="20" referer="true" />
+
+				<mail_subject type="textbox" title="Subject" size="30" />
+
+				<button type="button" button="search" location="javascript:document.forms[0].submit();" />
+			</fields>
+
+			<sql_fields>
+				<field name="mail_name">%</field>			
+				<field name="mail_status">=</field>			
+			</sql_fields>
+
+	</search>
+</form>

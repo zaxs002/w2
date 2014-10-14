@@ -1,0 +1,51 @@
+@font-face 
+{
+    font-family: 'PTSans';
+    src: url('fonts/ptsans/regular.eot');
+    src: url('fonts/ptsans/regular.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ptsans/regular.woff') format('woff'),
+         url('fonts/ptsans/regular.ttf') format('truetype'),
+         url('fonts/ptsans/regular.svg#PTSans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face 
+{
+    font-family: 'FrancophilSans';
+    src: url('fonts/Qlassik/Qlassik_TB.eot');
+    src: url('fonts/Qlassik/Qlassik_TB.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Qlassik/Qlassik_TB.woff') format('woff'),
+         url('fonts/Qlassik/Qlassik_TB.ttf') format('truetype'),
+         url('fonts/Qlassik/Qlassik_TB.svg#FrancophilSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face 
+{
+    font-family: 'FrancophilSans';
+    src: url('fonts/Qlassik/QlassikBold_TB.eot');
+    src: url('fonts/Qlassik/QlassikBold_TB.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Qlassik/QlassikBold_TB.woff') format('woff'),
+         url('fonts/Qlassik/QlassikBold_TB.ttf') format('truetype'),
+         url('fonts/Qlassik/QlassikBold_TB.svg#FrancophilSansRegular') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/*
+@font-face 
+{
+    font-family: 'FrancophilSans';
+    src: url('fonts/francophilsans/bold.eot');
+    src: url('fonts/francophilsans/bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/francophilsans/bold.woff') format('woff'),
+         url('fonts/francophilsans/bold.ttf') format('truetype'),
+         url('fonts/francophilsans/bold.svg#FrancophilSansBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+*/

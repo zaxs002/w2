@@ -1,0 +1,103 @@
+<module>
+	<tables>
+		<table name="core:emails">site_oxymall_core_emails</table>
+
+		<table name="core:modules">site_oxymall_core_modules</table>
+		<table name="core:skins">site_oxymall_core_skins</table>
+		<table name="core:user_modules">site_oxymall_core_modules_user</table>
+		<table name="plugin:background_items">site_oxymall_plugin_background_items</table>
+
+		<table name="plugin:mail_emails">site_oxymall_plugin_mail_emails</table>
+		<table name="plugin:mail_queue">site_oxymall_plugin_mail_queue</table>
+
+		<table name="plugin:newsletters_subscribers">site_oxymall_plugin_newsletters_subscribers</table>
+		<table name="plugin:newsletters_history">site_oxymall_plugin_newsletters_history</table>
+		<table name="plugin:newsletters_items">site_oxymall_plugin_newsletters_items</table>
+
+		<table name="plugin:sharing">site_oxymall_plugin_sharing</table>
+
+		<table name="plugin:gallery_cats">site_oxymall_plugin_galleries_cats</table>
+		<table name="plugin:gallery_items">site_oxymall_plugin_galleries_items</table>
+
+		<table name="plugin:news_items">site_oxymall_plugin_news_items</table>
+
+		<table name="plugin:blog_items">site_oxymall_plugin_blog_items</table>
+		<table name="plugin:blog_comments">site_oxymall_plugin_blog_comments</table>
+		<table name="plugin:blog_cats">site_oxymall_plugin_blog_cats</table>
+		<table name="plugin:blog_authors">site_oxymall_plugin_blog_authors</table>
+
+		<table name="plugin:jobs_items">site_oxymall_plugin_jobs_items</table>
+		<table name="plugin:jobs_cats">site_oxymall_plugin_jobs_cats</table>
+		<table name="plugin:jobs_resumes">site_oxymall_plugin_jobs_resumes</table>
+		<table name="plugin:jobs_fields">site_oxymall_plugin_jobs_fields</table>
+
+		<table name="plugin:contact_messages">site_oxymall_plugin_contact_messages</table>
+		<table name="plugin:contact_links">site_oxymall_plugin_contact_links</table>
+		<table name="plugin:contact_fields">site_oxymall_plugin_contact_fields</table>
+
+		<table name="plugin:comments">site_oxymall_plugin_comments</table>
+
+		<table name="plugin:homepage_images">site_oxymall_plugin_homepage_images</table>
+
+		<table name="plugin:banner_images">site_oxymall_plugin_banner_images</table>
+		<table name="plugin:banner_texts">site_oxymall_plugin_banner_texts</table>
+
+		<table name="plugin:clients_cats">site_oxymall_plugin_clients_cats</table>
+		<table name="plugin:clients_images">site_oxymall_plugin_clients_images</table>
+
+		<table name="plugin:services_cats">site_oxymall_plugin_services_cats</table>
+		<table name="plugin:services_items">site_oxymall_plugin_services_items</table>
+
+		<table name="plugin:team_cats">site_oxymall_plugin_team_cats</table>
+		<table name="plugin:team_items">site_oxymall_plugin_team_items</table>
+
+		<table name="plugin:portfolio_cats">site_oxymall_plugin_portfolio_cats</table>
+		<table name="plugin:portfolio_projects">site_oxymall_plugin_portfolio_projects</table>
+		<table name="plugin:portfolio_items">site_oxymall_plugin_portfolio_items</table>
+
+		<table name="plugin:shop_cats">site_oxymall_plugin_shop_cats</table>
+		<table name="plugin:shop_items">site_oxymall_plugin_shop_items</table>
+		<table name="plugin:shop_orders">site_oxymall_plugin_shop_orders</table>
+		<table name="plugin:shop_cart">site_oxymall_plugin_shop_cart</table>
+		<table name="plugin:shop_files">site_oxymall_plugin_shop_files</table>
+		<table name="plugin:shop_reviews">site_oxymall_plugin_shop_reviews</table>
+		<table name="plugin:shop_questions">site_oxymall_plugin_shop_questions</table>
+		<table name="plugin:shop_variations">site_oxymall_plugin_shop_variations</table>
+		<table name="plugin:shop_images">site_oxymall_plugin_shop_images</table>
+		<table name="plugin:shop_accounts">site_oxymall_plugin_shop_accounts</table>
+		<table name="plugin:shop_shipping">site_oxymall_plugin_shop_shipping</table>
+		<table name="plugin:shop_countries">site_oxymall_plugin_shop_countries</table>
+		<table name="plugin:shop_log_paypal">site_oxymall_plugin_shop_log_paypal</table>
+		<table name="plugin:shop_files_history">site_oxymall_plugin_shop_files_history</table>
+
+		<table name="plugin:showreel_items">site_oxymall_plugin_showreel_items</table>
+		<table name="plugin:showreel_texts">site_oxymall_plugin_showreel_texts</table>
+
+		<table name="plugin:users">site_oxymall_plugin_users</table>
+		<table name="plugin:users_groups">site_oxymall_plugin_users_groups</table>
+		<table name="plugin:users_emails">site_oxymall_plugin_users_emails</table>
+		<table name="plugin:users_pages">site_oxymall_plugin_users_pages</table>
+		<table name="plugin:users_access">site_oxymall_plugin_users_access</table>
+		<table name="plugin:users_banrules">site_oxymall_plugin_users_banrules</table>
+		<table name="plugin:users_countries">site_oxymall_plugin_shop_countries</table>
+
+
+		<table name="plugin:financials_deposits">site_oxymall_plugin_financials_deposits</table>
+		<table name="plugin:financials_deposits_amounts">site_oxymall_plugin_financials_deposits_amounts</table>
+		<table name="plugin:financials_withdrawals">site_oxymall_plugin_financials_withdrawals</table>
+		<table name="plugin:financials_transactions">site_oxymall_plugin_financials_transactions</table>
+		<table name="plugin:financials_transactions_types">site_oxymall_plugin_financials_transactions_types</table>
+		<table name="plugin:financials_accounts">site_oxymall_plugin_financials_accounts</table>
+		<table name="plugin:financials_transfers">site_oxymall_plugin_financials_transfers</table>
+
+		<table name="plugin:financials_log_moneybookers">site_oxymall_plugin_financials_log_moneybookers</table>
+		<table name="plugin:financials_log_paypal">site_oxymall_plugin_financials_log_paypal</table>
+		<table name="plugin:financials_pages">site_oxymall_plugin_financials_pages</table>
+		<table name="plugin:financials_emails">site_oxymall_plugin_financials_emails</table>
+
+
+		<table name="vars">site_oxymall_core_vars</table>
+
+	</tables>
+
+</module>

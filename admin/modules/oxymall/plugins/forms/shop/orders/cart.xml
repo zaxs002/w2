@@ -1,0 +1,47 @@
+<form>
+	
+	<subtitle>Cart Content</subtitle>
+	<alternance>true</alternance>
+	<valternance>true</valternance>
+	
+	<fields>
+
+		<_count header="No." width="20" align="right" suffix="."/>
+		<item_product_sku header="SKU" width="100"/>
+		<item_product header="Product" />
+		<item_options header="Options" />
+		<item_price type="price" header="Unit Price" align="right" width="90" suffix=" {CURR}"/>
+		<item_quantity type="int" header="QTY" align="center" width="70" />
+		<item_total type="price" header="Total" align="right" width="90" suffix=" {CURR}"/>
+
+	</fields>
+
+	<header>
+		<titles>true</titles>
+		<nolinks>true</nolinks>
+	</header>
+
+	<sql>
+		<vars>
+
+			<table type="table"/>
+
+			<page type="page"/>
+			<items type="form" var="items"/>
+			<order_id type="eval" import="$_GET['order_id']" />
+
+			<condition type="var" import="WHERE item_order='{ORDER_ID}'" />
+
+			<order type="var" import="item_product" />
+			<order_mode type="var" import="ASC" />
+
+		</vars>
+		<query>select * from {TABLE} {CONDITION} ORDER BY {ORDER} {ORDER_MODE} LIMIT {PAGE} , {ITEMS} </query>
+		<count table="{TABLE}" condition="{CONDITION}" />
+
+	</sql> 
+
+	<items>50</items>
+
+
+</form>

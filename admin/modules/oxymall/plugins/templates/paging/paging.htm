@@ -1,0 +1,44 @@
+<!--S:Main-->		
+			<nav class="paging">
+				{SUM}
+				
+				<ul>
+						{PREV}
+						{DATA}
+						{NEXT}
+
+				</ul>
+			</nav>
+
+			<div class="navigation-row clearfix">
+				<!--paging -->
+				<div class="paging">
+					<ul>
+
+					</ul>
+				</div>
+			</div>
+<!--E:Main-->
+
+<!--S:Back--><li><a href="{URL}" class="text-button"><span>Prev</span></a></li><!--E:Back-->
+<!--S:BackDisabled-->
+
+<!--E:BackDisabled-->
+
+<!--S:Next--><li><a href="{URL}" class="text-button"><span>Next</span></a></li><!--E:Next-->
+<!--S:NextDisabled-->
+
+<!--E:NextDisabled-->
+
+<!--S:Page--><li><a href="{URL}" class="text-button"><span>{PAGE}</span></a></li><!--E:Page-->
+<!--S:PageCurrent--><li class="selected"><a href="{URL}" class="text-button"><span>{PAGE}</span></a></li><!--E:PageCurrent-->
+
+<!--S:Sep-->
+
+<!--E:Sep-->
+
+<!--S:Middle--><li><strong>...</strong></li><!--E:Middle-->
+
+<!--S:Summary-->
+<span>Showing {FROM} to {TO} out of {TOTAL}</span>
+<!--E:Summary-->

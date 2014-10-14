@@ -1,0 +1,44 @@
+<!--S:Main-->
+	{PRODUCTS}
+	{PAGING}
+<!--E:Main-->
+
+<!--S:Group-->
+			<div class="thumbs-listing">				
+				<ul class="{SET_ITEMS_COLUMN}">					
+					{DATA}
+				</ul>				
+			</div>			
+<!--E:Group-->
+
+<!--S:Element-->
+					<li>						
+						<a class="thumb" href="{LINK:DETAILS}" title="{ITEM_TITLE}">{IMAGE}</a>
+						
+						<div class="caption">
+							<h3>{ITEM_TITLE}</h3>
+							<p>{ITEM_DESCRIPTION}</p>
+						</div>
+						
+						<div class="price-line">{SET_LIST_PRICE} <span class="price">{PRICE}</span></div>
+						
+
+						{ADD}	
+						{DETAILS}
+					</li>
+<!--E:Element-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->
+
+<!--S:Image--><img alt="{ITEM_TITLE}" src="upload/shop/{ITEM_ID}.jpg"/><!--E:Image-->
+<!--S:NoImage--><img alt="{ITEM_TITLE}" src="upload/shop/default_list.jpg"/><!--E:NoImage-->
+
+
+<!--S:Details--><a href="{LINK:DETAILS}" class="text-button"><span>{SET_LIST_DETAILS}</span></a><!--E:Details-->
+<!--S:AddToCart-->
+						<form action="ajax.products-addcart.php?pid={ITEM_ID}" method="post">
+							<input class="product-add-to-cart-btn" type="submit" value="{SET_LIST_ADD}"/>
+						</form>
+<!--E:AddToCart-->

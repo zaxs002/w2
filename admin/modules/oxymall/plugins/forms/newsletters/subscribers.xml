@@ -1,0 +1,41 @@
+<form>
+
+	<forms>
+		<search>subscribers/search.xml</search>
+		<add>subscribers/add.xml</add>
+		<edit>subscribers/edit.xml</edit>
+		<list>subscribers/list.xml</list>
+	</forms>
+
+	<table>plugin:newsletters_subscribers</table>
+	<table_uid>item_id</table_uid>
+
+
+	<URIdata>
+		<action>action</action>
+
+		<add>add</add>
+		<details>details</details>
+		<delete>delete</delete>
+		<edit>edit</edit>
+		<list>details</list>
+		<search>search</search>
+
+		<mup>moveup</mup>
+		<mdw>movedown</mdw>
+
+		<store>store</store>
+	</URIdata>
+
+
+	<URIlinks>
+		<add>{SELF.LINK.ADD}&returnurl={SELF.LOCATION}</add>
+		<edit>{SELF.LINKUID.EDIT}&returnurl={SELF.LOCATION}</edit>
+		<details>{SELF.LINKUID.DETAILS}&returnurl={SELF.LOCATION}</details>
+		<delete>javascript:if(confirm('Are you sure you want to delete this record ?')) window.location='{SELF.LINKUID.DELETE}&returnURL={SELF.LOCATION}'</delete>
+		<store>{SELF.LINK}{SELF.ACTION.STORE}&module_id={MODULE_ID}</store>
+	</URIlinks>
+
+
+
+</form>

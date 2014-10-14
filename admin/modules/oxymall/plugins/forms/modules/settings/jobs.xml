@@ -1,0 +1,77 @@
+<form>
+	<tabs>
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user&action=details&mod_id={MODULE_ID}" />
+		<t00 width="80" title="Fields" link="index.php?mod=oxymall&sub=oxymall.plugin.jobs.fields&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t0 width="80" title="Jobs" link="index.php?mod=oxymall&sub=oxymall.plugin.jobs.landing&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t4 width="80" title="Categories" link="index.php?mod=oxymall&sub=oxymall.plugin.jobs.cats&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t1 width="80" title="Resumes" link="index.php?mod=oxymall&sub=oxymall.plugin.jobs.resumes&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t_video width="80" title="Video Tutorial" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.help&module_id={MODULE_ID}" restricted="eval:$GLOBALS['no_tutorials'];"/>
+	</tabs>
+
+
+	<fields>
+
+		<subtitle_mod_1 type="subtitle" title="Settings" />
+
+		<set_items type="textbox" size="4" title="Show" suffix="items per page"/>
+		<set_date_format type="textbox" size="20" title="Listing Date Format" />
+		<set_date_format_details type="textbox" size="20" title="Details Date Format" />
+
+		<subtitle_mod_3 type="subtitle" title="Comments" />
+		<set_fbcomments type="droplist" title="User Comments">
+			<options>
+				<option name="0">disabled</option>
+				<option name="1">local comments</option>
+				<option name="3">facebook comments</option>
+			</options>
+		</set_fbcomments>
+
+		<set_categories_type type="radiolist" title="Categories Display" newline="false">
+			<options>
+				<option name="1">menu</option>
+				<option name="2">droplist</option>
+				<option name="3">droplist if more then 3</option>
+			</options>
+		</set_categories_type>
+
+		<subtitle_mod_0 type="subtitle" title="Listing Texts" />
+		<set_text_details_button type="textbox" title="Details Button" />
+		<set_text_resume_button type="textbox" title="Apply Button" />
+
+		<subtitle_mod_2 type="subtitle" title="Texts" />
+		<set_text_apply type="textbox" title="Apply Title" />
+
+		<set_text_list_date type="textbox" title="Listing Date" />
+		<set_text_list_back type="textbox" title="Back to listing" />
+		<set_text_details_back type="textbox" title="Back Button" />
+		<set_text_details_next type="textbox" title="Next Button" />
+
+		<set_text_upload_field type="textbox" size="40" title="uploadField"/>
+		<set_text_upload type="textbox" size="40" title="uploadButton"/>
+		<set_text_send_button type="textbox" size="40" title="sendButton"/>
+		
+		<set_text_send type="textbox" size="40" title="sendingText"/>
+		<set_text_success type="textbox" size="40" title="succesText"/>
+
+		<set_post_comment type="textarea" size="90:4" title="form Note" />
+
+		<subtitle_mod_7 type="subtitle" title="Mails Settings" /> 
+		<set_mail_admin type="droplist" title="Resume Notification" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_admin>
+
+		<set_mail_client type="droplist" title="Resume Autoresponder" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_client>
+
+		<set_email_message type="textarea" size="90:4" title="Admin Message Template" description="Configure here the message to be stored in received message section. You need to put variables in body with the extra variables. By default only name / email / subject / message are beeing saved."/> 
+
+		<subtitle_mod_8 type="subtitle" title="Capcha" /> 
+
+
+		<set_verificationcodecaption type="textbox" size="40" title="verificationCodeCaption"/>
+		<set_verificationcoderefresh type="textbox" size="15" title="verificationCodeRefresh"/>
+		<set_verificationcodeerror type="textbox" size="40" title="verificationCodeAlert"/>
+
+	</fields>
+</form>

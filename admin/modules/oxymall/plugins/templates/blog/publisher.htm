@@ -1,0 +1,37 @@
+<!--S:Main-->
+		<div class="module" id="member-details-module">
+			<header>
+				<h1>{AUTHOR_NAME}</h1>
+								
+				<ul class="inline-list module-header-buttons">
+					<li><a href="{BACK}" class="go-back-btn"><span>{SET_PUBLISHER_BACK}</span></a></li>
+				</ul>
+			</header>
+
+			{SEARCH_FORM}
+						
+			<div class="pic-content">			
+				<div class="pic-content-pics">				
+					{IMAGE}
+				</div>
+				
+				{BIO}
+			</div>
+
+
+			{TOPICS}
+			{PAGING}
+
+		</div>
+<!--E:Main-->
+
+<!--S:Bio-->
+				<div class="pic-content-details">				
+					<article id="pic-content-description">					
+						{AUTHOR_BIO}
+					</article>					
+				</div>			
+<!--E:Bio-->
+
+
+<!--S:Avatar--><img class="pic-content-main-pic" alt="" src="upload/blog/authors/{AUTHOR_ID}.jpg"/><!--E:Avatar-->

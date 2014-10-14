@@ -1,0 +1,47 @@
+<!--S:Main-->
+	<div class="see-through-bg extra-panel" id="newsletter-panel">
+		
+		<header>
+			<h3>{SET_TITLE}</h3>
+			<a title="Close" class="icon-button" href="#">
+				<span class="x-icon">{SET_CLOSETOOLTIPALERT}</span>
+			</a>
+		</header>
+		
+		<form action="ajax.newsletters.subscribe.php" method="post" id="newsletter-form">
+			
+			<p>{SET_SUBTITLE}</p>
+			
+			<ul class="layout">
+				<li class="inline pb12 pr12">
+					<label class="block big">{SET_CONTACTNAMECAPTION}</label>
+					<input class="w194" name="name" type="text"/>
+				</li>
+				<li class="inline pb12">
+					<label class="block big">{SET_CONTACTEMAILCAPTION}</label>
+					<input class="w194" name="email" type="text"/>
+				</li>
+				<li class="inline clear pb12">
+					<input name="action" type="radio" checked="checked" value="1"/>
+					<label class="pr12">{SET_SUBSCRIBECAPTION}</label>					
+				</li>
+				<li class="inline pb12">
+					<input name="action" type="radio" value="2"/>
+					<label>{SET_UNSUBSCRIBECAPTION}</label>
+				</li>
+				<li class="inline clear pr12"><input id="newsletter-form-submit-btn" type="submit" value="{SET_SENDBUTTONCAPTION}"/></li>
+				<li id="newsletter-form-msg" class="inline lh25">
+					<div class="wait">{SET_SENDINGMESSAGETEXT}</div>
+				</li>
+			</ul>
+			
+		</form>
+		
+	</div>
+<!--E:Main-->
+
+<!--S:Button-->
+				<li class="icon-button" id="subscribe-btn" title="Subscribe to Newsletter">
+					<a class="envelope-icon" href="#">Newsletter</a>
+				</li>
+<!--E:Button-->

@@ -1,0 +1,34 @@
+<!--S:Button-->
+						<li data-content="product-ask-a-question"><a href="#">{SET_ASK_TITLE}</a></li>
+<!--E:Button-->
+
+<!--S:Main-->
+					<article id="product-ask-a-question">
+						<form id="ask-question-form" action="ajax.products-question.php" method="post">
+							<input type="hidden" name="p" value="{ITEM_ID}">
+							<ul class="layout">
+								<li class=""><label class="block big">{SET_ASK_NAME}</label></li>								
+								<li class="pb12"><input class="w280" type="text" name="name"/></li>
+								
+								<li class=""><label class="block big">{SET_ASK_PHONE}</label></li>
+								<li class="pb12"><input class="w280" type="text" name="phone"/></li>
+								
+								<li class=""><label class="block big">{SET_ASK_EMAIL}</label></li>
+								<li class="pb12"><input class="w280" type="text" name="email"/></li>
+								
+								<li class=""><label class="block big">{SET_ASK_SUBJECT}</label></li>
+								<li class="pb12"><input class="w280" type="text" name="subject"/></li>
+								
+								<li class=""><label class="block big">{SET_ASK_MESSAGE}</label></li>
+								<li class="pb12"><textarea cols="60" rows="7" name="message"></textarea></li>
+								
+								<li class="inline pr6"><input id="ask-question-form-submit-btn" type="submit" value="{SET_ASK_BUTTON_1}" /></li>
+								<li class="inline pr6"><input type="reset" value="{SET_ASK_BUTTON_2}" /></li>
+								
+								<li id="ask-question-form-msg" class="inline lh27">
+									<div class="wait">{SET_ASK_SENDING}</div>
+								</li>
+							</ul>
+						</form>
+					</article>
+<!--E:Main-->

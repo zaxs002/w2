@@ -1,0 +1,59 @@
+<form>
+	<title>{SELF.TITLE} E-Mail</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<email_id type="hidden"/>		
+
+		<email_code type="textbox" title="code" size="30" required="true" validate="A:1:200" unique="true" />
+
+		<email_status type="checkbox" checked="1" label="enabled" />
+
+		<email_subject type="textbox" size="50" title="Subject" required="true" validate="A:1:200"/>
+
+<!--
+		<comment_auto padding="20" type="comment" align="center" subtype="extern" file="variables.htm" /> 
+-->
+		<subtitle_1 type="subtitle" title="To" />
+		<email_to type="textbox" size="50" title="Email" />
+		<email_to_name type="textbox" size="50" title="Name" />
+
+		<subtitle_2 type="subtitle" title="From" />
+		<email_from type="textbox" size="50" title="Email" />
+		<email_from_name type="textbox" size="50" title="Name" />
+
+		<subtitle_x type="subtitle" title="Message" />
+		<email_body type="textarea" width="600" height="200" title="Body" html="true" toolbar="Basic" required="true" validate="A:1:200000" />
+
+	</fields>
+</form>

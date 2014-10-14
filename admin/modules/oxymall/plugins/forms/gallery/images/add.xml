@@ -1,0 +1,155 @@
+<form>
+	<title>{SELF.TITLE} {TITLE} Image</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<item_id type="hidden"/>		
+		<item_order type="hidden"/>		
+		<module_id type="hidden" default="eval:$_GET[module_id]"/>		
+
+		<item_cat title="Album" type="droplist" empty="true" required="true" validate="A:1:200" default="eval:$_GET[item_cat];" >
+			<relation table="plugin:gallery_cats" id="cat_id" text="cat_title" order="cat_order ASC">
+				<condition eval="true" import=" ' module_id=' . $_GET[module_id] . '';"/>
+			</relation>
+		</item_cat>
+
+
+		<item_tn  valign="top" adminwidth="100" type="image" path="./galleries/" absolute="false" editable="true" >
+			<file default="tn_" field="item_id" ext=".jpg" />			
+			<title>Thumbnail (224x132 px)</title>
+			<error>No photo available.</error>						
+			<thumbnails>
+				<resize preffix="3/" generate="true" width="224" height="132" />
+				<list_2 preffix="4/" generate="true" width="163" height="96" />
+				<list_3 preffix="5/" generate="true" width="126" height="74" />
+				<list_4 preffix="6/" generate="true" width="107" height="63" />
+				<tn preffix="a/" generate="true" width="50" height="50" />
+			</thumbnails>
+		</item_tn>
+
+		<item_title type="textbox" size="60:200" title="Title" />
+
+		<subtitle type="subtitle" title="Details" />
+
+		<item_type type="droplist" required="true" validate="A:1:2" title="Type" onchange="ChangeRecordType(this.value);" empty="true">
+			<options>
+				<option name="1">image</option>
+				<option name="2">video</option>
+				<option name="4">youtube/vimeo</option>
+			</options>
+		</item_type>
+
+		<item_image valign="top" adminwidth="100" type="image" path="./galleries/" absolute="false" editable="true" >
+			<file default="" field="item_id" ext=".jpg" />			
+			<title>Image</title>
+			<error>No file available.</error>						
+		</item_image>
+
+
+		<item_video valign="top" type="upload" path="./galleries/" absolute="false" editable="true" >
+			<file default="" field="item_id" ext=".mp4" />			
+			<title>Video ( mp4 )</title>
+			<error>No file available.</error>						
+		</item_video>
+
+
+		<item_youtube type="textbox" size="90:255" title="Youtube/Vimeo"/>
+
+
+		<subtitle_after title="&nbsp;" type="subtitle" />
+		<after_save type="after_save" />
+
+	</fields>
+
+	<javascript>
+		<after><![CDATA[
+
+			function ChangeRecordType(value) {
+	
+				value = parseInt(value);
+
+
+				fields  = {
+								1 : { 
+										"item_video" : "none",
+										"item_image" : "block",
+										"item_youtube" : "none"
+									},
+								2 : { 
+										"item_video" : "block",
+										"item_image" : "none",
+										"item_youtube" : "none"
+									},								
+								3 : { 
+										"item_video" : "none",
+										"item_image" : "none",
+										"item_youtube" : "none"
+									},						
+								4 : { 
+										"item_video" : "none",
+										"item_image" : "none",
+										"item_youtube" : "block"
+									},
+								5: {
+										"item_video" : "none",
+										"item_image" : "none",
+										"item_youtube" : "none"
+									},
+								6: {
+										"item_video" : "none",
+										"item_image" : "none",
+										"item_youtube" : "none"
+								},									
+								0: {
+										"item_video" : "none",
+										"item_image" : "none",
+										"item_youtube" : "none"
+								},
+								NaN: {
+										"item_video" : "none",
+										"item_image" : "none",
+										"item_youtube" : "none"
+								}
+							}
+
+				for ( i in fields[value] ) {
+					document.getElementById("XML_BODY_FIELD_" + i).style.display = fields[value][i];
+					document.getElementById("XML_BODY_FIELD_" + i).style.width = "100%";
+				}
+			} 
+
+			ChangeRecordType(document.forms[0].item_type.value);
+
+		]]></after>
+	</javascript>
+</form>

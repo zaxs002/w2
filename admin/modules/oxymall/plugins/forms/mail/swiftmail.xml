@@ -1,0 +1,77 @@
+<form>
+	<title>Mailer</title>
+	<action>{SELF.LINK}action=store</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+	<formtag>true</formtag>
+	<border>true</border>
+
+
+	<tabs>
+		<t7 active="true"  width="100" title="Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.mail.swiftmail" />
+		<t6 width="100" title="E-Mails" link="index.php?mod=oxymall&sub=oxymall.plugin.mail.emails" />
+		<t8 width="100" title="Queue" link="index.php?mod=oxymall&sub=oxymall.plugin.mail.queue" />
+	</tabs>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+		<back location="{SELF.PREVIOUS}" button="return" />
+		<save onclick="" location="javascript:document.forms[0].submit();" button="save" />
+		<edit location="{SELF.LINK}action=edit&module_id={MODULE_ID}&returnurl={SELF.LOCATION}" button="edit" />
+
+	</buttons>
+
+	<redirect>{SELF.LINK}</redirect>
+
+	<fields>
+	
+		<set_switft_transport type="droplist" title="Method">
+			<options>
+				<option name="smtp">swift - smtp</option>
+				<option name="sendmail">swift - sendmail</option>
+				<option name="php">swift - php mail()</option>
+				<option name="php-default">system - php mail()</option>
+			</options>
+		</set_switft_transport>
+
+
+		<subtitle_smtp type="subtitle" title="SMTP Settings" />
+
+		<set_swiftp_smtp_server type="textbox" size="50" title="Server / Port" referers="set_swiftp_smtp_port"/>
+		<set_swiftp_smtp_port type="textbox" size="6" referer="true" preffix=":"/>
+
+		<set_swiftp_smtp_auth type="checkbox" checked="1" title="Requires Auth" label="yes|no" />
+
+		<set_swiftp_smtp_auth_username type="textbox" size="50" title="Username"/>
+		<set_swiftp_smtp_auth_password type="textbox" size="20" title="Password"/>
+
+		<set_swiftp_smtp_enc type="droplist" title="Encryption">
+			<options>
+				<option name="none">none</option>
+				<option name="ssl">ssl</option>
+				<option name="tls">tls</option>
+			</options>
+		</set_swiftp_smtp_enc>
+
+		<subtitle_sendmail type="subtitle" title="Sendmail Settings" />
+		<set_swiftp_sendmail type="textbox" size="90" title="Sendmail Path"/>
+
+		<subtitle_queue type="subtitle" title="Queue Settings" />
+		<set_send_block type="textbox" size="5" title="Send" suffix="emails at once." description="Enter the number of emails to be sent from queue every time the cron its called. If you are using external server its recomanded not to use more then 10 email. For local servers you can use up to 100 emails."/>
+
+
+		<subtitle_test type="subtitle" title="Test Connection" />
+		<test type="checkbox" checked="1" label="send test after save"/>
+		<test_to type="textbox" title="To Email" size="40"/>
+		<test_subject type="textbox" title="Subject" size="90" default="Test email sent with swiftmail"/>
+		<test_body type="textbox" title="Body" size="90" default="Test email sent with swiftmail"/>
+
+	</fields>
+
+</form>

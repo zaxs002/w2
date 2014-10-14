@@ -1,0 +1,57 @@
+<form>
+	<title>{SELF.TITLE} Variation</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<vars>
+		<item_id type="eval" import="$_GET[item_id]" />
+	</vars>
+
+	<fields>
+		<item_id type="hidden"/>		
+		<item_order type="hidden"/>		
+		<item_last_update type="hidden" action="eval" forcevalue="time();"/>
+
+		<module_id type="hidden" default="eval:$_GET[module_id]"/>		
+		<item_parent type="hidden" default="eval:$_GET[item_parent];" />
+
+
+		<item_name type="textbox" size="60:200" title="Title" required="true" validate="A:1:200"/>
+
+		<item_options type="textarea" size="60:5" title="Options" description="Put one option on each line using the following format {option}:{price}. [br]The price its optionan and it will be added to the original price of the product" />
+
+		<subtitle_after title="&nbsp;" type="subtitle" />
+		<after_save type="after_save" />
+
+	</fields>
+
+</form>

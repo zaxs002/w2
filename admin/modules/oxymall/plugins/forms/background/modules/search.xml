@@ -1,0 +1,53 @@
+<form>
+	<title>Backgrounds</title>
+	<action>{SELF.FILE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<method>get</method>
+
+	<formtag>true</formtag>
+	<border>true</border>
+	<alternance>true</alternance>
+	
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+	</buttons>
+
+	<redirect>index.php?sub=units</redirect>
+
+
+	<tabs>
+		<t width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default&action=details&module_id=13" />
+		<t0 width="130" title="Global Backgrounds" link="index.php?mod=oxymall&sub=oxymall.plugin.background.landing&returnurl=" />
+		<t1 active="true" width="130" title="Modules Backgrounds" link="index.php?mod=oxymall&sub=oxymall.plugin.background.modules&returnurl=" />
+
+	</tabs>  
+
+	<fields>
+
+		<mod type="hidden" default="$_GET['mod']" action="eval"/>
+		<sub type="hidden" default="$_GET['sub']" action="eval"/>
+		<module_id type="hidden" default="$_GET['module_id']" action="eval"/>
+		<advanced type="hidden" default="0" />
+	</fields>
+
+	<search>
+			<fields>
+
+				<item_module title="Module" type="droplist" empty="true" onchange="document.forms[0].submit();">
+					<tree parent="mod_parent" separator="&nbsp;&nbsp;&nbsp;" s1eparator="   " />
+					<relation table="core:user_modules" id="mod_id" text="mod_name" />
+				</item_module>
+
+			</fields>
+
+			<sql_fields>
+				<field name="item_module">=</field>			
+			</sql_fields>
+
+	</search>
+</form>

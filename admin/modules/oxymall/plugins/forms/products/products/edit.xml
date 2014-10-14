@@ -1,0 +1,127 @@
+<form>
+	<title>{SELF.TITLE} Product</title>
+	<action>{SELF.URI.STORE}&storeredirect=ADDDETAILS</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<tabs>
+		<t0 width="80" title="Details" link="index.php?mod=oxymall&sub=oxymall.plugin.products.products&action=details&section=0&module_id={MODULE_ID}&item_id={ITEM_ID}&returnurl={PRIVATE.FORM_PREVIOUS_PAGE_ENC}" />
+		<t2 width="80" title="Variations" link="index.php?mod=oxymall&sub=oxymall.plugin.products.products&action=details&section=2&module_id={MODULE_ID}&item_id={ITEM_ID}&returnurl={PRIVATE.FORM_PREVIOUS_PAGE_ENC}" />
+		<t3 width="80" title="Gallery" link="index.php?mod=oxymall&sub=oxymall.plugin.products.products&action=details&section=3&module_id={MODULE_ID}&item_id={ITEM_ID}&returnurl={PRIVATE.FORM_PREVIOUS_PAGE_ENC}" />
+		<t4 width="80" title="Reviews" link="index.php?mod=oxymall&sub=oxymall.plugin.products.products&action=details&section=4&module_id={MODULE_ID}&item_id={ITEM_ID}&returnurl={PRIVATE.FORM_PREVIOUS_PAGE_ENC}" />
+		<t5 width="80" title="Questions" link="index.php?mod=oxymall&sub=oxymall.plugin.products.products&action=details&section=5&module_id={MODULE_ID}&item_id={ITEM_ID}&returnurl={PRIVATE.FORM_PREVIOUS_PAGE_ENC}" />
+		<t6 width="80" title="Files" link="index.php?mod=oxymall&sub=oxymall.plugin.products.products&action=details&section=6&module_id={MODULE_ID}&item_id={ITEM_ID}&returnurl={PRIVATE.FORM_PREVIOUS_PAGE_ENC}" />
+	</tabs>
+
+
+	<vars>
+		<var name="cur:pre" type="eval" import="$GLOBALS[_MODULES][oxymall]->private->vars->data['set_shop_currencyposition'] == 'before' ? $GLOBALS[_MODULES][oxymall]->private->vars->data['set_shop_currency_sign'] : ''"/>
+		<var name="cur:suf" type="eval" import="$GLOBALS[_MODULES][oxymall]->private->vars->data['set_shop_currencyposition'] == 'after' ? $GLOBALS[_MODULES][oxymall]->private->vars->data['set_shop_currency_sign'] : ''"/>
+
+		<item_id type="eval" import="$_GET[item_id]" />
+	</vars>
+
+	<fields>
+		<item_id type="hidden"/>		
+		<item_order type="hidden"/>		
+		<item_date type="hidden" default="eval:time();"/>
+		<module_id type="hidden" default="eval:$_GET[module_id]"/>		
+
+		<item_cat title="Category" type="droplist" empty="true" default="eval:$_GET[item_cat];"  required="true" validate="A:1:200">
+			<relation table="plugin:shop_cats" id="cat_id" text="cat_title" order="cat_order ASC">
+				<condition eval="true" import=" ' module_id=' . $_REQUEST[module_id] . '';"/>
+			</relation>
+		</item_cat>
+
+		<item_title type="textbox" size="60:200" title="Title" required="true" validate="A:2:200" onblur="AddPageCode(this.value);"/>
+		<item_sku type="textbox" size="20" title="SKU" required="true" unique="true" validate="A:1:20"/>
+
+		<item_price type="textbox" size="5" align="right" title="Price" required="true" validate="A:1:10" suffix="{CUR:SUF}" preffix="{CUR:PRE}"/>
+		<item_shipping type="checkbox" checked="1" label="enabled|disabled" title="Enable Shipping"/>
+
+		<item_image  valign="top" adminwidth="100" type="image" path="./shop/" absolute="false" editable="true" >
+			<file default="" field="item_id" ext=".jpg" />			
+			<title>Thumnbnail (224x140px)</title>
+			<error>No photo available.</error>						
+			<thumbnails>
+				<resize preffix="" generate="true" width="224" height="140" />
+				<resize2 preffix="list_" generate="true" width="163" height="102" />
+				<tn preffix="admin_" generate="true" width="50" height="50" />
+			</thumbnails>
+		</item_image>
+
+		<item_description type="textbox" size="90" title="Brief" />
+
+		<subtitle title="Details" type="subtitle" />
+
+		<item_set_details type="checkbox" checked="1" label="enable details page" />
+		
+		<item_url type="textbox" size="60:200" title="Url" required="true" validate="A:2:200" u_nique="true" preffix="/#/module-url/" suffix="-#id/"/>
+
+		<item_image_large  valign="top" adminwidth="100" type="image" path="./shop/" absolute="false" editable="true" >
+			<file default="large_" field="item_id" ext=".jpg" />			
+			<title>Large 220px wide</title>
+			<error>No photo available.</error>						
+			<process width="220"/>
+		</item_image_large>
+
+		<item_details type="textarea" html="true" title="Details" width="600" height="200" toolbar="Basic" />
+
+		<item_specs type="textarea" size="60:5" title="Specs Table" description="Put a specs set on each line ex: [br]Title|value|value|value[br]Title2|value|value|value"/>
+
+		<subtitle_seo title="SEO Fields" type="subtitle" />
+		<seo_title type="textbox" size="100" title="Browser Title"/>
+		<seo_desc type="textbox" size="100" title="Meta Description"/>
+		<seo_keys type="textbox" size="100" title="Meta Keywords"/>
+
+		<subtitle_after title="&nbsp;" type="subtitle" />
+		<after_save type="after_save" />
+
+	</fields>
+
+		<javascript>
+			<after><![CDATA[
+
+				function AddPageCode(txt) {
+					if (document.forms['edit'].item_url.value == '') {
+						var url = Name2Url(txt.trim());
+						document.forms['edit'].item_url.value = url.toLowerCase();
+					}
+
+					if (document.forms['edit'].seo_title.value == '') {
+						var url = Name2Url(txt.trim());
+						document.forms['edit'].seo_title.value = txt;
+					}
+				}
+			]]></after>
+		</javascript>
+
+</form>

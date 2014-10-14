@@ -1,0 +1,62 @@
+<!--S:Main-->
+
+		<div class="module" id="careers-module">
+			<header>
+				<h1>{CAT_TITLE}</h1>
+
+				{CATEGORIES}
+
+			</header>
+
+			{HEADER}
+
+			{ITEMS}
+
+			{PAGING}
+		</div>
+<!--E:Main-->
+
+<!--S:Header-->
+			<article>
+				{CAT_DESCRIPTION}
+			</article>
+<!--E:Header-->
+
+
+<!--S:Group-->
+			<div class="topics-listing">				
+				<ul>					
+					{DATA}
+				</ul>				
+			</div>
+<!--E:Group-->
+
+<!--S:Element-->
+					<li>
+						<header>
+							<h2><a href="{LINK}">{ITEM_TITLE}</a></h2>									
+
+							<span>
+								<a class="text-button" href="{LINK}">
+									<span class="plus-icon">{SET_TEXT_DETAILS_BUTTON}</span>
+								</a>
+								
+								<a class="text-button" href="{LINK}#upload">
+									<span class="arrow-up-icon">{SET_TEXT_RESUME_BUTTON}</span>
+								</a>
+							</span>
+
+						</header>
+						{BRIEF}
+					</li>
+<!--E:Element-->
+
+<!--S:Brief-->
+						<article>
+							<p>{ITEM_SMALL_DESCRIPTION}</p>
+						</article>
+<!--E:Brief-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->

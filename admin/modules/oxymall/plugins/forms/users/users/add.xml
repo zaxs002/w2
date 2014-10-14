@@ -1,0 +1,95 @@
+<form>
+	<title>{PRIVATE.FORM_ACTION_TITLE} User</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<encoding>multipart/form-data</encoding>
+	<alternance>true</alternance>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<user_id type="hidden" hidden="true"/>
+		<user_date type="hidden" default="eval:time();" />
+
+		<user_email type="textbox" size="30" title="Email" required="true" validate="A:1:200" unique="true"/>
+
+		<user_first_name type="textbox" size="30" title="First/Last Name" referers="user_last_name" required="true" validate="A:1:200"/>
+		<user_last_name type="textbox" size="30" referer="user_first_name"/>
+
+
+		<user_groups type="checklist" title="Groups" empty="true" required="true" validate="A:1:200">
+			<relation table="plugin:users_groups" id="group_id" text="group_name" order="group_name ASC">
+			</relation>
+		</user_groups>
+
+		<user_status type="droplist" title="Status" empty="true" required="true" validate="A:1:20" referers="send_mail">
+			<options>
+				<option name="1">inactive</option>
+				<option name="2">active</option>
+				<option name="3">pending admin confirmation</option>
+				<option name="4">suspended</option>
+			</options>
+			<description>Check the send mail field to notify the user</description>
+		</user_status>
+
+		<send_mail type="checkbox" label="notify user via email" checked="1" referer="true" />
+
+
+		<subtitle_pass title="Change Password" type="subtitle" />
+		<user_pass type="password" size="30" title="Password" />
+		<user_pass_confirm type="password" size="30" title="Re-type" />
+
+		<subtitle2 type="subtitle" title="Billing Address" />	
+
+		<user_billing_first_name type="textbox" size="40" title="First Name"/>
+		<user_billing_last_name type="textbox" size="40" title="Last Name"/>
+		<user_billing_address_1 type="textbox" size="40" title="Address" />
+		<user_billing_address_2 type="textbox" size="40" title="Address 2" />
+		<user_billing_city type="textbox" size="40" title="City" />
+		<user_billing_state type="textbox" size="40" title="State" />
+		<user_billing_zip type="textbox" size="40" title="Zip" />
+		<user_billing_country type="textbox" size="40" title="Country" />
+		<user_billing_email type="textbox" size="40" title="E-Mail" />
+
+		<subtitle3 type="subtitle" title="Shipping Address" />	
+
+		<user_shipping_first_name type="textbox" size="40" title="First Name"/>
+		<user_shipping_last_name type="textbox" size="40" title="Last Name"/>
+		<user_shipping_address_1 type="textbox" size="40" title="Address" />
+		<user_shipping_address_2 type="textbox" size="40" title="Address 2" />
+		<user_shipping_city type="textbox" size="40" title="City" />
+		<user_shipping_state type="textbox" size="40" title="State" />
+		<user_shipping_zip type="textbox" size="40" title="Zip" />
+		<user_shipping_country type="textbox" size="40" title="Country" />
+
+
+		<subtitle_after title="&nbsp;" type="subtitle" />
+		<after_save type="after_save" />
+
+	</fields>
+
+</form>

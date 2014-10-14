@@ -1,0 +1,149 @@
+<form>
+	<title>Shop Settings</title>
+	<action>{SELF.LINK}action=store&module_id={MODULE_ID}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+	<formtag>true</formtag>
+	<border>true</border>
+
+
+	<tabs>
+		<t0 active="true" width="100" title="Global Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.products.global&action=details&module_id={MODULE_ID}" />
+		<t width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default&action=details&module_id=16" />
+
+		<t05 width="100" title="Payment Accounts" link="index.php?mod=oxymall&sub=oxymall.plugin.shop.accounts" />
+		<t02 width="100" title="Orders Mangement" link="index.php?mod=oxymall&sub=oxymall.plugin.shop.orders" />
+		<t03 width="100" title="Shipp Countries" link="index.php?mod=oxymall&sub=oxymall.plugin.shop.shipp_countries" />
+		<t04 width="100" title="Shipp Methods" link="index.php?mod=oxymall&sub=oxymall.plugin.shop.shipp_methods" />
+
+	</tabs>
+
+	<vars>
+		<module_id type="eval" import="$_GET[module_id]" />
+	</vars>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+		<back location="{SELF.PREVIOUS}" button="return" />
+		<save onclick="" location="javascript:document.forms[0].submit();" button="save" />
+		<edit location="{SELF.LINK}action=edit&module_id={MODULE_ID}&returnurl={SELF.LOCATION}" button="edit" />
+
+	</buttons>
+
+	<redirect>{SELF.LINK}</redirect>
+
+	<fields>			
+		
+			<set_shop_currency type="droplist" title="Currency">
+				<options>
+					<option name="USD">USD</option>
+					<option name="EUR">EUR</option>
+					<option name="CAD">CAD</option>
+					<option name="AUD">AUD</option>
+					<option name="BRL">BRL</option>
+					<option name="CZK">CZK</option>
+					<option name="DKK">DKK</option>
+					<option name="HKD">HKD</option>
+					<option name="HUF">HUF</option>
+					<option name="ILS">ILS</option>
+					<option name="JPY">JPY</option>
+					<option name="MYR">MYR</option>
+					<option name="MXN">MXN</option>
+					<option name="NOK">NOK</option>
+					<option name="PHP">PHP</option>
+					<option name="PLN">PLN</option>
+					<option name="GBP">GBP</option>
+					<option name="SGD">SGD</option>
+					<option name="SEK">SEK</option>
+					<option name="CHF">CHF</option>
+					<option name="THB">THB</option>
+				</options>				
+			</set_shop_currency>
+
+			<set_shop_currency_sign type="textbox" size="5" title="Currency Sign" />
+
+			<set_shop_currencyposition type="droplist" title="Position">
+				<options>
+					<option name="before">before</option>
+					<option name="after">after</option>
+				</options>
+			</set_shop_currencyposition>
+
+			<set_shop_number_dec_count type="textbox" size="1:1" title="Decimal Digits" />
+			<set_shop_number_dec type="textbox" size="1:1" title="Decimal Separator" />
+			<set_shop_number_mul type="textbox" size="1:1" title="Thousands Separator" />
+
+			<set_custom type="subtitle" title="Customer Manager" />
+
+			<set_shop_require_users title="Require Login" type="checkbox" checked="1" label="yes|no" description="If you check this your users will be required to login before finalizing the order. "/>
+
+			<set_shippin type="subtitle" title="Shipping" />
+
+			<set_shop_shipping_country type="droplist" emtpy="true" validate="A:1:200" title="Store Country">
+				<relation table="plugin:shop_countries" text="item_title" id="item_iso" order="item_title asc" />
+			</set_shop_shipping_country>
+
+			<set_tax type="subtitle" title="Tax" />
+
+			<set_tax_domestic type="textbox" size="5" suffix="%" title="Domestic" />
+			<set_tax_international type="textbox" size="5" suffix="%" title="International" />
+
+			<set_downloads type="subtitle" title="File Downloads" />
+			<set_shop_download_limit type="textbox" size="4" title="Max Download Times" />
+
+			<set_shop_download_exceeded type="droplist" title="Too Many Downloads" empty="true">
+				<relation table="core:user_modules" id="mod_id" text="mod_name" order="mod_name" condition="mod_module_code='about'"/>
+			</set_shop_download_exceeded>
+
+
+			<set_mailing type="subtitle" title="New Order Email Notifications" />
+
+			<set_shop_mail_admin type="droplist" title="Admin Notification" empty="true">
+				<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+			</set_shop_mail_admin>
+
+			<set_shop_mail_client_1 type="droplist" title="Pending Order" empty="true">
+				<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+			</set_shop_mail_client_1>
+
+			<set_shop_mail_client_2 type="droplist" title="Order Completed" empty="true">
+				<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+			</set_shop_mail_client_2>
+
+			<set_shop_mail_client_3 type="droplist" title="Order Refunded" empty="true">
+				<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+			</set_shop_mail_client_3>
+
+
+			<set_mailing2 type="subtitle" title="Order Update Email Notifications" />
+
+			<set_shop_mail_admin_1 type="droplist" title="Pending Order" empty="true">
+				<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+			</set_shop_mail_admin_1>
+
+			<set_shop_mail_admin_2 type="droplist" title="Order Completed" empty="true">
+				<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+			</set_shop_mail_admin_2>
+
+			<set_shop_mail_admin_3 type="droplist" title="Order Refunded" empty="true">
+				<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+			</set_shop_mail_admin_3>
+
+			<set_shop_mail_admin_4 type="droplist" title="Order Canceled" empty="true">
+				<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+			</set_shop_mail_admin_4>
+
+			<set_shop_mail_admin_5 type="droplist" title="Order Shipped" empty="true">
+				<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+			</set_shop_mail_admin_5>
+
+
+	</fields>
+
+</form>

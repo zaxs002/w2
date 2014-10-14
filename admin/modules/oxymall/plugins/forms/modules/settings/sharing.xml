@@ -1,0 +1,17 @@
+<form>
+	<tabs>
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user&action=details&mod_id={MODULE_ID}" />
+		<t0 width="80" title="Links" link="index.php?mod=oxymall&sub=oxymall.plugin.sharing.landing" />
+	</tabs> 
+
+	<fields>
+								
+				
+
+
+		<settings_title type="subtitle" title="Settings" /> 
+
+		<set_title title="title" type="textbox" size="40" />
+		<set_close title="closeButton" type="textbox" size="40" />
+	</fields>
+</form>

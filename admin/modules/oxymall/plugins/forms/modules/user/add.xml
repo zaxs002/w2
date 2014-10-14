@@ -1,0 +1,114 @@
+<form>
+	<title>{SELF.TITLE} Module Settings{MODULE_TITLE}</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<vars>
+		<module_id type="eval" import="$_GET[mod_id]" />
+	</vars>
+
+	<fields>
+
+		<mod_id type="hidden"/>
+		<mod_status type="checkbox" title="" checked="1" label="active" />
+		<mod_invisible type="checkbox" title="" checked="1" label="invisible" description="Invisible modules can be accessed directly by link. They wont appear in the top menu." />
+		<mod_parent action="eval" type="droplist" empty="true" empty_msg="[ main module ]">
+			<title>Parent Menu</title>
+
+			<tree parent="mod_parent" separator="&nbsp;&nbsp;&nbsp;" s1eparator="   " />
+
+			<relation table="core:user_modules" id="mod_id" text="mod_name" condition="mod_parent=0 AND mod_module_code='category' "/>
+		</mod_parent>
+		<mod_name type="textbox" size="60:200" title="Menu Name" required="true" validate="A:1:100" onblur="AddPageCode(this.value);"/>
+		<mod_url type="textbox" size="40:100" suffix="/" preffix="/#/" title="Url Preffix" required="true" unique="true" validate="A:1:100"/>
+		<mod_long_name type="textbox" size="60:200" title="Long Title" required="true" validate="A:1:100"/>
+		
+		<mod_module_code type="textbox" size="50:50" title="Module Type" editable="false"/>
+
+		<mod_protected type="checkbox" checked="1" title="Protected" label="yes|no">
+			<description>If you check this box, the module will be seen and accessed only by logged in users.</description>
+		</mod_protected>
+
+		<subtitle_seo title="SEO Fields" type="subtitle" />
+		<seo_title type="textbox" size="90:255" title="Browser Title"/>
+		<seo_desc type="textbox" size="90:255" title="Meta Description"/>
+		<seo_keys type="textbox" size="90:255" title="Meta Keywords"/>
+
+
+
+	</fields>
+
+	<javascript>
+		<after><![CDATA[
+			function ShowSettings(block) {
+
+				elems = document.forms['edit'].elements;
+				fields  = new Array("subtitle_mod_1","subtitle_mod_2","subtitle_mod_3","subtitle_mod_4","subtitle_mod_5","subtitle_mod_6","subtitle_mod_7","subtitle_mod_8");
+
+				for (var i=0 ; i < elems.length ; i++ ){
+					if ((elems[i].name.indexOf("set_" , 0) != -1) && (elems[i].name.indexOf("email_" , 0) == -1)) {
+						fields[fields.length] = elems[i].name;
+					}
+				}	
+
+				for ( i =0 ; i < fields.length ; i ++ ) {
+
+					try {
+						document.getElementById("XML_BODY_FIELD_" + fields[i]).style.display = block ? "block" : "none";
+						document.getElementById("XML_BODY_FIELD_" + fields[i]).style.width = "100%";
+					} catch (e){}
+				}
+			}  
+
+			if (typeof document.forms[0].show_settings != "undefined" ) {
+				if (document.forms[0].show_settings.checked == true )
+					ShowSettings(1);
+				else
+					ShowSettings(0);
+			}
+
+			function AddPageCode(txt) {
+				if (document.forms['edit'].mod_url.value == '') {
+					var url = Name2Url(txt.trim());
+					document.forms['edit'].mod_url.value = url.toLowerCase();
+				}
+
+				if (document.forms['edit'].mod_long_name.value == '') {
+					document.forms['edit'].mod_long_name.value = document.forms['edit'].mod_name.value;
+				}
+
+			}
+
+		]]></after>
+	</javascript>
+
+</form>

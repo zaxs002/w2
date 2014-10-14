@@ -1,0 +1,40 @@
+<!--S:Main-->
+		<div class="module" id="sign-in-module">
+			<header>
+				<h1>{SET_LOGIN_TOPTITLE}</h1>
+			</header>
+			
+			<form class="see-through-bg" action="ajax.users-login.php" method="post" id="sign-in-form" >
+				<input name="r" value="{R}" type="hidden"/>
+				<p>{SET_LOGIN_DESCRIPTON}</p>
+				
+				<ul class="layout">
+					<li class="inline pb12 pr12">
+						<label class="block big">{SET_LOGIN_USEREMAILCAPTION}</label>
+						<input class="w194" name="email" type="text"/>
+					</li>
+					<li class="inline pb12">
+						<label class="block big">{SET_LOGIN_PASSWORDCAPTION}</label>
+						<input class="w194" name="password" type="password"/>
+					</li>
+					<li class="inline clear pb12">
+						<input id="remember_option" name="remember" value="1" type="checkbox"/>
+						<label for="remember_option" class="pr12">{SET_LOGIN_REMEMBERBUTTON}</label>					
+					</li>
+
+					<li class="inline clear pr6"><input id="sign-in-form-submit-btn" type="submit" value="{SET_LOGIN_BUTTON}"/></li>
+					<li id="sign-in-form-msg" class="inline lh25">
+						<div class="wait">{SET_LOGIN_SENDINGCAPTION}</div>
+					</li>					
+					{FACEBOOK_LOGIN}
+
+					<li class=" inline-right"><a href="{LINK:REGISTER}" class="text-button"><span>{SET_LOGIN_REGISTERBUTTONCAPTION}</span></a></li>
+					<li class="inline-right pr6"><a href="{LINK:RECOVER}" class="text-button"><span>{SET_LOGIN_FORGOTPASSBUTTONCAPTION}</span></a></li>
+				</ul>	
+			</form>
+		</div>
+<!--E:Main-->
+
+<!--S:Fb-->
+
+<!--E:Fb-->

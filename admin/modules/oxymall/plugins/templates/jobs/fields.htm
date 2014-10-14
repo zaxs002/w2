@@ -1,0 +1,102 @@
+<!--S:Main-->
+			<div id="apply-form" class="see-through-bg extra-content">
+				
+				<header>
+					<h3>{SET_TEXT_APPLY}</h3>
+				</header>
+				
+				<form class="pt12" action="ajax.careers-resume-send.php" method="post">
+					<input type="hidden"  name="job" value="{ITEM_ID}" />
+					<input type="hidden"  name="files" id="jobfile" value="" />
+					<ul class="layout">
+						{FIELDS}
+
+						{UPLOAD}
+						<li class="inline clear w194 pb12">
+							<label class="block big">{SET_VERIFICATIONCODECAPTION}</label>
+							<div class="verification-code">
+								<input class="w106 pr82" type="text" name="image_code" value=""/>
+								<img class="verification-image" alt="" src="ajax.capcha.php"/>
+								<a class="refresh-button" href="ajax.capcha.php">{SET_VERIFICATIONCODEREFRESH}</a>
+							</div>
+						</li>
+
+						<li class="clear inline pr6 pb12"><input id="apply-form-submit-btn" type="submit" value="{SET_TEXT_SEND_BUTTON}" /></li>
+						<li id="apply-form-msg" class="inline lh27">
+							<div class="wait">{SET_TEXT_SEND}</div>
+						</li>
+					</ul>
+				</form>
+				
+				<div class="to-right">					
+					<p>{SET_POST_COMMENT}</p>
+				</div>
+				
+			</div>
+
+<!--E:Main-->
+
+<!--S:Group-->
+			{DATA}
+<!--E:Group-->
+
+<!--S:Element-->
+			{CONTENT}
+<!--E:Element-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->
+
+<!--S:Small-->
+							<li class="inline pb12 {CLASS} w194">
+								<label class="block big">{ITEM_TITLE}</label>
+								{FIELD}
+							</li>							
+<!--E:Small-->
+
+<!--S:Big-->
+							<li class="inline pb12 clear ">
+								<label class="block big">{ITEM_TITLE}</label>
+								{FIELD}
+							</li>							
+<!--E:Big-->
+
+<!--S:smallsize-->w184<!--E:smallsize-->
+<!--S:bigsize-->w390<!--E:bizsize-->
+
+<!--S:usertext--><input name="{ITEM_FIELD}" class="{SIZE}" type="text" value=""/><!--E:usertext-->
+<!--S:usermessage--><textarea name="{ITEM_FIELD}" class="{SIZE}" rows="8"></textarea><!--E:usermessage-->
+<!--S:useremail--><input name="{ITEM_FIELD}" class="{SIZE}" type="text" value=""/><!--E:useremail-->
+<!--S:userdroplist-->
+								<select class="{SIZE}" name="{ITEM_FIELD}">
+									<option></option>
+									{OPTIONS}
+								</select>
+<!--E:userdroplist-->
+
+
+
+<!--S:Upload-->
+								<li class="clear inline pr6 pb12"><label class="block big">{SET_TEXT_UPLOAD_FIELD}</label></li>
+								<li class="clear pb12" id="resume-uploader">
+									<input name="resume" type="file"/>
+								</li>
+								
+								<script src="js/plugins/fileuploader.js" type="text/javascript"></script>
+								<script>        
+
+									var uploader = new qq.FileUploader({
+										element: document.getElementById('resume-uploader'),
+										action: 'ajax.upload.php',
+										allowedExtensions: ["doc","pdf" , "docx"],
+										params: {},
+										onSubmit: function(id, fileName){
+										},
+
+										onComplete: function(id, fileName, responseJSON){
+											$('#jobfile').val(fileName);
+										}
+									});           
+								</script>
+<!--E:Upload-->

@@ -1,0 +1,30 @@
+<!--S:NoUser-->
+	<nav class="see-through-bg" id="user-bar">
+		<ul>
+			<li>{SET_SUMMARY_GUEST}</li>
+			<li><a href="{LINK:LOGIN}">{SET_SUMMARY_LOGIN}</a></li>
+			<li><a href="{LINK:REGISTER}">{SET_SUMMARY_REGISTER}</a></li>
+		</ul>
+	</nav>
+<!--E:NoUser-->
+
+<!--S:NoUserFacebook-->
+	<nav class="see-through-bg" id="user-bar">
+		<ul>
+			<li>{SET_SUMMARY_GUEST}</li>
+			<li><a href="{FB_LOGIN}">{SET_FACEBOOK_LOGIN_BUTTON}</a></li>
+			<li><a href="{LINK:LOGIN}">{SET_SUMMARY_LOGIN}</a></li>
+			<li><a href="{LINK:REGISTER}">{SET_SUMMARY_REGISTER}</a></li>
+		</ul>
+	</nav>
+<!--E:NoUserFacebook-->
+
+<!--S:User-->
+	<nav class="see-through-bg" id="user-bar">
+		<ul>
+			<li>{SET_SUMMARY_WELCOME} {USER_FIRST_NAME} {USER_LAST_NAME}</li>
+			<li><a href="{LINK:ACCOUNT}">{SET_SUMMARY_ACCOUNT}</a></li>
+			<li><a href="{LINK:LOGOUT}">{SET_SUMMARY_LOGOUT}</a></li>
+		</ul>
+	</nav>
+<!--E:User-->

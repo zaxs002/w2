@@ -1,0 +1,41 @@
+<!--S:User-->
+		<div class="module" id="account-info-module">
+			<header>
+				<h1>{SET_ACCOUNT_YOURACCOUNTTITLE}</h1>
+			</header>
+			
+			<ul class="bigger-tabs-list">
+				{USER_MENU}
+				{SHOP_MENU}				
+			</ul>
+			
+			<form id="account-info-form" class="see-through-bg" action="ajax.user-profile.php" method="post">
+				
+				<ul class="layout">
+					<li class="inline"><label class="block big w140 lh25">{SET_ACCOUNT_NAMECAPTION}</label></li>
+					<li class="inline pb12"><input class="w194" name="user_first_name" value="{USER_FIRST_NAME}" type="text"/></li>
+					
+					<li class="clear inline"><label class="block big w140 lh25">{SET_ACCOUNT_SURNAMECAPTION}</label></li>
+					<li class="inline pb12"><input class="w194" name="user_last_name" value="{USER_LAST_NAME}" type="text"/></li>
+					
+					<li class="clear inline"><label class="block big w140 lh25">{SET_ACCOUNT_EMAILCAPTION}</label></li>
+					<li class="inline pb12"><input class="w194" name="user_email" type="text" disabled value="{USER_EMAIL}"/></li>
+					
+					<li class="clear inline"><label class="block big w140 lh25">{SET_ACCOUNT_PASSWORD}</label></li>
+					<li class="inline pb12"><input class="w194" name="user_password" type="password"/></li>
+					
+					<li class="clear inline"><label class="block big w140 lh25">{SET_ACCOUNT_NEWPASSWORDCAPTION}</label></li>
+					<li class="inline pb12"><input class="w194" name="user_password_new" type="password"/></li>
+					
+					<li class="clear inline"><label class="block big w140 lh25">{SET_ACCOUNT_REPEATNEWPASSWORDCAPTION}</label></li>
+					<li class="inline pb12"><input class="w194" name="user_password_confirm" type="password"/></li>
+					
+					<li class="inline clear pr6"><input id="account-info-form-submit-btn" type="submit" value="{SET_ACCOUNT_SAVEBUTTONCAPTION}"/></li>
+					<li id="account-info-form-msg" class="inline lh25">
+						<div class="wait">{SET_ACCOUNT_SAVINGCAPTION}</div>
+					</li>
+					<li class="inline-right"><a href="{LINK:PROFILE}" class="text-button"><span>{SET_ACCOUNT_RESETBUTTONCAPTION}</span></a></li>
+				</ul>	
+			</form>
+		</div>
+<!--E:User-->

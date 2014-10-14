@@ -1,0 +1,81 @@
+<form>
+	<alternance>true</alternance>
+	<valternance>true</valternance>
+	
+	<fields>
+
+		<_count header="No." width="20" align="right" suffix="."/>
+		<order_code header="Order ID#" width="150" link="{SELF.URI.EDIT}"/>
+		<order_date header="Date" type="date" params="d M Y" align="center" width="80"/>
+		<order_trans_id header="Trans ID#" width="150" restricted="eval:!$_GET[order_trans_id];"/>
+		<order_billing_first_name header="First Name" />
+		<order_billing_last_name header="Last Name" />
+		<order_business header="Business Name" restricted="eval:!$_GET[order_business];"/>
+		<order_payer_email header="Payer Email" restricted="eval:!$_GET[order_payer_email];"/>
+
+		<order_price_total type="price" header="Total" align="right" width="70"/>
+		<order_price_currency header="Cur." align="center" width="40" />
+
+		<order_status type="relation" header="Status" align="center" width="40">
+			<options>
+				<option name="0">temp</option>
+				<option name="1">pending</option>
+				<option name="2">completed</option>
+				<option name="3">refunded</option>
+				<option name="4">canceled</option>
+				<option name="5">shipped</option>
+			</options>
+		</order_status>
+
+		<order_payment_method header="Payment" type="relation" align="center">
+			<relation table="plugin:shop_accounts" id="item_id" text="item_title" />
+		</order_payment_method>
+
+		<button_delete type="button" width="20" align="center" onclick="" button="/small/delete" protected="promo_default">
+			<location>{SELF.URI.DELETE}</location>
+		</button_delete>
+
+		<button_details type="button" width="20" align="center" onclick="" button="/small/edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_details>
+
+	</fields>
+
+	<header>
+		<titles>true</titles>
+		<buttons>
+			<add button="addnew" restricted="eval:!$_GET['item_cat'];">
+				<location>{SELF.URI.ADD}</location>
+			</add>
+		</buttons>
+	</header>
+
+	<vars>
+		<module_id type="eval" import="(int)$_GET[module_id]" />
+		<item_cat type="eval" import="(int)$_GET[item_cat]" />
+	</vars>
+
+
+	<sql>
+		<vars>
+
+			<table type="table"/>
+
+			<page type="page"/>
+			<items type="form" var="items"/>
+
+			<condition type="var" import="" />
+
+			<order type="var" import="order_date" />
+			<order_mode type="var" import="DESC" />
+
+		</vars>
+		<query>select * from {TABLE} {CONDITION} ORDER BY {ORDER} {ORDER_MODE} LIMIT {PAGE} , {ITEMS} </query>
+		<count table="{TABLE}" condition="{CONDITION}" />
+
+	</sql> 
+
+	<items>50</items>
+
+
+</form>

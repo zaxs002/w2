@@ -1,0 +1,91 @@
+<form>
+	<title>{SELF.TITLE} Account</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit_cat</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<item_id type="hidden"/>		
+		<item_order type="hidden"/>		
+
+		<item_status type="droplist" title="Status">
+			<options>
+				<option name="1">active</option>
+				<option name="2">disabled</option>
+			</options>
+		</item_status>
+
+		<item_title type="textbox" size="60" title="Field Title" required="true" validate="A:1:200" unique="true"/>
+
+		<item_description type="textarea" size="70:3" title="Description" />
+		<item_redirect type="textarea" size="70:3" title="Redirect Text ( if applies )" />
+
+		<item_buttoncaption type="textbox" size="20" title="PayButton Title" />
+
+		<subtitle_account type="subtitle" title="Account" />
+
+		<item_account type="textbox" size="30" title="Account" required="true" validate="A:1:200"/>
+
+		<item_password type="textbox" size="30" title="Password (if applies)" />
+		<item_gatewayid type="textbox" size="30" title="Gatewayid (if applies)" />
+
+		<item_demo type="droplist" title="Demo Mode">
+			<options>
+				<option name="1">active</option>
+				<option name="0">disabled</option>
+			</options>
+		</item_demo>
+
+		<item_order_preffix type="textbox" size="3:3" title="Order Preffix" />
+		<item_order_description type="textbox" size="60" title="Order Description" />
+
+		<subtitle_type type="subtitle" title="Settings" />
+		<item_card type="droplist" title="Show Card Form">
+			<options>
+				<option name="1">yes</option>
+				<option name="0">no</option>
+			</options>
+		</item_card>
+
+		<item_script type="textbox" size="90" title="Processing Script/URL" required="true" validate="A:1:4000"/>
+
+		<subtitle_type2 type="subtitle" title="Response Pages" />
+
+		<item_page_ok type="droplist" title="Success Page" empty="true">
+			<relation table="core:user_modules" id="mod_id" text="mod_name" order="mod_name" condition="mod_module_code='about'"/>
+		</item_page_ok>
+
+		<item_page_error type="droplist" title="Cancel Page" empty="true">
+			<relation table="core:user_modules" id="mod_id" text="mod_name" order="mod_name" condition="mod_module_code='about'"/>
+		</item_page_error>
+
+	</fields>
+</form>

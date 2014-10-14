@@ -1,0 +1,42 @@
+<!--S:Main-->
+		<div class="module" id="home-module">
+			<header>
+				<h1>{MOD_TITLE}</h1>
+			</header>
+			
+			<article>
+				{HEADER}
+			</article>
+			
+			<header>
+				<h2>{PRODUCTS_TEXT}</h2>
+			</header>
+			
+			{SCROLLER_ITEMS}
+
+			{COMMENTS}
+		</div>
+<!--E:Main-->
+
+<!--S:ImagesGroup-->
+			<div class="thumbs-listing">				
+				<ul class="three-cols">					
+					{DATA}
+				</ul>					
+			</div>
+<!--E:ImagesGroup-->
+
+<!--S:ImagesGroupEmpty-->
+
+<!--E:ImagesGroupEmpty-->
+
+<!--S:ImagesElement-->
+					<li>{CONTENT}</li>
+<!--E:ImagesElement-->
+
+<!--S:ImagesEmpty-->
+
+<!--E:ImagesEmpty-->
+
+<!--S:Link--><a target="{ITEM_TARGET}" class="thumb" href="{ITEM_LINK}"><img src="upload/homepage/{ITEM_ID}.jpg"/></a><!--E:Link-->
+<!--S:NoLink--><a class="thumb" href="#"><img src="upload/homepage/{ITEM_ID}.jpg"/></a><!--E:NoLink-->

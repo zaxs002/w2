@@ -1,0 +1,38 @@
+<form>
+
+	<forms>
+		<list>orders/cart.xml</list>
+	</forms>
+
+	<table>plugin:shop_cart</table>
+	<table_uid>item_id</table_uid>
+
+
+	<URIdata>
+		<action>action</action>
+
+		<add>add2</add>
+		<details>details2</details>
+		<delete>delete2</delete>
+		<edit>edit2</edit>
+		<list>details2</list>
+		<search>search2</search>
+
+		<mup>moveup</mup>
+		<mdw>movedown</mdw>
+
+		<store>store</store>
+	</URIdata>
+
+
+	<URIlinks>
+		<add>{SELF.LINK.ADD}&returnurl={SELF.LOCATION}</add>
+		<edit>{SELF.LINKUID.EDIT}&returnurl={SELF.LOCATION}</edit>
+		<details>{SELF.LINKUID.DETAILS}&returnurl={SELF.LOCATION}</details>
+		<delete>javascript:if(confirm('Are you sure you want to delete this record ?')) window.location='{SELF.LINKUID.DELETE}&returnURL={SELF.LOCATION}'</delete>
+		<store>{SELF.LINK}{SELF.ACTION.STORE}</store>
+	</URIlinks>
+
+
+
+</form>

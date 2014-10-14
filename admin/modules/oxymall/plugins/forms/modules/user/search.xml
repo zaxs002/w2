@@ -1,0 +1,56 @@
+<form>
+	<title>Enabled Modules</title>
+	<action>{SELF.FILE}</action>
+	<name>edit</name>
+	<width>100%</width>
+	<method>get</method>
+
+	<formtag>true</formtag>
+	<border>true</border>
+	<alternance>true</alternance>
+	
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+	</buttons>
+
+	<redirect>index.php?sub=units</redirect>
+
+	<tabs>
+		<t0 width="100" title="Video Tutorial" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.help" restricted="eval:$GLOBALS['no_tutorials'];"/>
+		<t1 width="100" title="Global Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.settings" />
+<!--		<t2 width="100" title="Installed Skins" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.skins" />-->
+		<t3 width="100" title="Installed Modules" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default" />
+		<t4 active="true" width="100" title="Enabled Modules" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user" />
+	</tabs>
+
+	<fields>
+
+		<mod type="hidden" default="$_GET['mod']" action="eval"/>
+		<sub type="hidden" default="$_GET['sub']" action="eval"/>
+		<module_id type="hidden" default="$_GET['module_id']" action="eval"/>
+		<advanced type="hidden" default="0" />
+	</fields>
+
+	<search>
+			<fields>
+
+				<mod_parent type="droplist" empty="true" empty_msg="[ main menu ]" onchange="document.forms[0].submit();">
+					<title>Parent Menu</title>
+
+					<tree parent="mod_parent" separator="&nbsp;&nbsp;&nbsp;" s1eparator="   " />
+
+					<relation table="core:user_modules" id="mod_id" text="mod_name" condition="mod_parent=0 AND mod_module_code='category' "/>
+				</mod_parent>
+
+			</fields>
+
+			<sql_fields>
+				<field name="mod_parent">int</field>			
+			</sql_fields>
+
+	</search>
+</form>

@@ -1,0 +1,99 @@
+<!--S:Main-->
+			<header>
+				<h2>{SET_TITLE}</h2>
+			</header>
+
+			<div id="comments-data">
+				{COMMENTS}
+				{PAGING}
+			</div>
+
+			{NEW_COMMENT}
+<!--E:Main-->
+
+<!--S:AjaxMain-->
+				{COMMENTS}
+				{PAGING}
+<!--E:AjaxMain-->
+
+<!--S:Group-->
+			
+			<ul class="comments">				
+				{DATA}
+			</ul>
+<!--E:Group-->
+
+<!--S:GroupEmpty-->
+
+<!--E:GroupEmpty-->
+
+<!--S:Element-->
+				<li>
+					<div class="avatar"><a rel="noindex nofollow" href="{ITEM_WEBSITE}"><img alt="" src="{AVATAR}" width="80" height="80"/></a></div>
+					<div class="comment">
+						<div class="comment-header">
+							<h5>{ITEM_AUTHOR} <span>{SET_COMMENTS_SAID}</span></h5>
+							<div class="comment-date">{ITEM_DATE}</div>
+						</div>						
+						<div class="comment-body">
+							<div class="scroll-pane">
+								<p>{ITEM_BODY}</p>
+							</div>
+						</div>
+					</div>
+				</li>
+<!--E:Element-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->
+
+<!--S:New-->			
+			<div id="comment-form" class="see-through-bg extra-content">
+				
+				<header>
+					<h3>{SET_POST_TITLE}</h3>
+				</header>
+				
+				<form class="pt12" action="ajax.comments-post.php" method="post">
+					<input type="hidden" name="url" value="{URL}" />
+					<ul class="layout">
+						<li class=""><label class="block big">{SET_POST_NAME}</label></li>								
+						<li class="pb12"><input class="w390" type="text" name="name" value="{NAME}"/></li>
+						
+						<li class=""><label class="block big">{SET_POST_EMAIL}</label></li>
+						<li class="pb12"><input class="w390" type="text" name="email" value="{EMAIL}"/></li>
+						
+						<li class=""><label class="block big">{SET_POST_WEBSITE}</label></li>
+						<li class="pb12"><input class="w390" type="text" name="website"/></li>
+						
+						<li class=""><label class="block big">{SET_POST_MESSAGE}</label></li>
+						<li class="pb12"><textarea class="w390" rows="7" name="message"></textarea></li>
+
+						{CAPCHA}
+						
+						<li class="clear inline pr6 pb12"><input id="comment-form-submit-btn" type="submit" value="{SET_POST_BUTTON_POST}" /></li>
+						<li id="comment-form-msg" class="inline lh27">
+							<div class="wait">{SET_POST_ALERT_SENDING}</div>
+						</li>
+					</ul>
+				</form>
+
+				<div class="to-right">
+					<p>{SET_POST_COMMENT}</p>
+				</div>
+
+				
+			</div>
+<!--E:New-->			
+
+<!--S:Capcha-->
+							<li class="inline clear w194 pb12">
+								<label class="block big">{SET_POST_CAPCHA_TITLE}</label>
+								<div class="verification-code">
+									<input class="w106 pr82" type="text" name="image_code" value=""/>
+									<img class="verification-image" alt="" src="ajax.capcha.php"/>
+									<a class="refresh-button" href="ajax.capcha.php">{SET_POST_CAPCHA_REFRESH}</a>
+								</div>
+							</li>
+<!--E:Capcha-->

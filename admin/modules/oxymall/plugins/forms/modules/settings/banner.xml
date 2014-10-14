@@ -1,0 +1,24 @@
+<form>
+	<tabs>
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user&action=details&mod_id={MODULE_ID}" />
+		<t0 width="80" title="Items" link="index.php?mod=oxymall&sub=oxymall.plugin.banner.landing&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t_video width="80" title="Video Tutorial" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.help&module_id={MODULE_ID}" restricted="eval:$GLOBALS['no_tutorials'];"/>
+	</tabs>
+	
+	<fields>
+		<subtitle_mod_1 type="subtitle" title="Module Settings" />
+
+		<set_description_width type="textbox" size="5" suffix="&nbsp;px" title="descriptionWidth"/>
+		<set_stay type="textbox" size="5" suffix="seconds" title="sliderStay"/>
+
+		<set_fbcomments type="droplist" title="User Comments">
+			<options>
+				<option name="0">disabled</option>
+				<option name="1">local comments</option>
+				<option name="3">facebook comments</option>
+			</options>
+		</set_fbcomments>
+
+	</fields>
+
+</form>

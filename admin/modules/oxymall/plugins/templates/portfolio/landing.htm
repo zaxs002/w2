@@ -1,0 +1,51 @@
+<!--S:Main-->
+		<div class="module" id="clients-module">
+			<header>
+				<h1>{CAT_TITLE}</h1>
+				
+				{CATEGORIES}
+
+			</header>
+			
+			{HEADER}
+			{CONTENT}			
+
+			{PAGING}
+
+			{COMMENTS}
+		</div>
+<!--E:Main-->
+
+<!--S:Header-->
+			<article>
+				{CAT_DESCRIPTION}
+			</article>
+<!--E:Header-->
+
+
+<!--S:ItemsGroup-->
+			<div class="thumbs-listing">
+				<ul class="{CLASS}">					
+					{DATA}
+				</ul>					
+			</div>
+<!--E:ItemsGroup-->
+
+<!--S:ItemsGroupEmpty-->
+
+<!--E:ItemsGroupEmpty-->
+
+<!--S:ItemsElement-->
+					<li>
+						<a title="{PROJECT_TITLE}" class="thumb" href="{LINK}" ><img alt="" src="upload/portfolio/{SET_ITEMS_COLUMN}/project_{PROJECT_ID}.jpg"/></a>
+
+						<div class="caption">
+							<h3><a title="{PROJECT_TITLE}" href="{LINK}" >{PROJECT_TITLE}</a></h3>
+						</div>
+
+					</li>
+<!--E:ItemsElement-->
+
+<!--S:ItemsEmpty-->
+
+<!--E:ItemsEmpty-->

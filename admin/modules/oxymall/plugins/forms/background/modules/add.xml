@@ -1,0 +1,64 @@
+<form>
+	<title>{SELF.TITLE} Background</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit_cat</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<item_id type="hidden"/>		
+		<item_order type="hidden"/>		
+
+		<item_module title="Module" type="droplist" empty="true" required="true" validate="A:1:200" default="eval:$_GET[item_module];">
+			<tree parent="mod_parent" separator="&nbsp;&nbsp;&nbsp;" s1eparator="   " />
+			<relation table="core:user_modules" id="mod_id" text="mod_name" />
+		</item_module>
+
+		<item_title type="textbox" size="50" title="Title" required="true" validate="A:1:200" />
+
+		<item_file valign="top" type="image" path="./backgrounds/" absolute="false" editable="true" adminwidth="200" >
+			<file default="" field="item_id" ext=".jpg" />			
+			<title>Image</title>
+			<error>No image available.</error>						
+		</item_file>
+
+
+		<subtitle_after title="&nbsp;" type="subtitle" />
+		<after_save type="after_save" />
+
+	</fields>
+
+	<javascript>
+		<after>
+
+		</after>
+	</javascript>
+
+</form>

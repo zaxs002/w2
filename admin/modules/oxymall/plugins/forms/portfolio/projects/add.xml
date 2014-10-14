@@ -1,0 +1,97 @@
+<form>
+	<title>{SELF.TITLE} {TITLE} Project</title>
+	<action>{SELF.URI.STORE}&storeredirect=ADDDETAILS</action>
+	<name>edit</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+
+		<project_id type="hidden"/>		
+		<project_order type="hidden"/>		
+		<module_id type="hidden" default="eval:$_GET[module_id]"/>		
+
+		<project_cat title="Category" type="droplist" empty="true" required="true" validate="A:1:200" default="eval:$_GET[project_cat];">
+			<relation table="plugin:portfolio_cats" id="cat_id" text="cat_title" order="cat_order ASC">
+				<condition eval="true" import=" ' module_id=' . $_REQUEST[module_id] . '';"/>
+			</relation>
+		</project_cat>
+
+		<project_title type="textbox" size="60:200" title="Title" required="true" validate="A:2:200" onblur="AddPageCode(this.value);"/>
+		<project_subtitle type="textbox" size="60:200" title="Subtitle"/>
+		<project_url type="textbox" size="60:200" title="Url" required="true" validate="A:2:200" u_nique="true" preffix="/#/module-url/category-url/" suffix="-#id/"/>
+
+		<project_image  valign="top" adminwidth="100" type="image" path="./portfolio/" absolute="false" editable="true" >
+			<file default="project_" field="project_id" ext=".jpg" />			
+			<title>Thumbnail (224x132 px)</title>
+			<error>No photo available.</error>						
+			<thumbnails>
+				<resize preffix="3/" generate="true" width="224" height="132" />
+				<list_2 preffix="4/" generate="true" width="163" height="96" />
+				<tn preffix="admin_" generate="true" width="50" height="50" />
+			</thumbnails>
+		</project_image>
+
+		<project_description type="textarea" html="true" toolbar="Basic" width="600" height="200" title="Description" />
+
+		<project_link type="textbox"  size="70" title="Project Link" referers="project_target"/>
+		<project_target type="droplist" referer="true">
+			<options>
+				<option name="_blank">new window</option>
+				<option name="">same window</option>
+			</options>
+		</project_target>
+
+		<subtitle_seo title="SEO Fields" type="subtitle" />
+		<seo_title type="textbox" size="90:255" title="Browser Title"/>
+		<seo_desc type="textbox" size="90:255" title="Meta Description"/>
+		<seo_keys type="textbox" size="90:255" title="Meta Keywords"/>
+
+
+	</fields>
+	<javascript>
+		<after><![CDATA[
+
+			function AddPageCode(txt) {
+				if (document.forms['edit'].project_url.value == '') {
+					var url = Name2Url(txt.trim());
+					document.forms['edit'].project_url.value = url.toLowerCase();
+				}
+
+				if (document.forms['edit'].seo_title.value == '') {
+					document.forms['edit'].seo_title.value = txt;
+				}
+			}
+
+		]]></after>
+	</javascript>
+
+
+</form>

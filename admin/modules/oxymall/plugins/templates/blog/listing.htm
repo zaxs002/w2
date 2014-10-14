@@ -1,0 +1,51 @@
+<!--S:Main-->
+		<div class="module" id="blog-module">
+			<header>
+				<h1>{CAT_TITLE}</h1>
+				
+				{CATEGORIES}
+			</header>
+
+			{SEARCH_FORM}
+			{ITEMS}			
+			{PAGING}
+		</div>
+<!--E:Main-->
+
+<!--S:Header-->
+			<article>
+				{CAT_DESCRIPTION}
+			</article>
+<!--E:Header-->
+
+
+<!--S:ItemsGroup-->
+			<div class="topics-listing">
+				<ul>					
+					{DATA}
+				</ul>					
+			</div>
+<!--E:ItemsGroup-->
+
+<!--S:ItemsGroupEmpty-->
+
+<!--E:ItemsGroupEmpty-->
+
+<!--S:ItemsElement-->
+
+					<li>
+						<header>
+							<h2><a href="{DETAILS_LINK}">{ITEM_TITLE}</a></h2>									
+							<span>{SET_TEXT_POSTED_BY} <b><a href="{AUTHOR_LINK}">{AUTHOR_NAME}</a></b> {SET_TEXT_POSTED_ON} <b>{ITEM_DATE}</b></span>							
+						</header>
+						
+						<article>
+							<p>{ITEM_BRIEF}</p>
+							{TAGS}
+						</article>
+					</li>
+<!--E:ItemsElement-->
+
+<!--S:ItemsEmpty-->
+
+<!--E:ItemsEmpty-->

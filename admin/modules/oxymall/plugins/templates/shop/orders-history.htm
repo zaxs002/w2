@@ -1,0 +1,55 @@
+<!--S:Main-->
+		<div class="module" id="shop-step3-module">
+			<header>
+				<h1>{SET_ACCOUNT_YOURACCOUNTTITLE}</h1>
+			</header>
+			
+			<ul class="bigger-tabs-list">
+				{USER_MENU}
+				{SHOP_MENU}				
+			</ul>
+
+			<div class="see-through-bg extra-content">
+
+				<header>
+					<h3>{SET_ACCOUNT_MYORDERS}</h3>
+				</header>
+
+				<table class="list">				
+					<thead>
+						<tr>
+							<td class="full">{SET_HISTORY_CODE}</td>
+							<td class="spaced center-align">{SET_HISTORY_PAYMENT}</td>
+							<td class="spaced center-align">{SET_HISTORY_DATE}</td>
+							<td class="spaced center-align">{SET_HISTORY_TOTAL}</td>
+							<td class="spaced center-align">{SET_HISTORY_STATUS}</td>
+						</tr>
+					</thead>
+					
+					<tbody>
+						{ORDERS}
+					</tbody>				
+				</table>
+			</div>
+
+			{PAGING}			
+		</div>
+<!--E:Main-->
+
+<!--S:Group-->
+						{DATA}
+<!--E:Group-->
+
+<!--S:Element-->
+						<tr>
+							<td class="full"><a href="{LINK:HISTORY-ORDER}{ORDER_CODE}/">{ORDER_CODE}</a></td>
+							<td class="spaced center-align silent">{ORDER_PAYMENT_METHOD_NAME}</td>
+							<td class="spaced center-align silent">{DATE}</td>
+							<td class="spaced center-align silent">{PRICE}</td>
+							<td class="spaced center-align loud">{STATUS}</td>
+						</tr>
+<!--E:Element-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->

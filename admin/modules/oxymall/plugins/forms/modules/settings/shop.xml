@@ -1,0 +1,242 @@
+<form>
+	<tabs>
+		<t0 width="100" title="Global Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.shop.global&action=details" />
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.default&action=details&module_id=16" />
+		<t05 width="100" title="Payment Accounts" link="index.php?mod=oxymall&sub=oxymall.plugin.shop.accounts" />
+		<t02 width="100" title="Orders Mangement" link="index.php?mod=oxymall&sub=oxymall.plugin.shop.orders" />
+		<t03 width="100" title="Shipp Countries" link="index.php?mod=oxymall&sub=oxymall.plugin.shop.shipp_countries" />
+		<t04 width="100" title="Shipp Methods" link="index.php?mod=oxymall&sub=oxymall.plugin.shop.shipp_methods" />
+
+		<t_video width="80" title="Video Tutorial" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.help&module_id={MODULE_ID}" restricted="eval:$GLOBALS['no_tutorials'];"/>
+	</tabs> 
+
+	<fields>
+		<subtitle_seo title="SEO Fields" type="subtitle" />
+		<set_seo_title type="textbox" size="90:255" title="Browser Title"/>
+		<set_seo_desc type="textbox" size="90:255" title="Meta Description"/>
+		<set_seo_keys type="textbox" size="90:255" title="Meta Keywords"/>
+
+
+		<subtitle_mod_2 type="subtitle" title="Global Texts"  />
+
+		<set_title type="textbox" size="30" title="title"/>
+		<set_title_items type="textbox" size="30" title="titleItems"/>
+
+		<set_pricecaption type="textbox" size="30" title="priceCaption"/>
+		<set_addtocartcaption type="textbox" size="30" title="addToCartCaption"/>
+
+		<set_itemscaption type="textbox" size="30" title="itemsCaption"/>
+		<set_productnamecaption type="textbox" size="30" title="productNameCaption"/>
+		<set_onlycartpricecaption type="textbox" size="30" title="onlyCartPriceCaption"/>
+		<set_quantitycaption type="textbox" size="30" title="quantityCaption"/>
+		<set_totalcaption type="textbox" size="30" title="totalCaption"/>
+		<set_continueshoppingcaption type="textbox" size="30" title="continueShoppingCaption"/>
+		<set_checkoutcaption type="textbox" size="30" title="checkoutCaption"/>
+		<set_grandtotalcaption type="textbox" size="30" title="grandTotalCaption"/>
+		<set_removeitemtooltip type="textbox" size="30" title="removeItemTooltip"/>
+		<set_actioncaption type="textbox" size="30" title="actionCaption"/>
+		<set_quantityplus type="textbox" size="30" title="quantityPlus"/>
+		<set_quantityminus type="textbox" size="30" title="quantityMinus"/>
+		<set_removeitem type="textbox" size="30" title="removeItem"/>
+
+		<set_opentooltipalert type="textbox" size="30" title="openTooltipAlert"/>
+		<set_closetooltipalert type="textbox" size="30" title="closeTooltipAlert"/>
+
+		<set_addedtocartnotificationcaption type="textbox" size="30" title="addedToCartNotificationCaption"/>
+		
+
+		<subtitle_mod_9 type="subtitle" title="Months Names"  />
+		<set_month_1 type="textbox" size="30" title="January"/>
+		<set_month_2 type="textbox" size="30" title="February"/>
+		<set_month_3 type="textbox" size="30" title="March"/>
+		<set_month_4 type="textbox" size="30" title="April"/>
+		<set_month_5 type="textbox" size="30" title="May"/>
+		<set_month_6 type="textbox" size="30" title="June"/>
+		<set_month_7 type="textbox" size="30" title="July"/>
+		<set_month_8 type="textbox" size="30" title="August"/>
+		<set_month_9 type="textbox" size="30" title="September"/>
+		<set_month_10 type="textbox" size="30" title="October"/>
+		<set_month_11 type="textbox" size="30" title="November"/>
+		<set_month_12 type="textbox" size="30" title="December"/>
+
+
+		<subtitle_mod_20 type="subtitle" title="My Account"  />
+		<set_account_shop_billing type="textbox" size="30" title="billingCaption"/>
+		<set_account_shop_shipping type="textbox" size="30" title="shippingCaption"/>
+		
+		<set_account_shop_first_name type="textbox" size="30" title="firstName"/>
+		<set_account_shop_last_name type="textbox" size="30" title="lastName"/>
+		<set_account_shop_address type="textbox" size="30" title="Address"/>
+		<set_account_shop_address2 type="textbox" size="30" title="Address 2"/>
+		<set_account_shop_city type="textbox" size="30" title="City"/>
+		<set_account_shop_state type="textbox" size="30" title="State"/>
+		<set_account_shop_zip type="textbox" size="30" title="Zip"/>
+		<set_account_shop_country type="textbox" size="30" title="Country"/>
+		<set_account_shop_phone type="textbox" size="30" title="Phone"/>
+		<set_account_shop_same type="textbox" size="30" title="same as billing"/>
+
+		<set_account_shop_button_1 type="textbox" size="30" title="saveButton"/>
+		<set_account_shop_button_2 type="textbox" size="30" title="resetButton"/>
+
+		<set_account_shop_saving type="textbox" size="50" title="savingAlert"/>
+		<set_account_shop_saved type="textbox" size="50" title="profileUpdated"/>
+
+		<subtitle_mod_18 type="subtitle" title="Checkout - Steps Titles/Subtitles"  />
+
+		<set_steps_title title="Main Title" type="textbox" size="30"/>
+		<set_steps_subtitle title="Main Subtitle" type="textbox" size="30"/>
+		<set_steps_items title="items In cart" type="textbox" size="30"/>
+		<set_steps_subtotal title="subTotal" type="textbox" size="30"/>
+
+		<set_steps_1_title title="Cart" type="textbox" size="30" referers="set_steps_1_subtitle"/>
+		<set_steps_1_subtitle title="" type="textbox" size="30" referer="true"/>
+
+		<set_steps_2_title title="Billing & Shipping" type="textbox" size="30" referers="set_steps_2_subtitle"/>
+		<set_steps_2_subtitle title="" type="textbox" size="30" referer="true"/>
+
+		<set_steps_2_title_ns title="Billing noShipping" type="textbox" size="30" referers="set_steps_2_subtitle_ns"/>
+		<set_steps_2_subtitle_ns title="" type="textbox" size="30" referer="true"/>
+
+		<set_steps_3_title title="Shipping Method" type="textbox" size="30" referers="set_steps_3_subtitle"/>
+		<set_steps_3_subtitle title="" type="textbox" size="30" referer="true"/>
+
+		<set_steps_4_title title="Review Order" type="textbox" size="30" referers="set_steps_4_subtitle"/>
+		<set_steps_4_subtitle title="" type="textbox" size="30" referer="true"/>
+
+		<set_steps_4_title_ns title="Review Order NoShip" type="textbox" size="30" referers="set_steps_4_subtitle_ns"/>
+		<set_steps_4_subtitle_ns title="" type="textbox" size="30" referer="true"/>
+
+		<set_steps_5_title title="Payment" type="textbox" size="30" referers="set_steps_5_subtitle"/>
+		<set_steps_5_subtitle title="" type="textbox" size="30" referer="true"/>
+
+		<set_steps_5_title_ns title="Payment NoShip" type="textbox" size="30" referers="set_steps_5_subtitle_ns"/>
+		<set_steps_5_subtitle_ns title="" type="textbox" size="30" referer="true"/>
+
+		<subtitle_mod_21 type="subtitle" title="Checkout - Step 1 - Billing and Shipping"  />
+
+		<set_step1_billing type="textbox" size="30" title="billingCaption"/>
+		<set_step1_shipping type="textbox" size="30" title="shippingCaption"/>
+		
+		<set_step1_first_name type="textbox" size="30" title="firstName"/>
+		<set_step1_last_name type="textbox" size="30" title="lastName"/>
+		<set_step1_address type="textbox" size="30" title="Address"/>
+		<set_step1_address2 type="textbox" size="30" title="Address 2"/>
+		<set_step1_city type="textbox" size="30" title="City"/>
+		<set_step1_state type="textbox" size="30" title="State"/>
+		<set_step1_zip type="textbox" size="30" title="Zip"/>
+		<set_step1_country type="textbox" size="30" title="Country"/>
+		<set_step1_phone type="textbox" size="30" title="Phone"/>
+		<set_step1_email type="textbox" size="30" title="E-Mail"/>
+
+		<set_step1_same type="textbox" size="30" title="same as billing"/>
+
+		<set_step1_button_1 type="textbox" size="30" title="back Button"/>
+		<set_step1_button_2 type="textbox" size="30" title="next Button"/>
+		<set_step1_button_2_2 type="textbox" size="30" title="next Button if no shipping"/>
+
+		<set_step1_saving type="textbox" size="50" title="sending Data"/>
+		<set_step1_success type="textbox" size="50" title="success"/>
+		<set_step1_error type="textbox" size="50" title="error"/>
+
+
+		<subtitle_mod_22 type="subtitle" title="Checkout - Step 2 - Shipping Method"  />
+
+		<set_step2_title type="textbox" size="30" title="title"/>
+		<set_step2_service type="textbox" size="30" title="service"/>
+		<set_step2_duration type="textbox" size="30" title="duration"/>
+		<set_step2_price type="textbox" size="30" title="price"/>
+		<set_step2_price_free type="textbox" size="30" title="priceFree"/>
+
+		<set_step2_button_1 type="textbox" size="30" title="back Button"/>
+		<set_step2_button_2 type="textbox" size="30" title="next Button"/>
+
+		<set_step2_saving type="textbox" size="50" title="sending Data"/>
+		<set_step2_success type="textbox" size="50" title="success"/>
+		<set_step2_error type="textbox" size="50" title="error"/>
+
+		<subtitle_mod_23 type="subtitle" title="Checkout - Step 3 - Review Order"  />
+
+		<set_step3_title type="textbox" size="30" title="title"/>
+
+		<set_step3_button_1 type="textbox" size="30" title="back Button"/>
+		<set_step3_button_1_2 type="textbox" size="30" title="back Button if no shipping"/>
+		<set_step3_button_2 type="textbox" size="30" title="next Button"/>
+
+		<set_step3_shipping type="textbox" size="30" title="shipping Title"/>
+		<set_step3_tax type="textbox" size="30" title="tax Title"/>
+		<set_step3_tax_free type="textbox" size="30" title="tax Free"/>
+		<set_step3_shipping_free type="textbox" size="30" title="shipping Free"/>
+
+		<subtitle_mod_24 type="subtitle" title="Checkout - Step 4 - Make Payment"  />
+		<set_step4_title type="textbox" size="30" title="title"/>
+		<set_step4_header type="textarea" size="60:3" title="header"/>
+		<set_step4_button type="textbox" size="30" title="backButton"/>
+
+		<set_nameoncardcaption type="textbox" size="30" title="nameOnCardCaption"/>
+		<set_nameoncarddescription type="textarea" size="60:2" title="nameOnCardDescription"/>
+		
+		<set_cardtypecaption type="textbox" size="30" title="cardTypeCaption"/>
+		<set_cardtypedescription type="textarea" size="60:2" title="cardTypeDescription"/>
+		
+		<set_cardnumbercaption type="textbox" size="30" title="cardNumberCaption"/>
+		<set_cardnumberdescription type="textarea" size="60:2" title="cardNumberDescription"/>
+		
+		<set_expirydatecaption type="textbox" size="30" title="expiryDateCaption"/>
+		<set_expirydatedescription type="textarea" size="60:2" title="expiryDateDescription"/>
+		
+		<set_cvv2caption type="textbox" size="30" title="cvv2Caption"/>
+		<set_cvv2description type="textarea" size="60:2" title="cvv2Description"/>
+
+		<set_step4_sending type="textbox" size="30" title="sedingData"/>
+		<set_step4_error type="textbox" size="30" title="errorFields"/>
+
+
+		<subtitle_mod_25 type="subtitle" title="User Account - Orders History"  />
+		<set_history_code type="textbox" size="30" title="orderCode"/>
+		<set_history_total type="textbox" size="30" title="orderTotal"/>
+		<set_history_date type="textbox" size="30" title="orderDate"/>
+		<set_history_status type="textbox" size="30" title="orderStatus"/>
+		<set_history_payment type="textbox" size="30" title="orderPayment"/>
+
+		<set_history_date_format type="textbox" size="30" title="dateFormat"/>
+		<set_history_status_1 type="textbox" size="30" title="statusPending"/>
+		<set_history_status_2 type="textbox" size="30" title="statusCompleted"/>
+		<set_history_status_3 type="textbox" size="30" title="statusRefunded"/>
+		<set_history_status_4 type="textbox" size="30" title="statusCanceled"/>
+		<set_history_status_5 type="textbox" size="30" title="statusShipped"/>
+
+
+		<set_history_back type="textbox" size="30" title="backToOrders"/>
+		<set_history_details_title type="textbox" size="30" title="orderDetailsTitle"/>
+		<set_history_details_carttitle type="textbox" size="30" title="orderDetailsCartTitle"/>
+
+
+		<subtitle_mod_26 type="subtitle" title="User Account"  />
+		<set_account_youraccounttitle type="textbox" size="30" title="accountTitle"/>
+		<set_account_myorders type="textbox" size="30" title="myOrders"/>
+		<set_account_history_title type="textbox" size="30" title="historyTitle"/>
+		<set_account_history_subtitle type="textbox" size="30" title="historySubTitle"/>
+
+		<set_account_profile_title type="textbox" size="30" title="profileTitle"/>
+		<set_account_profile_subtitle type="textbox" size="30" title="profileSubTitle"/>
+
+		<set_account_download_title type="textbox" size="30" title="downloadTitle"/>
+		<set_account_download_subtitle type="textbox" size="30" title="downloadSubTitle"/>
+
+		<set_account_orders_pp type="textbox" size="5" title="orders Per Page"/>
+
+
+		<subtitle_mod_27 type="subtitle" title="User Account - Download Files"  />
+		<set_account_download type="checkbox" checked="1" label="enable download files tab" description="Check this if you want to let your clients download the files you purchased directly from their accounts !"/>
+		<set_download_title type="textbox" size="30" title="downloadsTitle" />
+		<set_download_product type="textbox" size="30" title="Product" />
+		<set_download_file type="textbox" size="30" title="File" />
+		<set_download_date type="textbox" size="30" title="Date" />
+		<set_download_button type="textbox" size="30" title="DownloadButton" />
+		<set_download_pp type="textbox" size="5" title="Files Per Page"/>
+		<set_download_date_order type="textbox" size="10" title="Order Date Format"/>
+		<set_download_date_file type="textbox" size="10" title="File Date Format"/>
+
+
+	</fields>
+</form>

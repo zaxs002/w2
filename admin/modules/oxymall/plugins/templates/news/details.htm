@@ -1,0 +1,44 @@
+<!--S:Details-->		
+		<div class="module" id="news-details-module">			
+			<header>
+				<h1>{ITEM_TITLE}</h1>
+				
+				<ul class="inline-list module-header-nav-btns">
+					{PREV}
+					{NEXT}
+
+				</ul>
+				
+				<ul class="inline-list module-header-buttons">
+					<li><a href="{BACK}" class="go-back-btn"><span>{SET_TEXT_LIST_BACK}</span></a></li>
+				</ul>
+			</header>
+			
+			<article>
+				{ITEM_BODY}
+			</article>
+
+			{COMMENTS}
+		</div>
+<!--E:Details-->
+
+<!--S:Prev-->
+					<li><a href="{LINK}" class="big-prev-btn"><span>{SET_TEXT_DETAILS_BACK}</span></a></li>
+<!--E:Prev-->
+
+
+<!--S:PrevDisabled-->
+					<li><a href="#" class="big-prev-btn disabled"><span>{SET_TEXT_DETAILS_BACK}</span></a></li>
+<!--E:PrevDisabled-->
+
+<!--S:Next-->
+					<li><a href="{LINK}" class="big-next-btn"><span>{SET_TEXT_DETAILS_NEXT}</span></a></li>
+<!--E:Next-->
+
+<!--S:NextDisabled-->
+					<li><a href="#" class="big-next-btn disabled"><span>{SET_TEXT_DETAILS_NEXT}</span></a></li>
+<!--E:NextDisabled-->
+
+
+<!--S:Comments-->
+<!--E:Comments-->

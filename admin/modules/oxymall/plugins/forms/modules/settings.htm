@@ -1,0 +1,42 @@
+
+<h2>Apache webservers (linux hosting)</h2>
+<p>Copy the following lines and paste them into a file named <b>.htaccess</b> in the root of your install directory. If the install is elsewhere than in the root of your site, you will need to change the existing path so that it will point to the actual index.php directory.</p>
+
+<pre>
+#try to use mod_rewrite
+&lt;IfModule mod_rewrite.c&gt;
+	RewriteEngine On
+	#RewriteBase /
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule . /index.php [L]
+&lt;/IfModule&gt;
+
+#else use the ErrorDocument
+
+&lt;IfModule !mod_rewrite.c&gt;
+	ErrorDocument "404"	./index.php
+&lt;/IfModule&gt;
+</pre>
+
+
+<h2>IIS webservers (windows hosting)</h2>
+<p>Copy the following lines and paste them into a file named <b>web.config</b> in the root of your install web domain. If the install is elsewhere than in the root of your site, you will need to change the existing path so that it will point to the actual index.php directory.</p>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;configuration&gt;
+    &lt;system.webServer&gt;
+        &lt;directoryBrowse enabled="false" /&gt;
+        &lt;defaultDocument&gt;
+            &lt;files&gt;
+                &lt;clear /&gt;
+                &lt;add value="index.php" /&gt;
+            &lt;/files&gt;
+        &lt;/defaultDocument&gt;
+		&lt;customErrors mode="On" defaultRedirect="/index.php"&gt;
+			 &lt;error statusCode="404" redirect="/index.php" /&gt;
+		&lt;/customErrors&gt;
+    &lt;/system.webServer&gt;
+&lt;/configuration&gt;
+
+</pre>

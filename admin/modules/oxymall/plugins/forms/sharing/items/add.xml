@@ -1,0 +1,66 @@
+<form>
+	<title>{SELF.TITLE} Large Link</title>
+	<action>{SELF.URI.STORE}</action>
+	<name>edit_cat</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<item_id type="hidden"/>		
+		<item_order type="hidden"/>		
+		<item_type type="hidden" default="1"/>
+
+		<item_icon  valign="top" adminwidth="100" type="image" path="./sharing/" absolute="false" editable="true" >
+			<file default="" field="item_id" ext=".png" />			
+			<title>Icon (25x25px)</title>
+			<error>No photo available.</error>						
+			<thumbnails>
+				<resize preffix="" generate="true" width="25" height="25" />
+			</thumbnails>
+		</item_icon>
+
+		<item_description type="textbox" size="50" title="Tooltip" required="true" validate="A:1:200" />
+		<item_url type="textbox" size="70" title="Link/Target" required="true" validate="A:1:200" description="Place the {URL} or {URL_ENCODED} variables inside the link where you want to have your site address." referers="item_target"/>
+
+		<item_target type="droplist" referer="true">
+			<options>
+				<option name="">same window</option>
+				<option name="_blank">new window</option>
+			</options>
+		</item_target>
+
+
+		<subtitle_after title="&nbsp;" type="subtitle" />
+		<after_save type="after_save" />
+
+	</fields>
+
+
+</form>

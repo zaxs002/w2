@@ -1,0 +1,152 @@
+	<form>
+	<tabs>
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user&action=details&mod_id={MODULE_ID}" />
+		<t1 width="80" title="Categories" link="index.php?mod=oxymall&sub=oxymall.plugin.products.landing&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t2 width="80" title="Products" link="index.php?mod=oxymall&sub=oxymall.plugin.products.products&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t3 width="80" title="Reviews" link="index.php?mod=oxymall&sub=oxymall.plugin.products.allreviews&module_id={MODULE_ID}" />
+		<t4 width="80" title="Questions" link="index.php?mod=oxymall&sub=oxymall.plugin.products.allquestions&module_id={MODULE_ID}" />
+		<t_video width="80" title="Video Tutorial" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.help&module_id={MODULE_ID}" restricted="eval:$GLOBALS['no_tutorials'];"/>
+
+	</tabs>
+	
+
+	<fields>
+
+		<subtitle_mod_4 type="subtitle" title="Misc Settings" />
+
+
+
+		<set_ipp type="textbox" size="3" title="Products Per Page" />
+
+		<set_items_column type="droplist" title="Products per Row">
+			<options>
+				<option name="three-cols">3</option>
+				<option name="four-cols">4</option>
+			</options>
+		</set_items_column>
+
+		<set_disable_add type="checkbox" checked="1" label="yes|no" title="Disable Add to Cart" description="Check this if you want to use this module just for presentation "/>
+
+		<subtitle_mod_set type="subtitle" title="Comments" />
+		<set_fbcomments type="droplist" title="User Comments">
+			<options>
+				<option name="0">disabled</option>
+				<option name="1">local comments</option>
+				<option name="3">facebook comments</option>
+			</options>
+		</set_fbcomments>
+
+		<set_categories_type type="radiolist" title="Categories Display" newline="false">
+			<options>
+				<option name="1">menu</option>
+				<option name="2">droplist</option>
+				<option name="3">droplist if more then 3</option>
+			</options>
+		</set_categories_type>
+		<set_reviews type="checkbox" checked="1" label="yes|no" title="User Reviews" />
+		<set_askquestion type="checkbox" checked="1" label="yes|no" title="Ask Question" />
+
+		<subtitle_mod_7 type="subtitle" title="Mails Settings" /> 
+		<set_mail_ask_admin type="droplist" title="Ask Question Notification" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_ask_admin>
+
+		<set_mail_ask_client type="droplist" title="Ask Question Autoresponder" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_ask_client>
+
+		<set_mail_review_admin type="droplist" title="Review Notification" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_review_admin>
+
+		<set_mail_review_client type="droplist" title="Review Autoresponder" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_review_client>
+
+
+		<subtitle_mod_filter type="subtitle" title="Filter Form" />
+		<set_filter_name type="textbox" size="20" title="Name" />
+		<set_filter_price type="textbox" size="20" title="Price" />
+		<set_filter_date type="textbox" size="20" title="Date" />
+		<set_filter_sales type="textbox" size="20" title="Sales" />
+		<set_filter_asc type="textbox" size="20" title="Ascending" />
+		<set_filter_desc type="textbox" size="20" title="Descending" />
+		<set_filter_search type="textbox" size="20" title="Search" />
+		<set_filter_text_sort type="textbox" size="20" title="Sort by" />
+		<set_filter_text_order type="textbox" size="20" title="Order" />
+
+
+		<subtitle_mod_ask type="subtitle" title="Ask a Question" />
+
+		<set_ask_title type="textbox" size="60" title="Form Title" />
+
+		<set_ask_name type="textbox" size="40" title="Full Name" />
+		<set_ask_phone type="textbox" size="40" title="Phone" />
+		<set_ask_email type="textbox" size="40" title="Email" />
+		<set_ask_subject type="textbox" size="40" title="Subject" />
+		<set_ask_message type="textbox" size="40" title="Message" />
+
+		<set_ask_button_1 type="textbox" size="20" title="Send Button" />
+		<set_ask_button_2 type="textbox" size="20" title="Reset Button" />
+
+		<set_ask_sending type="textbox" size="40" title="Sending Data" />
+
+		<set_ask_namealert title="nameAlert" type="textbox" size="40" /> 				
+		<set_ask_phonealert title="phoneAlert" type="textbox" size="40" /> 				
+		<set_ask_emailalert title="emailAlert" type="textbox" size="40" /> 				
+		<set_ask_subjectalert title="subjectAlert" type="textbox" size="40" /> 				
+		<set_ask_messagealert title="messageAlert" type="textbox" size="40" /> 				
+		
+		<set_ask_success title="success" type="textbox" size="40" /> 				
+
+
+		<subtitle_mod_reviews type="subtitle" title="Reviews" />
+
+		<set_reviews_title type="textbox" size="60" title="Title" />
+		<set_reviews_title_post type="textbox" size="60" title="new Review Title" />
+
+		<set_reviews_name type="textbox" size="40" title="Full Name" />
+		<set_reviews_email type="textbox" size="40" title="Email" />
+		<set_reviews_message type="textbox" size="40" title="Message" />
+
+
+		<set_reviews_button_1 type="textbox" size="20" title="Send Button" />
+		<set_reviews_button_2 type="textbox" size="20" title="Reset Button" />
+
+		<set_reviews_sending type="textbox" size="40" title="Sending Data" />
+
+		<set_reviews_namealert title="nameAlert" type="textbox" size="40" /> 				
+		<set_reviews_emailalert title="emailAlert" type="textbox" size="40" /> 				
+		<set_reviews_messagealert title="messageAlert" type="textbox" size="40" /> 				
+		
+		<set_reviews_success title="success" type="textbox" size="40" /> 				
+
+
+		<set_reviews_load_more title="loadMore" type="textbox" size="40" /> 				
+
+
+		<set_reviews_text_said type="textbox" size="20" title="Text Said" />
+
+		<set_date_format_comments type="textbox" size="20" title="Reviews Date Format" />
+
+
+
+		<subtitle_mod_details type="subtitle" title="Details Texts" />
+
+		<set_details_back type="textbox" size="20" title="Back" />
+		<set_details_price type="textbox" size="20" title="Price" />
+		<set_details_description type="textbox" size="20" title="Description Button" />
+		<set_details_specs type="textbox" size="20" title="Specifications Button" />
+		<set_details_checkout type="textbox" size="40" title="Checkout Button" />
+		<set_details_add type="textbox" size="40" title="Add to Cart Button" />
+		<set_prj_middle_text  type="textbox" size="60" title="Middle Title" />
+
+
+		<subtitle_mod_list type="subtitle" title="Listing" />
+		<set_list_price type="textbox" size="20" title="Price" />
+		<set_list_add type="textbox" size="40" title="Add to Cart Button" />
+		<set_list_details type="textbox" size="40" title="Details Button" />
+
+	</fields>
+
+</form>

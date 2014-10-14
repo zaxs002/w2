@@ -1,0 +1,68 @@
+<form>
+	<title>{TITLE}</title>
+	<border>true</border>
+
+	<alternance>true</alternance>
+	<valternance>true</valternance>
+
+	<tabs>
+		<t width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.modules.user&action=details&mod_id={MODULE_ID}" restricted="eval:$GLOBALS[_USER]['user_level'];"/>
+		<t3 active="true" width="80" title="Authors" link="index.php?mod=oxymall&sub=oxymall.plugin.blog.authors&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t0 width="80" title="Topics" link="index.php?mod=oxymall&sub=oxymall.plugin.blog.landing&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+		<t2 width="80" title="Categories" link="index.php?mod=oxymall&sub=oxymall.plugin.blog.cats&module_id={MODULE_ID}&returnurl={SELF.PREVIOUS_ENC}" />
+	</tabs>
+
+	<vars>
+		<module_id type="eval" import="$_GET[module_id]" />
+	</vars>
+
+	<fields>
+
+		<_count header="No." width="20" align="right" suffix="."/>
+
+		<author_name header="Name" link="index.php?mod=oxymall&sub=oxymall.plugin.gallery.images&module_id={MODULE_ID}&advanced=0&item_cat={author_ID}"/>
+	
+		<button_delete type="button" width="20" align="center" onclick="" button="/small/delete" protected="promo_default">
+			<location>{SELF.URI.DELETE}</location>
+		</button_delete>
+
+		<button_details type="button" width="20" align="center" onclick="" button="/small/edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_details>
+
+	</fields>
+
+	<header>
+		<titles>true</titles>
+		<buttons>
+			<add button="addnew">
+				<location>{SELF.URI.ADD}</location>
+			</add>
+		</buttons>
+	</header>
+
+
+	<items>50</items>
+
+	<sql>
+		<vars>
+
+			<table type="table"/>
+
+			<page type="page"/>
+			<items type="form" var="items"/>
+			<module_id type="eval" import="$_GET[module_id];" />
+
+			<condition type="var" import="" />
+
+			<order type="var" import="author_name" />
+			<order_mode type="var" import="ASC" />
+
+		</vars>
+		<query>select * from {TABLE} {CONDITION} ORDER BY {ORDER} {ORDER_MODE} LIMIT {PAGE} , {ITEMS} </query>
+		<count table="{TABLE}" condition="{CONDITION}" />
+
+	</sql> 
+
+
+</form>

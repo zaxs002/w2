@@ -1,0 +1,71 @@
+<!--S:Main-->
+		<div class="module" id="register-module">
+			<header>
+				<h1>{SET_REGISTER_TOPTITLE}</h1>
+			</header>
+			
+			<form class="see-through-bg" action="ajax.users-register.php" id="register-form"  method="post">
+				<p>{SET_REGISTER_DESCRIPTON}</p>
+				
+				<ul class="layout">
+					<li class="inline pb12 pr12">
+						<label class="block big">{SET_REGISTER_NAMECAPTION}</label>
+						<input class="w194" name="first_name" type="text"/>
+					</li>
+					<li class="inline pb12">
+						<label class="block big">{SET_REGISTER_SURNAMECAPTION}:</label>
+						<input class="w194" name="last_name" type="text"/>
+					</li>
+					
+					<li class="inline pb12 pr12">
+						<label class="block big">{SET_REGISTER_EMAILCAPTION}</label>
+						<input class="w194" name="email" type="text"/>
+					</li>
+					<li class="inline pb12">
+						<label class="block big">{SET_REGISTER_REPEATEMAILCAPTION}</label>
+						<input class="w194" name="confirm_email" type="text"/>
+					</li>
+					
+					<li class="inline pb12 pr12">
+						<label class="block big">{SET_REGISTER_PASSWORDCAPTION}</label>
+						<input class="w194" name="password" type="password"/>
+					</li>
+					<li class="inline pb12">
+						<label class="block big">{SET_REGISTER_REPEATPASSWORDCAPTION}</label>
+						<input class="w194" name="confirm_password" type="password"/>
+					</li>					
+
+					<li class="inline clear pb12">
+						<input id="tos" value="1" name="tos" type="checkbox"/>
+						<label for="agree_option" class="pr12">{SET_REGISTER_TOS}</label>					
+					</li>
+
+					<li class="inline clear pr6"><input id="register-form-submit-btn" type="submit" value="{SET_REGISTER_BUTTON}"/></li>
+					<li id="register-form-msg" class="inline lh25">
+						<div class="wait">{SET_REGISTER_SENDINGALERT}</div>
+					</li>
+					<li class="inline-right"><a href="{LINK:LOGIN}" class="text-button"><span>{SET_LOGIN_LOGINBUTTONCAPTION}</span></a></li>
+				</ul>	
+			</form>
+		</div>
+<!--E:Main-->
+
+<!--S:Facebook-->
+		<div class="module" id="register-module-facebook">
+			<header>
+				<h1>{SET_REGISTER_TOPTITLE}</h1>
+			</header>
+			
+			<article>
+				<div class="see-through-bg" style="width:600px;">
+
+					<fb:registration 
+						coloscheme="dark"
+						redirect-uri="{REDIRECT_URI}" 
+						fields="{FIELDS}"
+					></fb:registration> 
+
+				</div>
+			</article>
+		</div>
+<!--E:Facebook-->

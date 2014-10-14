@@ -1,0 +1,114 @@
+<form>
+	<title>{SELF.TITLE} {TITLE} Image</title>
+	<action>{SELF.URI.STORE}&storeredirect=ADDDETAILS</action>
+	<name>edit_cat</name>
+	<width>100%</width>
+	<alternance>true</alternance>
+	<encoding>multipart/form-data</encoding>
+
+
+	<formtag>true</formtag>
+	<border>true</border>
+	
+	<buttons>		
+		<set>
+			<header>true</header>
+		</set>
+
+
+		<button_back onclick="" button="return">
+			<location>{PRIVATE.FORM_PREVIOUS_PAGE}</location>
+		</button_back>
+
+		<button_edit onclick="" button="edit">
+			<location>{SELF.URI.EDIT}</location>
+		</button_edit>
+
+		<button_save button="saveall">
+			<location>javascript:document.forms[0].submit();</location>
+		</button_save>
+
+	</buttons>
+
+	<redirect>{PHP}?sub=accounts</redirect>
+
+	<fields>
+		<item_id type="hidden"/>		
+		<item_order type="hidden"/>		
+		<module_id type="hidden" default="eval:$_GET[module_id]"/>		
+
+		<item_title type="textbox" title="Title" size="60" />
+
+		<item_type type="droplist" required="true" validate="A:1:2" title="Type" onchange="ChangeRecordType(this.value);" empty="true">
+			<options>
+				<option name="1">image</option>
+				<option name="2">youtube/vimeo</option>
+			</options>
+		</item_type>
+
+
+		<item_image  valign="top" adminwidth="100" type="image" path="./banners/" absolute="false" editable="true" >
+			<file default="" field="item_id" ext=".jpg" />			
+			<title>Image (730x360px)</title>
+			<error>No photo available.</error>						
+			<thumbnails>
+				<resize preffix="" generate="true" width="730" height="360" />
+				<tn preffix="admin_" generate="true" width="50" height="50" />
+			</thumbnails>
+		</item_image>
+
+		<item_video type="textbox" size="90" title="Youtube/Vimeo Link" />
+
+		<item_url type="textbox" size="60:200" title="Url" referers="item_target"/>
+		<item_target type="droplist" title="Target" default="_blank" referer="true">
+			<options>
+				<option name="">same window</option>
+				<option name="_blank">new window</option>
+			</options>
+		</item_target>
+
+	</fields>
+
+	<javascript>
+		<after>
+			function ChangeRecordType(value) {
+	
+				value = parseInt(value);
+
+
+				fields  = {
+								1 : { 
+										"item_image" : "block",
+										"item_url" : "block",
+										"item_video" : "none"
+									},
+								2 : { 
+										"item_image" : "none",
+										"item_url" : "none",
+										"item_video" : "block"
+									},								
+								0: {
+										"item_image" : "none",
+										"item_url" : "none",
+										"item_video" : "none"
+								},
+								NaN: {
+										"item_image" : "none",
+										"item_url" : "none",
+										"item_video" : "none"
+								}
+							}
+
+				for ( i in fields[value] ) {
+					document.getElementById("XML_BODY_FIELD_" + i).style.display = fields[value][i];
+					document.getElementById("XML_BODY_FIELD_" + i).style.width = "100%";
+				}
+			} 
+
+			ChangeRecordType(document.forms[0].item_type.value);
+
+
+		</after>
+	</javascript>
+
+</form>

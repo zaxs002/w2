@@ -1,0 +1,83 @@
+<!--S:Step-->
+		<div class="module" id="shop-order-module">
+			{STEPS}
+			
+			<form action="ajax.shop-cart.php" method="post" id="order-cart-list" class="see-through-bg extra-content">
+				{CONTENT}
+			</form>
+		</div>
+<!--E:Step-->
+
+
+<!--S:Main-->
+			<table class="list">				
+				<thead>
+					<tr>
+						<td class="product-name">{SET_PRODUCTNAMECAPTION}</td>
+						<td class="price">{SET_ONLYCARTPRICECAPTION}</td>
+						<td class="quantity">{SET_QUANTITYCAPTION}</td>
+						<td class="total">{SET_TOTALCAPTION}</td>
+						<td class="action"><{SET_ACTIONCAPTION}/td>
+					</tr>
+				</thead>
+
+				<tbody>
+					{PRODUCTS}
+				</tbody>
+			</table>
+
+			<div id="order-cart-footer">					
+				<a id="order-continue-btn" href="{LINK:CONTINUE}" class="text-button">
+					<span class="arrow-left-icon">{SET_CONTINUESHOPPINGCAPTION}</span>
+				</a>
+			
+				{BUTTON_CHECKOUT}				
+								
+				<div id="order-grand-total">{SET_GRANDTOTALCAPTION} <b>{TOTAL}</b></div>					
+			</div>			
+		</div>		
+
+<!--E:Main-->
+
+<!--S:CheckoutButton-->				
+				<a id="cart-checkout-btn" href="{LINK:CHECKOUT}" class="text-button">
+					<span class="check-icon">{SET_CHECKOUTCAPTION}</span>
+				</a>
+<!--E:CheckoutButton-->
+
+<!--S:CheckoutButtonDisabled-->				
+				<a id="cart-checkout-btn" href="#" class="text-button disabled">
+					<span class="check-icon">{SET_CHECKOUTCAPTION}</span>
+				</a>
+<!--E:CheckoutButtonDisabled-->
+
+<!--S:Group-->
+				{DATA}
+<!--E:Group-->
+
+<!--S:Element-->
+
+					<tr>
+						<td class="product-name">{ITEM_TITLE}<span class="info">{OPTIONS}</span></td>
+						<td class="price">{PRICE}</td>
+						<td class="quantity">
+							<a href="#" title="{SET_QUANTITYPLUS}" class="quantity-minus-btn icon-button no-bg">
+								<span class="minus-icon">{SET_QUANTITYPLUS}</span>
+							</a>
+							<input name="qty[{KEY}]" type="text" value="{QTY}"/>
+							<a href="#" title="{SET_QUANTITYMINUS}" class="quantity-plus-btn icon-button no-bg">
+								<span class="plus-icon">{SET_QUANTITYMINUS}</span>
+							</a>
+						</td>
+						<td class="total">{TOTAL_PRICE}</td>
+						<td class="action">
+							<a href="#" title="{SET_REMOVEITEM}" class="icon-button no-bg">
+								<span class="x-icon">{SET_REMOVEITEMTOOLTIP}</span>
+							</a>
+						</td>
+					</tr>
+<!--E:Element-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->

@@ -1,0 +1,53 @@
+<!--S:Main-->
+		<div class="module" id="showreel-module">
+			<header>
+				<h2>{TITLE}</h2>
+			</header>
+			<div class="outer-cont">
+				<div class="slides_container" data-stay="{STAY}">
+					{SLIDES}
+				</div>
+			</div>
+
+			{COMMENTS}
+		</div>
+<!--E:Main-->
+
+<!--S:ImagesGroup-->
+		{DATA}
+<!--E:ImagesGroup-->
+
+<!--S:ImagesGroupEmpty-->
+
+<!--E:ImagesGroupEmpty-->
+
+<!--S:ImagesElement-->
+					{TYPE}
+						<div class="caption">{ITEM_TITLE}</div>
+						{TEXTS}
+					</div>
+
+<!--E:ImagesElement-->
+
+<!--S:ImagesEmpty-->
+
+<!--E:ImagesEmpty-->
+
+<!--S:Image--><div class="slide"> 
+						<a href="{ITEM_URL}" title="{ITEM_TITLE}" target="{ITEM_TARGET}"><img src="upload/banners/{ITEM_ID}.jpg" width="740" height="370" alt="{ITEM_TITLE}"><span class="bordered"></span></a><!--E:Image-->
+
+<!--S:Video--><div class="slide video">				
+						<iframe src="{VIDEO}" width="740" height="370" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><!--E:Video-->
+
+
+<!--S:TextsGroup-->
+	{DATA}
+<!--E:TextsGroup-->
+
+<!--S:TextsElement-->
+					<div class="optional {ITEM_SET_HORIZONTALALIGN} {ITEM_SET_VERTICALALIGN}" data-width="{ITEM_SET_DESCRIPTION_WIDTH}">{ITEM_TEXT}</div>
+<!--E:TextsElement-->
+
+<!--S:TextsEmpty-->
+
+<!--E:TextsEmpty-->

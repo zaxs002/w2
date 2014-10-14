@@ -1,0 +1,42 @@
+<!--S:Main-->
+			{ITEMS}
+<!--E:Main-->
+
+<!--S:ItemsGroup-->
+	<div class="see-through-bg extra-panel" id="bookmark-share-panel">
+		<header>
+			<h3>{SET_TITLE}</h3>
+			<a title="{SET_CLOSE}" class="icon-button" href="#">
+				<span class="x-icon">{SET_CLOSE}</span>
+			</a>
+		</header>
+		
+		<ul id="bookmark-share-list">
+			{DATA}
+		</ul>
+	</div>
+<!--E:ItemsGroup-->
+
+<!--S:ItemsGroupEmpty-->
+
+<!--E:ItemsGroupEmpty-->
+
+<!--S:ItemsElement-->
+			<li>
+				<a href="{ITEM_URL}" {TARGET} >
+					<img alt="" src="upload/sharing/{ITEM_ID}.png"/>
+					<span>{ITEM_DESCRIPTION}</span>
+				</a>
+			</li>
+<!--E:ItemsElement-->
+
+<!--S:ItemsEmpty-->
+
+<!--E:ItemsEmpty-->
+
+
+<!--S:Button-->
+				<li class="icon-button" id="bookmark-share-btn" title="{SET_TITLE}">
+					<a class="plus-icon" href="#">{SET_TITLE}</a>
+				</li>
+<!--E:Button-->

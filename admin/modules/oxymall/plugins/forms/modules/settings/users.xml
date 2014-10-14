@@ -1,0 +1,255 @@
+<form>
+
+	<tabs>
+		<t active="true" width="100" title="Module Settings" link="index.php?mod=oxymall&sub=oxymall.plugin.users.settings" />
+		<t1 width="80" title="Users" link="index.php?mod=oxymall&sub=oxymall.plugin.users.landing" />
+		<t4 width="80" title="Groups" link="index.php?mod=oxymall&sub=oxymall.plugin.users.groups" />
+	</tabs>
+
+
+	<fields>
+
+
+
+		<settings_fb type="subtitle" title="Facebook Registration" />
+
+		<set_register_type type="droplist" title="Registration Style">
+			<options>
+				<option name="1">local logins</option>
+				<option name="2">local and facebook logins</option>
+			</options>
+		</set_register_type>
+
+<!--
+		<set_facebook_extra_fields type="textarea" size="80:10" title="Fields "/>
+		<set_facebook_form_height type="textbox" size="5" suffix="px" title="Height"/>
+-->
+		<set_facebook_scope type="textbox" size="60" title="Scope" description="For full list of scopes follow this link https://developers.facebook.com/docs/reference/api/permissions/ "/>
+
+
+		<set_page_facebook type="droplist" title="Welcome Facebook" empty="true">
+			<relation table="core:user_modules" id="mod_id" text="mod_name" order="mod_name" condition="mod_module_code='about'"/>
+		</set_page_facebook>
+
+		<set_default_group_facebook type="droplist" empty="true" required="true" validate="A:1:200" title="Default Group Facebook">
+			<relation table="plugin:users_groups" id="group_id" text="group_name" order="group_name ASC"/>
+		</set_default_group_facebook>
+
+		<set_facebook_login_button type="textbox" size="30" title="Login Button" />
+
+
+		<settings_summary type="subtitle" title="Summary Box" />
+
+		<set_summary_login type="textbox" title="Signin button"/>
+		<set_summary_register type="textbox" title="Signout button"/>
+		<set_summary_guest type="textbox" title="Guest"/>
+		<set_summary_welcome type="textbox" title="Welcome"/>
+		<set_summary_account type="textbox" title="My Account"/>
+		<set_summary_logout type="textbox" title="Logout"/>
+
+		<settings_title type="subtitle" title="Register User" />
+
+		<set_default_group type="droplist" empty="true" required="true" validate="A:1:200" title="Default Group">
+			<relation table="plugin:users_groups" id="group_id" text="group_name" order="group_name ASC"/>
+		</set_default_group>
+
+
+		<set_default_status type="droplist" empty="true" required="true" title="Default Status">
+			<options>
+				<option name="1">inactive</option>
+				<option name="2">active</option>
+				<option name="3">pending admin approval</option>
+			</options>
+		</set_default_status>
+
+		<set_default_confirm_status type="droplist" empty="true" required="true" title="After Confirm Status">
+			<options>
+				<option name="2">active</option>
+				<option name="3">pending admin approval</option>
+			</options>
+		</set_default_confirm_status>
+
+		<set_login type="checklist" title="Allow login from">
+			<options>
+				<option name="1">inactive</option>
+				<option name="2">active</option>
+				<option name="3">pending admin approval</option>
+				<option name="4">suspended</option>
+			</options>		
+		</set_login>
+
+		<subtitle_mod_8 type="subtitle" title="Response Pages" /> 
+
+
+		<set_page_confirmed type="droplist" title="Confirmed Account" empty="true">
+			<relation table="core:user_modules" id="mod_id" text="mod_name" order="mod_name" condition="mod_module_code='about'"/>
+		</set_page_confirmed>
+
+		<set_page_confirmed_invalid type="droplist" title="Invalid Confirmed Link" empty="true">
+			<relation table="core:user_modules" id="mod_id" text="mod_name" order="mod_name" condition="mod_module_code='about'"/>
+		</set_page_confirmed_invalid>
+
+		<set_page_recover type="droplist" title="Recover Pass Ok" empty="true">
+			<relation table="core:user_modules" id="mod_id" text="mod_name" order="mod_name" condition="mod_module_code='about'"/>
+		</set_page_recover>
+
+		<set_page_recover_invalid type="droplist" title="Invalid Recover Link" empty="true">
+			<relation table="core:user_modules" id="mod_id" text="mod_name" order="mod_name" condition="mod_module_code='about'"/>
+		</set_page_recover_invalid>
+
+		<subtitle_mod_7 type="subtitle" title="Mails Settings" /> 
+
+		<set_mail_admin type="droplist" title="Admin Notification" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_admin>
+
+
+		<set_mail_welcome type="droplist" title="Welcome" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_welcome>
+
+		<set_mail_welcome_facebook type="droplist" title="Welcome Facebook" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_welcome_facebook>
+
+		<set_mail_confirm type="droplist" title="Confirm Email" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_confirm>
+
+		<set_mail_pending type="droplist" title="Pending Admin Confirm" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_pending>
+
+		<set_mail_forgot_link type="droplist" title="Forgot - Confirm Link" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_forgot_link>
+
+		<set_mail_forgot_new type="droplist" title="Forgot - New Password" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_forgot_new>
+
+		<set_mail_suspended type="droplist" title="Suspended Account" empty="true">
+			<relation table="plugin:mail_emails" id="email_code" text="email_code" order="email_code"/>
+		</set_mail_suspended>
+
+		<subtitle_mod_6 title="Buttons" type="subtitle"/>
+
+		<set_login_loginbuttoncaption type="textbox" size="40" title="loginButtonCaption"/>
+		<set_login_registerbuttoncaption type="textbox" size="40" title="registerButtonCaption"/>
+		<set_login_forgotpassbuttoncaption type="textbox" size="40" title="forgotPassButtonCaption"/>
+
+		<subtitle_mod_2 title="Login Panel" type="subtitle"/>
+		<set_login_cookie type="textbox" size="3" title="cookieExpire" suffix="days"/>
+
+		<set_login_toptitle type="textbox" size="40" title="topTitle"/>
+		<set_login_descripton type="textarea" size="60:3" title="Header"/>
+
+		<set_login_useremailcaption type="textbox" size="40" title="userEmailCaption"/>
+		<set_login_passwordcaption type="textbox" size="40" title="passwordCaption"/>
+
+		<set_login_wronginfoalert type="textbox" size="40" title="wrongInfoAlert"/>
+		<set_login_correctloginalert type="textbox" size="40" title="correctLoginAlert"/>
+		<set_login_usersuspendedalert type="textbox" size="40" title="userSuspendedAlert"/>
+		<set_login_usernotconfirmedalert type="textbox" size="40" title="userNotConfirmedAlert"/>
+
+		<set_login_useremailalert type="textbox" size="40" title="userEmailAlert"/>
+		<set_login_passwordalert type="textbox" size="40" title="passwordAlert"/>
+
+		<set_login_sendingcaption type="textbox" size="40" title="sendingCaption"/>
+		<set_login_rememberbutton type="textbox" size="40" title="rememberButton"/>
+		<set_login_button type="textbox" size="40" title="button"/>
+
+		<set_login_facebook type="textbox" size="40" title="loginWithFacebook"/>
+
+
+		<subtitle_mod_3 title="Recover Password Panel" type="subtitle"/>
+
+		<set_recover_toptitle type="textbox" size="40" title="topTitle"/>
+		<set_recover_descripton type="textarea" size="60:3" title="Header"/>
+		
+		<set_recover_emailcaption type="textbox" size="40" title="emailCaption"/>
+
+		<set_recover_usernamealert type="textbox" size="40" title="usernameAlert"/>
+		<set_recover_notvalidemailalert type="textbox" size="40" title="notValidEmailAlert"/>
+		<set_recover_sendingalert type="textbox" size="40" title="sendingAlert"/>
+		<set_recover_failalert type="textbox" size="40" title="failAlert"/>
+		<set_recover_successalert type="textbox" size="40" title="successAlert"/>
+		<set_recover_notindatabasealert type="textbox" size="40" title="notInDatabaseAlert"/>
+		<set_recover_button type="textbox" size="40" title="recoverButton"/>
+		
+
+		<subtitle_mod_4 title="Register Panel" type="subtitle"/>
+
+
+		<set_register_toptitle type="textbox" size="40" title="topTitle"/>
+		<set_register_descripton type="textarea" size="60:3" title="Header"/>
+
+
+		<set_register_namecaption type="textbox" size="40" title="nameCaption"/>
+		<set_register_surnamecaption type="textbox" size="40" title="surNameCaption"/>
+
+		<set_register_usernamecaption type="textbox" size="40" title="userNameCaption"/>
+		
+		<set_register_emailcaption type="textbox" size="40" title="emailCaption"/>
+		<set_register_repeatemailcaption type="textbox" size="40" title="repeatEmailCaption"/>
+		
+		<set_register_passwordcaption type="textbox" size="40" title="passwordCaption"/>
+		<set_register_repeatpasswordcaption type="textbox" size="40" title="repeatPasswordCaption"/>
+		
+		<set_register_registerbuttoncaption type="textbox" size="40" title="registerButtonCaption"/>
+		<set_register_gobackbuttoncaption type="textbox" size="40" title="goBackButtonCaption"/>
+		
+		<set_register_namealert type="textbox" size="40" title="nameAlert"/>
+		<set_register_usernamealert type="textbox" size="40" title="usernameAlert"/>
+		
+		<set_register_notvalidemailalert type="textbox" size="40" title="notValidEmailAlert"/>
+		<set_register_emailsalert type="textbox" size="40" title="emailsAlert"/>
+		
+		<set_register_passwordalert type="textbox" size="40" title="passwordAlert"/>
+		<set_register_wrongpasswordsalert type="textbox" size="40" title="wrongPasswordsAlert"/>
+		
+		<set_register_sendingalert type="textbox" size="40" title="sendingAlert"/>
+		<set_register_failalert type="textbox" size="40" title="failAlert"/>
+		<set_register_successalert type="textbox" size="40" title="successAlert"/>
+		<set_register_existsalert type="textbox" size="40" title="existsAlert"/>
+		<set_register_button type="textbox" size="40" title="button"/>
+		<set_register_tos type="textarea" size="90:3" title="TOS Line"/>
+		<set_register_tosalert type="textbox" size="40" title="tosAlert"/>
+
+
+		<subtitle_mod_9 type="subtitle" title="My Account Settings" /> 
+
+		<set_account_youraccounttitle type="textbox" size="40" title="yourAccountTitle"/>
+		<set_account_basicinfocaption type="textbox" size="40" title="basicInfoCaption"/>
+		<set_account_basicinfosubtitle type="textbox" size="40" title="basicInfoSubtitle"/>
+				
+		<set_account_shopinfocaption type="textbox" size="40" title="shopInfoCaption"/>
+		<set_account_shopinforsubtitle type="textbox" size="40" title="shopInfoSubtitle"/>
+				
+		<set_account_namecaption type="textbox" size="40" title="fistNameCaption"/>
+
+		<set_account_surnamecaption type="textbox" size="40" title="lastNameCaption"/>
+		<set_account_emailcaption type="textbox" size="40" title="emailCaption"/>
+		<set_account_password type="textbox" size="40" title="password"/>
+
+		<set_account_newpasswordcaption type="textbox" size="40" title="newPasswordCaption"/>
+		<set_account_repeatnewpasswordcaption type="textbox" size="40" title="repeatNewPasswordCaption"/>
+		<set_account_savebuttoncaption type="textbox" size="40" title="saveButtonCaption"/>
+		<set_account_resetbuttoncaption type="textbox" size="40" title="resetButtonCaption"/>
+
+
+		<subtitle_mod_10 type="subtitle" title="My Account - Alerts" /> 
+				
+		<set_account_firstalert type="textbox" size="40" title="firstName"/>
+		<set_account_lastalert type="textbox" size="40" title="lastName"/>
+
+		<set_account_currentpasswordalert type="textbox" size="40" title="currentPasswordWrong"/>
+		<set_account_wrongnewpasswordalert type="textbox" size="40" title="newPasswordConfirm"/>
+
+		<set_account_savingcaption type="textbox" size="40" title="savingCaption"/>				
+		<set_account_successalert type="textbox" size="40" title="success"/>
+								
+
+
+	</fields>
+</form>

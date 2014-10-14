@@ -1,0 +1,73 @@
+<!--S:Button-->
+			<li data-content="product-reviews"><a href="#">{SET_REVIEWS_TITLE}</a></li>
+<!--E:Button-->
+
+<!--S:Reviews-->
+					<article id="product-reviews">
+						<ul id="product-reviews-list" class="comments-list">
+							{DATA}
+
+						</ul>
+
+						{MORE}
+
+						{NEW}
+					</article>
+<!--E:Reviews-->
+
+<!--S:LoadMore-->
+						<a data-pid="{ITEM_ID}"  rel="noindex" id="load-more-product-reviews" class="text-button" href="ajax.products-reviews.php"><span>{SET_REVIEWS_LOAD_MORE}</span></a>
+<!--E:LoadMore-->
+
+<!--S:AjaxList-->
+							{DATA}
+<!--E:AjaxList-->
+
+
+<!--S:Group-->
+							{DATA}	
+<!--E:Group-->
+
+<!--S:Element-->
+							<li>
+								<header>
+									<h3>{ITEM_NAME} <span>{SET_REVIEWS_TEXT_SAID}</span></h3>
+									<span class="extra">{DATE}</span>
+								</header>
+								
+								<article>
+									<p>{ITEM_TEXT}</p>
+								</article>
+							</li>
+<!--E:Element-->
+
+<!--S:Empty-->
+
+<!--E:Empty-->
+
+<!--S:NewReview-->
+						<form id="review-form" action="ajax.products-review.php" method="post">
+							<input type="hidden" name="p" value="{ITEM_ID}" />
+							
+							<h4>{SET_REVIEWS_TITLE_POST}</h4>
+							
+							<ul class="layout">
+								<li class=""><label class="block big">{SET_REVIEWS_NAME}</label></li>								
+								<li class="pb12"><input class="w280" type="text" name="name"/></li>
+								
+								<li class=""><label class="block big">{SET_REVIEWS_EMAIL}</label></li>
+								<li class="pb12"><input class="w280" type="text" name="email"/></li>
+								
+								<li class=""><label class="block big">{SET_REVIEWS_MESSAGE}</label></li>
+								<li class="pb12"><textarea cols="60" rows="7" name="message"></textarea></li>
+								
+								<li class="inline pr6"><input id="review-form-submit-btn" type="submit" value="{SET_REVIEWS_BUTTON_1}" /></li>
+								<li class="inline pr6"><input type="reset" value="{SET_REVIEWS_BUTTON_2}" /></li>
+								
+								<li id="review-form-msg" class="inline lh27">
+									<div class="wait">{SET_REVIEWS_SENDING}</div>
+								</li>
+							</ul>
+							
+						</form>
+<!--E:NewReview-->
